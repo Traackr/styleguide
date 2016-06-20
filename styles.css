@@ -28,13 +28,13 @@ h2 {
     font-size: 18px;
 }
 h3 {
-    font-size: 14px;
+    font-size: 16px;
 }
 h4, h5 {
     font-size: 12px;
 }
 a {
-    color: #f74902;
+    color: #48b9c7;
     text-decoration: none;
 }
 a:hover {
@@ -560,7 +560,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     display: inline-block;
 }
 .influencer.selected {
-    outline: 2px solid #00b3c3;
+    outline: 2px solid #48b9c7;
 }
 .influencer-large {
     width: 100%;
@@ -674,6 +674,13 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .influencer .influencer-channels {
     padding: 8px 0 5px;
 }
+.influencer-small .influencer-channels {
+    padding: 0 7px 5px;
+}
+.recommended {
+    padding: 5px 7px;
+    font-size: 12px;
+}
 .channel {
     display: inline-block;
     margin-right: 5px;
@@ -715,11 +722,11 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     -webkit-transition: height 0.2s;
 }
 .influencer-info-small .influencer-more-info {
-    padding: 0 7px;
+    padding: 0 7px 3px;
     font-size: 12px;
 }
 .influencer:hover .influencer-info-small {
-    height: 90px;
+    height: 135px;
 }
 
 /* checkmark animation */
