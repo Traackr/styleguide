@@ -723,20 +723,27 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     transition: height 0.2s;
     -webkit-transition: height 0.2s;
 }
+.influencer .influencer-more-info {
+    float: right;
+    font-size: 12px;
+}
 .influencer-info-small .influencer-more-info {
     padding: 0 7px 3px;
-    font-size: 12px;
+    float: none;
 }
 .influencer:hover .influencer-info-small {
     height: 135px;
 }
 .influencer-more-info .scores {
+    padding-left: 15px;
+    overflow: hidden;
+}
+.influencer-more-info .stage {
     float: left;
     margin-top: 1px;
 }
-.influencer-more-info .stage {
-    padding-left: 15px;
-    overflow: hidden;
+.influencer-info-small .influencer-more-info .stage {
+    margin-top: -1px;
 }
 
 /* checkmark animation */
