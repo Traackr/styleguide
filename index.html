@@ -15,7 +15,6 @@
                 <h2>Colors</h2>
             </div>
             <div class="block-content">
-                <a href="#">Hi, I'm a link!</a>
                 <p><span style="display: inline-block; padding: 10px 20px; background: #f04c3c; color: #fff;">Logo: #f04c3c</span> <span style="display: inline-block; padding: 10px 20px; background: #f5775a; color: #fff;">Primary: #f5775a</span> <span style="display: inline-block; padding: 10px 20px; background: #48b9c7; color: #fff;">Secondary: #48b9c7</span> <span style="display: inline-block; padding: 10px 20px; background: #333; color: #fff;">Dark grey: #333</span> <span style="display: inline-block; padding: 10px 20px; background: #c8c8c8; color: #fff;">Medium grey: #c8c8c8</span> <span style="display: inline-block; padding: 10px 20px; background: #e8e8e8; color: #333;">Light grey: #e8e8e8</span></p>
             </div>
         </div>
@@ -24,10 +23,12 @@
                 <h2>Fonts</h2>
             </div>
             <div class="block-content">
-                <h1 style="padding-bottom: 0; padding-top: 0;">24px for h1</h1>
-                <h2 style="padding-bottom: 0;">18px for h2</h2>
-                <h3>16px for h3</h3>
-                14px for paragraphs
+                <h1 style="padding-bottom: 0; padding-top: 0;">24px for h1: <a href="#">link styles</a></h1>
+                <h2 style="padding-bottom: 0;">18px for h2: <a href="#">link styles</a></h2>
+                <h3>16px for h3: <a href="#">link styles</a></h3>
+                <div style="padding-bottom: 5px;">14px for paragraphs: <a href="#">link styles</a></div>
+                <div style="font-size: 12px; padding-bottom: 5px;">12px for meta information: <a href="#">link styles</a></div>
+                <div style="font-size: 10px;">10px for tiny meta information: <a href="#">link styles</a></div>
             </div>
         </div>
         <div class="block">
@@ -51,19 +52,13 @@
                 <h2>Icon Lists</h2>
             </div>
             <div class="block-content">
-                <p>It's an icon list.</p>
-                <ul class="icon-list">
-                    <li><span class="ss-icon">location</span>Boston, MA</li>
-                    <li><span class="ss-icon">reply</span>Owner McOwnerson</li>
-                    <li class="unset"><span class="ss-icon">reply</span>Nobody here!</li>
-                </ul>
-                <p>It's a tiny icon list.</p>
+                <div style="padding-bottom: 15px;">It's an icon list.</div>
                 <ul class="icon-list tiny">
                     <li><span class="ss-icon">location</span>Boston, MA</li>
                     <li><span class="ss-icon">reply</span>Owner McOwnerson</li>
                     <li class="unset"><span class="ss-icon">reply</span>Nobody here!</li>
                 </ul>
-                <p>It's a tiny inline icon list.</p>
+                <p>It's an inline icon list.</p>
                 <ul class="icon-list inline tiny">
                     <li><span class="ss-icon">location</span>Boston, MA</li>
                     <li><span class="ss-icon">reply</span>Owner McOwnerson</li>
@@ -76,19 +71,31 @@
                 <h2>Regular/secondary buttons</h2>
             </div>
             <div class="block-content">
-                <div class="medium-circle-icon stream-daterangepicker" id="daterangepicker" value=""><span class="ss-icon">filter</span></div>
-                <div class="medium-circle-icon stream-daterangepicker" id="daterangepicker" value=""><span class="ss-icon">calendar</span></div>
-                <div class="medium-circle-icon inline-btn stream-daterangepicker" id="daterangepicker" value=""><span class="ss-icon">ellipsis</span></div>
-                <button>Button!</button>
+                <div class="btn"><span class="ss-icon">filter</span></div>
+                <div class="btn"><span class="ss-icon">calendar</span></div>
+                <div class="btn inline-btn"><span class="ss-icon">ellipsis</span></div>
                 <a class="btn" href="#" role="button">Link button</a>
                 <button><span class="ss-icon">calendar</span> <span class="btn-text">Button with icon!</span></button>
                 <input type="button" class="btn" value="Input Button!" />
                 <div class="btn"><span class="ss-icon">calendar</span> <span class="btn-text">Div button!</span></div>
-                <div class="medium-circle-icon stream-daterangepicker" id="daterangepicker" value=""><span class="ss-icon">calendar</span> <span class="btn-text">Dates</span></div>
+                <div class="btn"><span class="ss-icon">calendar</span> <span class="btn-text">Dates</span></div>
                 <div class="btn-combo">
                     <div class="btn">Button combo</div>
                     <div class="btn">Another one</div>
                     <div class="btn"><span class="ss-icon tiny-icon">descend</span></div>
+                </div>
+                <div class="btn expand-btn"><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
+                
+                <p></p>
+                
+                <div class="dropdown">
+                    <button type="button" class="btn dropdown-toggle">I'm a dropdown <span class="ss-icon tiny-icon">descend</span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#" class="divider">Separated link</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -97,12 +104,22 @@
                 <h2>Primary buttons</h2>
             </div>
             <div class="block-content">
-                <div class="medium-circle-icon primary-btn stream-daterangepicker" id="daterangepicker" value=""><span class="ss-icon">calendar</span></div>
+                <div class="btn primary-btn" role="button"><span class="ss-icon">calendar</span></div>
                 <button class="primary-btn"><span class="ss-icon">calendar</span> <span class="btn-text">Button with icon!</span></button>
-                <div class="btn primary-btn">Div button!</div>
+                <div class="btn primary-btn" role="button">Div button!</div>
                 <div class="btn-combo">
-                    <div class="btn primary-btn">Button combo</div>
-                    <div class="btn primary-btn"><span class="ss-icon">descend</span></div>
+                    <div class="btn primary-btn" role="button">Button combo</div>
+                    <div class="btn primary-btn" role="button"><span class="ss-icon">descend</span></div>
+                </div>
+                <div class="btn primary-btn expand-btn" role="button"><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
+                <div class="dropdown">
+                    <button type="button" class="btn primary-btn dropdown-toggle">I'm a dropdown <span class="ss-icon tiny-icon">descend</span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#" class="divider">Separated link</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -111,31 +128,17 @@
                 <h2>Light buttons</h2>
             </div>
             <div class="block-content" style="background: #222;">
-                <div class="medium-circle-icon light-btn btn"><span class="ss-icon">calendar</span></div>
+                <div class="light-btn btn" role="button"><span class="ss-icon">calendar</span></div>
                 <button class="light-btn"><span class="ss-icon">calendar</span> <span class="btn-text">Button with icon!</span></button>
-                <div class="light-btn btn">Div button!</div>
+                <div class="light-btn btn" role="button">Div button!</div>
                 <div class="btn-combo">
-                    <div class="btn light-btn">Button combo</div>
-                    <div class="btn light-btn"><span class="ss-icon">descend</span></div>
+                    <div class="btn light-btn" role="button">Button combo</div>
+                    <div class="btn light-btn" role="button"><span class="ss-icon">descend</span></div>
                 </div>
-            </div>
-        </div>
-        <div class="block">
-            <div class="block-header clearfix">
-                <h2>Expandy buttons</h2>
-            </div>
-            <div class="block-content">
-                <div class="medium-circle-icon stream-daterangepicker expand-btn" id="daterangepicker" value=""><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
-                <div class="medium-circle-icon stream-daterangepicker primary-btn expand-btn" id="daterangepicker" value=""><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
-            </div>
-        </div>
-        <div class="block">
-            <div class="block-header clearfix">
-                <h2>Dropdowns</h2>
-            </div>
-            <div class="block-content">
+                <div class="btn light-btn expand-btn"><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
+                
                 <div class="dropdown">
-                    <button type="button" class="btn dropdown-toggle">Yo I'm a dropdown <span class="ss-icon tiny-icon">descend</span></button>
+                    <button type="button" class="btn light-btn dropdown-toggle">I'm a dropdown <span class="ss-icon tiny-icon">descend</span></button>
                     <ul class="dropdown-menu">
                         <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
@@ -461,11 +464,14 @@
                         googleplus
                         </a></li>
                     </ul>
-                    <ul class="scores influencer-more-info">
-                        <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
-                        <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
-                    </ul>
-                    <div class="influencer-more-info" style="color: #fea17b"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</div>
+                    <div class="influencer-more-info clearfix">
+                        <ul class="scores">
+                            <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                            <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                        </ul>
+                        <div class="stage" style="color: #fea17b"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</div>
+                    </div>
+                    <span class="recommended">Recommended to you</span>
                 </div>
             </li>
             <li class="influencer block influencer-small clearfix">
@@ -520,10 +526,13 @@
                         googleplus
                         </a></li>
                     </ul>
-                    <ul class="scores influencer-more-info">
-                        <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
-                        <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
-                    </ul>
+                    <div class="influencer-more-info clearfix">
+                        <ul class="scores">
+                            <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                            <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                        </ul>
+                        <div class="stage" style="color: #fea17b"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</div>
+                    </div>
                     <span class="recommended">Recommended to you</span>
                 </div>
             </li>
