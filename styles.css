@@ -41,6 +41,9 @@ a:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+h1 a, h2 a, h3 a {
+    color: #f5775a;
+}
 .noscroll { /* used for overlays on the body when you don't want the body to scroll :) */
     overflow: hidden;
 }
@@ -208,6 +211,7 @@ a:hover {
 /* dropdown */
 .dropdown {
     position: relative;
+    display: inline-block;
 }
 .dropdown-menu {
     position: absolute;
@@ -275,11 +279,11 @@ fieldset {
     padding: 15px;
     border: 0;
 }
-input[type=text], textarea {
+input[type="text"], textarea {
     border: 1px solid #c8c8c8;
     background: white;
     margin: 0;
-    padding: 6px 12px;
+    padding: 10px 12px;
     font-family: inherit;
     line-height: 1.28571428571;
     font-size: 14px;
@@ -419,9 +423,6 @@ section {
     display: inline-block;
 }
 .icon-list {
-    font-size: 14px;
-}
-.icon-list.tiny {
     font-size: 12px;
 }
 .icon-list .ss-icon {
@@ -468,6 +469,7 @@ ul.tagit {
     margin: 0;
     border: 0;
     border: 1px solid #c8c8c8;
+    padding: 3px 5px;
 }
 ul.tagit li.tagit-choice-editable {
     padding: 6px 22px 6px 12px;
@@ -727,6 +729,14 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 .influencer:hover .influencer-info-small {
     height: 135px;
+}
+.influencer-more-info .scores {
+    float: left;
+    margin-top: 1px;
+}
+.influencer-more-info .stage {
+    padding-left: 15px;
+    overflow: hidden;
 }
 
 /* checkmark animation */
