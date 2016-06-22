@@ -750,10 +750,10 @@ $(document).ready(function() {
     $('.add-influencer').on('click', function() {
         var $this = $(this);
         if ( $this.hasClass("add") ) {
-            $this.closest('.influencer').addClass('loading');
+            $this.closest('.influencer').addClass('added');
             $this.removeClass("add").addClass("disabled").addClass("loading");
             setTimeout(function() {
-                $this.closest('.influencer').removeClass('loading');
+                $this.closest('.influencer');
                 $this.removeClass("loading").removeClass("disabled").removeClass("no-toggle").trigger('click');
             }, 2000);
         }
