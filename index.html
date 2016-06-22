@@ -52,20 +52,71 @@
         </div>
         <div class="block">
             <div class="block-header clearfix">
+                <h2>Tables</h2>
+            </div>
+            <div class="block-content">
+                <h3>Borderless table: useful for putting in containers that already have a border</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;"></th>
+                            <th style="width: 150px;">Field</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="ss-icon ss-symbolicons-block">userprofile</span></td>
+                            <td>Name</td>
+                            <td>Leonard McCoy</td>
+                        </tr>
+                        <tr>
+                            <td><span class="ss-icon">location</span></td>
+                            <td>Location</td>
+                            <td>USS Enterprise</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>Bordered table: useful for standalone</h3>
+                <table class="table bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;"></th>
+                            <th style="width: 150px;">Field</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="ss-icon ss-symbolicons-block">userprofile</span></td>
+                            <td>Name</td>
+                            <td>Leonard McCoy</td>
+                        </tr>
+                        <tr>
+                            <td><span class="ss-icon">location</span></td>
+                            <td>Location</td>
+                            <td>USS Enterprise</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block-header clearfix">
                 <h2>Icon Lists</h2>
             </div>
             <div class="block-content">
                 <div style="padding-bottom: 15px;">It's an icon list.</div>
                 <ul class="icon-list tiny">
                     <li><span class="ss-icon">location</span>Boston, MA</li>
-                    <li><span class="ss-icon">reply</span>Owner McOwnerson</li>
-                    <li class="unset"><span class="ss-icon">reply</span>Nobody here!</li>
+                    <li><span class="ss-icon">redirect</span>Owner McOwnerson</li>
+                    <li class="unset"><span class="ss-icon">redirect</span>Nobody here!</li>
                 </ul>
                 <p>It's an inline icon list.</p>
                 <ul class="icon-list inline tiny">
                     <li><span class="ss-icon">location</span>Boston, MA</li>
-                    <li><span class="ss-icon">reply</span>Owner McOwnerson</li>
-                    <li class="unset"><span class="ss-icon">reply</span>Nobody here!</li>
+                    <li><span class="ss-icon">redirect</span>Owner McOwnerson</li>
+                    <li class="unset"><span class="ss-icon">redirect</span>Nobody here!</li>
                 </ul>
             </div>
         </div>
@@ -359,9 +410,12 @@
                     <div class="influencer-buttons">
                         <div class="dropdown">
                             <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
-                                <a href="#" class="checkadd"><span></span></a>
+                                <span class="ss-icon add-inf">add</span>
+                                <span class="loading-success"><span class="ss-icon success-icon">checkmark</span> <span class="btn-text">Added</span></span>
+                                <span class="loader"></span>
                             </div>
                             <ul class="dropdown-menu">
+                                <li><span class="helptext">Select optional projects to add this person to.</span></li>
                                 <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
                                 <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
                             </ul>
@@ -419,9 +473,9 @@
                             <li><span class="ss-icon ss-symbolicons-block">buildings</span> <span class="qtip-toggle" title="Account, Account2">Account +1</span></li>
                         </ul>
                         <ul class="icon-list tiny inline">
-                            <li><a href="#"><span class="ss-icon">reply</span></a> David Chancogne</li>
-                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">folder</span></a> <span class="qtip-toggle" title="Skipping School, Ferris Bueller's Friends"><a href="#">Skipping School</a> +1</span></li>
-                            <li><a href="#"><span class="ss-icon">tag</span></a> <span class="qtip-toggle" title="hypochondriac, worries a lot">hypochondriac +1</span></li>
+                            <li><a href="#" class="icon-link"><span class="ss-icon">redirect</span></a> David Chancogne</li>
+                            <li><a href="#" class="icon-link"><span class="ss-icon ss-symbolicons-block">folder</span></a> <span class="qtip-toggle" title="Skipping School, Ferris Bueller's Friends"><a href="#">Skipping School</a> +1</span></li>
+                            <li><a href="#" class="icon-link"><span class="ss-icon">tag</span></a> <span class="qtip-toggle" title="hypochondriac, worries a lot">hypochondriac +1</span></li>
                         </ul>
                         <div class="keyword-matches meta-item meta-item-small clearfix">75 posts match "ferris bueller"</div>
                     </div>
@@ -437,7 +491,9 @@
                     <div class="influencer-buttons">
                         <div class="dropdown">
                             <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
-                                <a href="#" class="checkadd"><span></span></a>
+                                <span class="ss-icon add-inf">add</span>
+                                <span class="loading-success"><span class="ss-icon success-icon">checkmark</span> <span class="btn-text">Added</span></span>
+                                <span class="loader"></span>
                             </div>
                             <ul class="dropdown-menu">
                                 <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
@@ -505,7 +561,9 @@
                     <div class="influencer-buttons">
                         <div class="dropdown">
                             <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
-                                <a href="#" class="checkadd"><span></span></a>
+                                <span class="ss-icon add-inf">add</span>
+                                <span class="loading-success"><span class="ss-icon success-icon">checkmark</span> <span class="btn-text">Added</span></span>
+                                <span class="loader"></span>
                             </div>
                             <ul class="dropdown-menu">
                                 <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
@@ -575,7 +633,9 @@
                     <div class="influencer-buttons">
                         <div class="dropdown">
                             <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
-                                <a href="#" class="checkadd"><span></span></a>
+                                <span class="ss-icon add-inf">add</span>
+                                <span class="loading-success"><span class="ss-icon success-icon">checkmark</span> <span class="btn-text">Added</span></span>
+                                <span class="loader"></span>
                             </div>
                             <ul class="dropdown-menu">
                                 <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
@@ -638,9 +698,9 @@
                             <li><span class="ss-icon ss-symbolicons-block">buildings</span> Account, Account 2</li>
                         </ul>
                         <ul class="icon-list tiny">
-                            <li><a href="#"><span class="ss-icon">reply</span></a> David Chancogne</li>
-                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">folder</span></a> <a href="#">Skipping School</a>, <a href="#">Ferris Bueller's Friends</a></li>
-                            <li><a href="#"><span class="ss-icon">tag</span></a> hypochondriac, worries a lot</li>
+                            <li><a href="#" class="icon-link"><span class="ss-icon">redirect</span></a> David Chancogne</li>
+                            <li><a href="#" class="icon-link"><span class="ss-icon ss-symbolicons-block">folder</span></a> <a href="#">Skipping School</a>, <a href="#">Ferris Bueller's Friends</a></li>
+                            <li><a href="#" class="icon-link"><span class="ss-icon">tag</span></a> hypochondriac, worries a lot</li>
                         </ul>
                         <div class="keyword-matches meta-item meta-item-small clearfix">75 posts match "ferris bueller"</div>
                     </div>
@@ -752,9 +812,10 @@ $(document).ready(function() {
         if ( $this.hasClass("add") ) {
             $this.closest('.influencer').addClass('added');
             $this.removeClass("add").addClass("disabled").addClass("loading");
-            setTimeout(function() {
+            setTimeout(function() { // simulate some loading
+                // Success!
                 $this.closest('.influencer');
-                $this.removeClass("loading").removeClass("disabled").removeClass("no-toggle").trigger('click');
+                $this.removeClass("loading").addClass("expand-btn").removeClass("disabled").removeClass("no-toggle").trigger('click');
             }, 2000);
         }
         return false;
