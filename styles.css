@@ -727,9 +727,9 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 
 .influencer .influencer-buttons {
-    /*display: none;*/
+    display: none;
 }
-.influencer:hover .influencer-buttons, .influencer.loading .influencer-buttons {
+.influencer:hover .influencer-buttons, .influencer.added .influencer-buttons {
     display: inline-block;
 }
 .influencer-info-small {
