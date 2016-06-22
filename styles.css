@@ -162,6 +162,12 @@ h1 a, h2 a, h3 a {
     border: 1px solid transparent;
     background: transparent;
 }
+/* Tiny button */
+.medium-circle-icon.tiny-btn, button.tiny-btn, .btn.tiny-btn, .tiny-btn,
+.medium-circle-icon.tiny-btn:hover, button.tiny-btn:hover, .btn.tiny-btn:hover, .tiny-btn:hover {
+    padding: 2px 3px 1px;
+    font-size: 7px;
+}
 /* Expand button */
 .expand-btn {
     max-width: 40px;
@@ -276,8 +282,9 @@ h1 a, h2 a, h3 a {
 
 /* forms */
 fieldset {
-    padding: 15px;
+    padding: 15px 0;
     border: 0;
+    margin: 0;
 }
 input[type="text"], textarea {
     border: 1px solid #c8c8c8;
@@ -302,6 +309,17 @@ input[disabled] {
 }
 input[disabled]:hover {
     border: 1px solid #c8c8c8;
+}
+.input-icon-container {
+    position: relative;
+}
+.input-icon-container input {
+    padding-left: 40px;
+}
+.input-icon-container .ss-icon {
+    position: absolute;
+    top: 12px;
+    left: 15px;
 }
 .form-row .input-label, .form-row .label, .form-row label {
     width: 25%;
@@ -435,7 +453,7 @@ section {
     color: #c8c8c8;
 }
 .icon-list > li > a:hover .ss-icon {
-    color: #f74902;
+    color: #48b9c7;
 }
 .icon-list > li > a:hover {
     text-decoration: none;
@@ -490,6 +508,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     display: block;
     color: #fff;
 }
+/* loader */
 .loader-wrapper {
     position: fixed;
     top: 0;
@@ -708,9 +727,9 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 
 .influencer .influencer-buttons {
-    display: none;
+    /*display: none;*/
 }
-.influencer:hover .influencer-buttons {
+.influencer:hover .influencer-buttons, .influencer.loading .influencer-buttons {
     display: inline-block;
 }
 .influencer-info-small {
@@ -720,8 +739,8 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     background: #fff;
     overflow: hidden;
     height: 65px;
-    transition: height 0.2s;
-    -webkit-transition: height 0.2s;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
 }
 .influencer .influencer-more-info {
     float: right;
@@ -758,6 +777,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     margin: 0 auto;
     position: relative;
     top: -6px;
+    background: #fff;
     -webkit-transition-duration: 0s; transition-duration: 0s;
     -webkit-transition-delay: 0.2s; transition-delay: 0.2s;
 }
@@ -773,7 +793,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 .checkadd span:before {
     margin-top: 2px;
-    -webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform, width;
+    -webkit-transition-property: all; transition-property: all;
     -webkit-transition-duration: 0.2s; transition-duration: 0.2s;
     -webkit-transform: rotate(45deg); transform: rotate(45deg);
     margin-left: -2px;
@@ -781,16 +801,19 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 .checkadd span:after {
     margin-top: -1px;
-    -webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform;
+    -webkit-transition-property: all; transition-property: all;
     -webkit-transition-duration: 0.2s; transition-duration: 0.2s;
     -webkit-transform: rotate(-45deg); transform: rotate(-45deg);
     margin-left: 2px;
 }
-.add-influencer:hover span:before, .add-influencer:hover span:after {
+.add-influencer:hover span:before, .add-influencer:hover span:after, .add-influencer:hover span {
 	background-color: #f5775a;
 }
-.add-influencer.primary-alt-btn:hover span:before, .add-influencer.primary-alt-btn:hover span:after {
+.add-influencer.primary-alt-btn:hover span:before, .add-influencer.primary-alt-btn:hover span:after, .add-influencer.primary-alt-btn:hover span {
 	background-color: #fff;
+}
+.add-influencer.disabled:hover span:before, .add-influencer.disabled:hover span:after, .add-influencer.disabled:hover span {
+	background-color: #f5775a;
 }
 .add-influencer.add span:before {
     margin-top: 0;
@@ -802,4 +825,70 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     margin-top: 0;
     -webkit-transform: rotate(90deg); transform: rotate(90deg);
     margin-left: 0;
+}
+.loading.disabled.light-btn:hover, .loading.disabled.light-btn:hover, .loading.disabled.light-btn:hover {
+    background-color: #fff;
+    opacity: 1;
+}
+.btn.loading.light-btn {
+    opacity: 1;
+    background: #fff;
+}
+.btn.loading span:before {
+    margin-top: 0;
+    margin-left: -8px;
+    width: 4px;
+    background-color: #f5775a;
+    -webkit-animation: load7 1.8s infinite ease-in-out;
+    animation: load7 1.8s infinite ease-in-out;
+    -webkit-animation-delay: -0.08s;
+    animation-delay: -0.08s;
+    transform: rotate(0deg);
+    bottom: 0;
+    top: auto;
+}
+.btn.loading span:after {
+    margin-top: 0;
+    margin-left: 8px;
+    width: 4px;
+    background-color: #f5775a;
+    -webkit-animation: load7 1.8s infinite ease-in-out;
+    animation: load7 1.8s infinite ease-in-out;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+    transform: rotate(0deg);
+    bottom: 0;
+    top: auto;
+}
+.btn.loading span {
+    height: 4px;
+    width: 4px;
+    display: block;
+    background-color: #f5775a;
+    -webkit-animation: load7 1.8s infinite ease-in-out;
+    animation: load7 1.8s infinite ease-in-out;
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+    bottom: 0;
+    top: auto;
+    position: absolute;
+    left: 5px;
+}
+@-webkit-keyframes load7 {
+    0%,
+    100% {
+        height: 9px;
+    }
+    50% {
+        height: 0px;
+    }
+}
+@keyframes load7 {
+    0%,
+    100% {
+        height: 9px;
+    }
+    50% {
+        height: 0px;
+    }
 }
