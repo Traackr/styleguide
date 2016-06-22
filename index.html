@@ -36,7 +36,10 @@
                 <h2>Date display</h2>
             </div>
             <div class="block-content">
-                <a href="#" class="prev-range prev-range-sentiment ss-icon small-icon btn inline-btn">navigateleft</a> Apr 20, 2016 - May 19, 2016 <a href="#" class="next-range next-range-sentiment ss-icon btn small-icon inline-btn">navigateright</a>
+                <p>Current year:</p>
+                <a href="#" class="prev-range ss-icon small-icon btn inline-btn">navigateleft</a> Apr 20 - May 19 <a href="#" class="next-range ss-icon btn small-icon inline-btn">navigateright</a>
+                <p>Previous year:</p>
+                <a href="#" class="prev-range ss-icon small-icon btn inline-btn">navigateleft</a> Apr 20, 2015 - May 19, 2015 <a href="#" class="next-range ss-icon btn small-icon inline-btn">navigateright</a>
             </div>
         </div>
         <div class="block">
@@ -195,7 +198,12 @@
                 <h2>Forms</h2>
             </div>
             <div class="block-content">
-                <form id="proj-access-settings" action="#" method="post">
+                <h3>Input with Icon</h3>
+                <div class="input-icon-container">
+                    <input type="text" class="search" placeholder="Search..." />
+                    <span class="ss-icon">search</span>
+                </div>
+                <form id="" action="#" method="post">
                     <fieldset>
                         <div class="form-row">
                             <label for="regularInput">Regular input:<div class="help-text">(Some help text)</div></label>
@@ -259,7 +267,16 @@
         </div>
         <div class="block">
             <div class="block-header clearfix">
-                <h2>Block header</h2>
+                <h2>Block header 
+                    
+                        <div class="dropdown">
+                            <span class="btn tiny-btn dropdown-toggle"><span class="ss-icon">descend</span></span>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">My relationships</a></li>
+                                <li><a href="#">All influencers</a></li>
+                            </ul>
+                        </div>
+                </h2>
                 <ul class="btn-group">
                     <li>
                         <a href="#" class="prev-range prev-range-sentiment ss-icon small-icon btn inline-btn">navigateleft</a> Apr 20, 2016 - May 19, 2016 <a href="#" class="next-range next-range-sentiment ss-icon btn small-icon inline-btn">navigateright</a></li>
@@ -341,7 +358,7 @@
                     </div>
                     <div class="influencer-buttons">
                         <div class="dropdown">
-                            <div class="btn add-influencer dropdown-toggle add light-btn">
+                            <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
                                 <a href="#" class="checkadd"><span></span></a>
                             </div>
                             <ul class="dropdown-menu">
@@ -403,7 +420,7 @@
                         </ul>
                         <ul class="icon-list tiny inline">
                             <li><a href="#"><span class="ss-icon">reply</span></a> David Chancogne</li>
-                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">folder</span></a> <span class="qtip-toggle" title="Skipping School, Ferris Bueller's Friends">Skipping School +1</span></li>
+                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">folder</span></a> <span class="qtip-toggle" title="Skipping School, Ferris Bueller's Friends"><a href="#">Skipping School</a> +1</span></li>
                             <li><a href="#"><span class="ss-icon">tag</span></a> <span class="qtip-toggle" title="hypochondriac, worries a lot">hypochondriac +1</span></li>
                         </ul>
                         <div class="keyword-matches meta-item meta-item-small clearfix">75 posts match "ferris bueller"</div>
@@ -418,8 +435,14 @@
                         <img class="influencer-avatar" src="sample-avatar.jpg" />
                     </div>
                     <div class="influencer-buttons">
-                        <div class="btn add-influencer add light-btn">
-                            <a href="#" class="checkadd"><span></span></a>
+                        <div class="dropdown">
+                            <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                <a href="#" class="checkadd"><span></span></a>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                            </ul>
                         </div>
                         <div class="dropdown">
                             <button type="button" class="dropdown-toggle meta-dropdown btn inline-btn light-btn"><span class="ss-icon">ellipsis</span></button>
@@ -480,8 +503,14 @@
                         <img class="influencer-avatar" src="sample-avatar.jpg" />
                     </div>
                     <div class="influencer-buttons">
-                        <div class="btn add-influencer add light-btn">
-                            <a href="#" class="checkadd"><span></span></a>
+                        <div class="dropdown">
+                            <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                <a href="#" class="checkadd"><span></span></a>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                            </ul>
                         </div>
                         <div class="dropdown">
                             <button type="button" class="dropdown-toggle meta-dropdown btn inline-btn light-btn"><span class="ss-icon">ellipsis</span></button>
@@ -544,8 +573,14 @@
                         <img class="influencer-avatar" src="sample-avatar.jpg" />
                     </div>
                     <div class="influencer-buttons">
-                        <div class="btn add-influencer add light-btn">
-                            <a href="#" class="checkadd"><span></span></a>
+                        <div class="dropdown">
+                            <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                <a href="#" class="checkadd"><span></span></a>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                            </ul>
                         </div>
                         <div class="dropdown">
                             <button type="button" class="dropdown-toggle meta-dropdown btn inline-btn light-btn"><span class="ss-icon">ellipsis</span></button>
@@ -604,7 +639,7 @@
                         </ul>
                         <ul class="icon-list tiny">
                             <li><a href="#"><span class="ss-icon">reply</span></a> David Chancogne</li>
-                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">folder</span></a> Skipping School, Ferris Bueller's Friends</li>
+                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">folder</span></a> <a href="#">Skipping School</a>, <a href="#">Ferris Bueller's Friends</a></li>
                             <li><a href="#"><span class="ss-icon">tag</span></a> hypochondriac, worries a lot</li>
                         </ul>
                         <div class="keyword-matches meta-item meta-item-small clearfix">75 posts match "ferris bueller"</div>
@@ -715,15 +750,21 @@ $(document).ready(function() {
     $('.add-influencer').on('click', function() {
         var $this = $(this);
         if ( $this.hasClass("add") ) {
-            $this.removeClass("add");
-        } else {
-            $this.addClass("add");
+            $this.closest('.influencer').addClass('loading');
+            $this.removeClass("add").addClass("disabled").addClass("loading");
+            setTimeout(function() {
+                $this.closest('.influencer').removeClass('loading');
+                $this.removeClass("loading").removeClass("disabled").removeClass("no-toggle").trigger('click');
+            }, 2000);
         }
         return false;
     });
     
     $('.dropdown-toggle').on('click', function() {
-        $(this).closest('.dropdown').toggleClass('open');
+        if ( ! $(this).hasClass('no-toggle') ) {
+            $('.dropdown-toggle').not($(this)).closest('.dropdown').removeClass('open');
+            $(this).closest('.dropdown').toggleClass('open');
+        }
         return false;
     });
     $(document).click(function (e) {
