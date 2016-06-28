@@ -8,6 +8,19 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.css">
         <link rel="stylesheet" href="aehlke-tag-it-6ccd2de/css/jquery.tagit.css">
         <link rel="stylesheet" href="styles.css">
+        <style type="text/css">
+            body {
+                font-family: Helvetica;
+                font-size: 14px;
+                background: #e8e8e8;
+                width: 1120px;
+                margin: 40px auto;
+                color: #333;
+            }
+            * {
+                box-sizing: border-box;
+            }
+        </style>
     </head>
     <body>
         <div class="block">
@@ -15,7 +28,7 @@
                 <h2>Colors</h2>
             </div>
             <div class="block-content">
-                <p><span style="display: inline-block; padding: 10px 20px; background: #f04c3c; color: #fff;">Logo: #f04c3c</span> <span style="display: inline-block; padding: 10px 20px; background: #f5775a; color: #fff;">Primary: #f5775a</span> <span style="display: inline-block; padding: 10px 20px; background: #48b9c7; color: #fff;">Secondary: #48b9c7</span> <span style="display: inline-block; padding: 10px 20px; background: #333; color: #fff;">Dark grey: #333</span> <span style="display: inline-block; padding: 10px 20px; background: #c8c8c8; color: #fff;">Medium grey: #c8c8c8</span> <span style="display: inline-block; padding: 10px 20px; background: #e8e8e8; color: #333;">Light grey: #e8e8e8</span></p>
+                <p><span style="display: inline-block; padding: 10px 20px; background: #f04c3c; color: #fff;">Logo: #f04c3c</span> <span style="display: inline-block; padding: 10px 20px; background: #f5775a; color: #fff;">Primary: #f5775a</span> <span style="display: inline-block; padding: 10px 20px; background: #52bdc5; color: #fff;">Secondary: #52bdc5</span> <span style="display: inline-block; padding: 10px 20px; background: #333; color: #fff;">Dark grey: #333</span> <span style="display: inline-block; padding: 10px 20px; background: #c8c8c8; color: #fff;">Medium grey: #c8c8c8</span> <span style="display: inline-block; padding: 10px 20px; background: #e8e8e8; color: #333;">Light grey: #e8e8e8</span></p>
             </div>
         </div>
         <div class="block">
@@ -451,7 +464,7 @@
                         <div class="dropdown">
                             <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
                                 <span class="ss-icon add-inf">add</span>
-                                <span class="loading-success"><span class="ss-icon success-icon">checkmark</span> <span class="btn-text">Added</span></span>
+                                <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
                                 <span class="loader"></span>
                             </div>
                             <ul class="dropdown-menu">
@@ -532,7 +545,7 @@
                         <div class="dropdown">
                             <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
                                 <span class="ss-icon add-inf">add</span>
-                                <span class="loading-success"><span class="ss-icon success-icon">checkmark</span> <span class="btn-text">Added</span></span>
+                                <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
                                 <span class="loader"></span>
                             </div>
                             <ul class="dropdown-menu">
@@ -602,7 +615,7 @@
                         <div class="dropdown">
                             <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
                                 <span class="ss-icon add-inf">add</span>
-                                <span class="loading-success"><span class="ss-icon success-icon">checkmark</span> <span class="btn-text">Added</span></span>
+                                <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
                                 <span class="loader"></span>
                             </div>
                             <ul class="dropdown-menu">
@@ -674,7 +687,7 @@
                         <div class="dropdown">
                             <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
                                 <span class="ss-icon add-inf">add</span>
-                                <span class="loading-success"><span class="ss-icon success-icon">checkmark</span> <span class="btn-text">Added</span></span>
+                                <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
                                 <span class="loader"></span>
                             </div>
                             <ul class="dropdown-menu">
@@ -844,8 +857,10 @@ $(document).ready(function() {
         $(this).closest('.block-content').spin({ scope: 'inline' });
         return false;
     });
-    $('.avatar-info').on('click', function() {
-        $(this).closest('.influencer').toggleClass("selected");
+    $('.influencer').on('click', function(e) {
+        if ( e.target.tagName.toLowerCase() !== 'a' && $(e.target).closest('a').length === 0 && $(e.target).closest('label').length === 0 ) {
+            $(this).toggleClass("selected");
+        }
     });
     $('.add-influencer').on('click', function() {
         var $this = $(this);
