@@ -768,6 +768,11 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .influencer-medium {
     width: 50%;
 }
+.influencer-small {
+    width: 20%;
+    height: 301px;
+    max-width: 226px;
+}
 .influencer-small .influencer-header {
     border: 0;
     clear: both;
@@ -775,7 +780,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 .influencer-small .influencer-body {
     padding: 0 8px 0;
-    height: 31px;
+    height: 30px;
     overflow: hidden;
     margin-bottom: 5px;
 }
@@ -795,6 +800,14 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .influencer-avatar-wrapper {
     width: 216px;
     overflow: hidden;
+}
+.influencer-small {
+    .avatar-info {
+        width: 100%;
+    }
+    .influencer-avatar-wrapper {
+        width: 100%;
+    }
 }
 .avatar-info .overlay {
     display: none;
@@ -882,11 +895,6 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 .title {
     margin-bottom: 3px;
-}
-.influencer-small {
-    width: 20%;
-    height: 301px;
-    min-width: 226px;
 }
 .influencer-channels {
     list-style: none;
@@ -1101,7 +1109,95 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 
 
 @media screen and (max-width: 1280px) {
-    
+    .influencer-small {
+        width: 25%;
+    }
 }
+@media screen and (max-width: 900px) {
+    .influencer-small {
+        width: 33.3%;
+    }
+}   
 @media screen and (max-width: 700px) {
+    .form-row {
+        label {
+            width: 100%;
+            float: none;
+        }
+    }
+    .form-content {
+        width: 100%;
+        float: none;
+    }
+    .block-header > h5 {
+        
+    }
+    .table {
+        thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        tr {
+            border-bottom: 1px solid #e8e8e8;
+        }
+        td {
+            border: none;
+            border-bottom: 0; 
+            position: relative;
+            padding-left: 50%; 
+        }
+        td:before { 
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 45%; 
+            padding-right: 10px; 
+            white-space: nowrap;
+            content: attr(data-th);
+        }
+    }
+    
+    /* Influencers */
+    .influencer-medium {
+        width: 100%;
+    }
+    .influencer-small {
+        width: 50%;
+    }
+    .influencer-large {
+        .icon-list li {
+            display: inline;
+            padding-right: 5px;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .influencer-small {
+        width: 100%;
+    }
+    .influencer-medium, .influencer-large {
+        .block {
+            padding: 10px 0 25px;
+        }
+        .avatar-info, .influencer-avatar-wrapper {
+            float: none;
+            width: 190px;
+            height: 190px;
+            margin: 0 auto;
+        }
+        .influencer-avatar-wrapper {
+            overflow: hidden;
+            height: 190px;
+            width: 190px;
+        }
+        .influencer-info {
+            width: 100%;
+            float: none;
+            clear: both;
+        }
+    }
 }
