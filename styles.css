@@ -1250,6 +1250,11 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .influencer-small .block {
   height: 289px; }
 
+.influencer-small .meta-item-small {
+  display: block;
+  padding: 0 10px;
+  position: static; }
+
 .influencer-avatar {
   height: 224px; }
 
@@ -1393,7 +1398,9 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   font-size: 10px;
   color: #999;
   margin: 0;
-  display: none; }
+  display: none;
+  position: absolute;
+  bottom: 10px; }
 
 .recommended-reason {
   display: block; }
