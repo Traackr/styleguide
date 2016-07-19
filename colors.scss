@@ -1,0 +1,120 @@
+$black: rgb(68, 68, 68);
+
+/* Yellows */
+$kournikova: rgb(248, 214, 98);
+
+/* Oranges */
+$sunshade: rgb(249, 169, 74);
+$california: rgb(233, 149, 59);
+
+/* Blues (Damn right I've got them) */
+$arapawa: rgb(44, 71, 98);
+$dark-cerulean: rgb(6, 101, 145);
+$steel-blue: rgb(72, 117, 180);
+$deep-sky-blue: rgb(51, 204, 255);
+$cerulean-blue: rgb(47, 114, 196);
+$cerulean-blue-light: rgb(40, 93, 167);
+$summer-sky: rgb(48, 176, 226);
+$big-stone: rgb(51, 69, 78);
+$pacific-blue: rgb(0, 141, 222);
+
+/* Reds */
+$red: rgb(239, 14, 17);
+$deep-pink: rgb(255, 0, 132);
+$chilean-fire: rgb(211, 72, 54);
+$free-speech-red: rgb(168, 36, 0);
+$free-speech-red-dark: rgb(192, 0, 0);
+$free-speech-red-darker: rgb(196, 18, 0);
+$cardinal: rgb(203, 32, 39);
+
+/* Greens (Eat them... They're good for you!) */
+$medium-sea-green: rgb(47, 178, 91);
+
+/* We are Grey; we stand between the candle and the light */
+$dark-grey: rgb(51, 51, 51); // #333
+$medium-grey: rgb(200, 200, 200); // #c8c8c8
+$light-grey: rgb(232, 232, 232); // #e8e8e8
+
+// to remove
+$faint-grey: rgb(232, 232, 232);
+$slight-grey: rgb(247, 247, 247);
+$traackr-light-red: rgb(242, 110, 66);
+$traackr-green: rgb(193, 216, 47);
+
+/* Traackr Colors */
+$traackr-logo: rgb(240, 76, 60); // #f04c3c
+$traackr-red: rgb(244, 98, 64); //#f46240
+$traackr-dark-red: rgb(240, 76, 60); // #f04c3c
+$traackr-yellow: rgb(255, 219, 63); // #ffdb3f
+$traackr-teal: rgb(67, 180, 194); // #43b4c2
+
+/* Social Networks */
+$traackr-social-twitter: $deep-sky-blue;
+$traackr-social-rss: $sunshade;
+$traackr-social-email: $sunshade;
+$traackr-social-tumblr: $arapawa;
+$traackr-social-facebook: $dark-cerulean;
+$traackr-social-youtube: $red;
+$traackr-social-linkedin: $steel-blue;
+$traackr-social-flickr: $deep-pink;
+$traackr-social-googleplus: $chilean-fire;
+$traackr-social-quora: $free-speech-red;
+$traackr-social-share: $california;
+$traackr-social-lastfm: $free-speech-red-dark;
+$traackr-social-friendfeed: $cerulean-blue;
+$traackr-social-microsoft: $cerulean-blue-light;
+$traackr-social-posterous: $kournikova;
+$traackr-social-pinterest: $cardinal;
+$traackr-social-stumbleupon: $medium-sea-green;
+$traackr-social-foursquare: $summer-sky;
+$traackr-social-yelp: $free-speech-red-darker;
+$traackr-social-vimeo: $big-stone;
+$traackr-social-myspace: $pacific-blue;
+$traackr-social-compose: $medium-sea-green;
+
+/* Relationship Stages */
+$traackr-stage-1: #fcb69a;
+$traackr-stage-2: #fba481;
+$traackr-stage-3: #fa9267;
+$traackr-stage-4: #f9804e;
+$traackr-stage-5: $traackr-red;
+$traackr-stage-6: $traackr-red;
+
+/*
+ * The list of gradients represent percentage to 3 sig digits, multiplied by 1000.  These are keys that correspond
+ * with the percentages of a stage out of the whole, and they map to a percent lightness for each stage in the funnel.
+ */
+
+/* Relationship Stage Gradients */
+$traackr-stage-highest: $traackr-red;
+
+$list-stage-gradients: 8333, 10000, 12500, 16666, 16667, 20000, 24999, 25000, 30000, 33332, 33334, 37500, 40000, 41665;
+
+@for $i from 1 through (length($list-stage-gradients)) {
+    $val: nth($list-stage-gradients, $i);
+    $valPerc: percentage($val/170000);
+    .traackr-stage-background-#{$val} {
+        background-color: lighten($traackr-red, $valPerc);
+    }
+    .traackr-stage-font-#{$val} {
+        color: lighten($traackr-red, $valPerc);
+    }
+    .traackr-stage-background-highest {
+        background-color: $traackr-stage-highest;
+    }
+    .traackr-stage-font-highest {
+        color: $traackr-stage-highest;
+    }
+    .stage-slider {
+        .ui-slider-label-ticks {
+            &.traackr-stage-background-#{$val} {
+                background: lighten($traackr-red, $valPerc);
+                &.clear {
+                    background: #fff;
+                    border: 1px solid lighten($traackr-red, $valPerc);
+                    border-left: 0;
+                }
+            }
+        }
+    }
+}
