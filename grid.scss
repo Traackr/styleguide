@@ -1,0 +1,137 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+[class*='grid_'] {
+    padding-right: 15px;
+}
+[class*='grid_']:last-of-type {
+    padding-right: 0;
+}
+.grid_1 {
+    @include span(1);
+}
+
+.grid_2 {
+    @include span(2);
+}
+
+.grid_3 {
+    @include span(3);
+}
+
+.grid_4 {
+    @include span(4);
+}
+
+.grid_5 {
+    @include span(5);
+}
+
+.grid_6 {
+    @include span(6);
+}
+
+.grid_7 {
+    @include span(7);
+}
+
+.grid_8 {
+    @include span(8);
+}
+
+.grid_9 {
+    @include span(9);
+}
+
+.grid_10 {
+    @include span(10);
+}
+
+.grid_11 {
+    @include span(11);
+}
+
+.grid_12 {
+    @include span(12);
+}
+
+.grid_13 {
+    @include span(13);
+}
+
+.grid_14 {
+    @include span(14);
+}
+
+.grid_15 {
+    @include span(15);
+}
+
+.grid_16 {
+    @include span(16);
+}
+
+@media screen and (max-width: 700px) {
+    .grid_5, .grid_11 {
+        @include span(16);
+        padding: 0;
+    }
+}
+
+/* masonry grid */
+$main-height: 300px;
+
+.masonry-grid {
+    margin: 5px -5px 0;
+}
+
+.grid-item, .stamp {
+    @include span(4);
+    height: $main-height;
+    padding: 5px;
+}
+
+.grid-inner {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 3px $light-grey;
+    border-top: 4px solid transparent;
+}
+
+.grid-width1 {
+    @include span(4);
+    height: $main-height;
+}
+
+.grid-width2 {
+    @include span(8);
+    height: $main-height * 2;
+}
+
+.grid-width3 {
+    @include span(12);
+    height: $main-height * 3;
+}
+
+.grid-width4 {
+    @include span(16);
+    height: $main-height * 4;
+}
+
+.grid-header {
+    padding: 10px;
+    border-bottom: 1px solid $light-grey;
+    height: 46px;
+    display: table;
+    width: 100%;
+    h3 {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .icon-indicator {
+        float: right;
+    }
+}

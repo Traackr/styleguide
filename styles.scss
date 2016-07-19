@@ -1,2 +1,8 @@
+@import "susy";
+$susy: (
+    columns: 16, // The number of columns in your grid
+    gutters: 0 // The size of a gutter in relation to a single column
+);
 @import "colors";
+@import "grid";
 @import "basestyles";
