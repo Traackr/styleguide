@@ -1437,20 +1437,23 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
         padding-bottom: 0;
         margin-bottom: 0;
     }
-    .post-avatar, .post-details {
-        display: table-cell;
-        vertical-align: middle;
-        padding: 0 10px 0 5px;
-        .avatar.initials, .image-icon {
-            height: 48px;
-            width: 48px;
-            padding: 15px 0;
-            font-size: 20px;
-        }
+}
+.post-avatar, .post-details {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 10px 0 5px;
+    .avatar.initials, .image-icon {
+        height: 48px;
+        width: 48px;
+        padding: 15px 0;
+        font-size: 20px;
     }
-    .post-avatar {
-        vertical-align: top;
-        width: 60px;
+}
+.post-avatar {
+    vertical-align: top;
+    width: 60px;
+    img {
+        border-radius: 100%;
     }
 }
 .post-header {
@@ -1486,17 +1489,17 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .post-actions {
     margin-top: 10px;
     font-size: 11px;
+    li {
+        display: inline-block;
+        margin-right: 5px;
+        a:hover, a:active {
+            text-decoration: none;
+        }
+    }
     &.can-edit {
         clear: both;
         padding: 0 10px 0 0;
         display: block;
-        li {
-            display: inline-block;
-            margin-right: 5px;
-            a:hover, a:active {
-                text-decoration: none;
-            }
-        }
     }
 }
 .post-embed {

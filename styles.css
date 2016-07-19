@@ -1,3 +1,43 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button:focus {
+  outline: 0; }
+
 /* Yellows */
 /* Oranges */
 /* Blues (Damn right I've got them) */
@@ -1606,18 +1646,22 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     border-bottom: 0;
     padding-bottom: 0;
     margin-bottom: 0; }
-  .post .post-avatar, .post .post-details {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0 10px 0 5px; }
-    .post .post-avatar .avatar.initials, .post .post-avatar .image-icon, .post .post-details .avatar.initials, .post .post-details .image-icon {
-      height: 48px;
-      width: 48px;
-      padding: 15px 0;
-      font-size: 20px; }
-  .post .post-avatar {
-    vertical-align: top;
-    width: 60px; }
+
+.post-avatar, .post-details {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px 0 5px; }
+  .post-avatar .avatar.initials, .post-avatar .image-icon, .post-details .avatar.initials, .post-details .image-icon {
+    height: 48px;
+    width: 48px;
+    padding: 15px 0;
+    font-size: 20px; }
+
+.post-avatar {
+  vertical-align: top;
+  width: 60px; }
+  .post-avatar img {
+    border-radius: 100%; }
 
 .post-header {
   font-size: 16px;
@@ -1647,15 +1691,15 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .post-actions {
   margin-top: 10px;
   font-size: 11px; }
+  .post-actions li {
+    display: inline-block;
+    margin-right: 5px; }
+    .post-actions li a:hover, .post-actions li a:active {
+      text-decoration: none; }
   .post-actions.can-edit {
     clear: both;
     padding: 0 10px 0 0;
     display: block; }
-    .post-actions.can-edit li {
-      display: inline-block;
-      margin-right: 5px; }
-      .post-actions.can-edit li a:hover, .post-actions.can-edit li a:active {
-        text-decoration: none; }
 
 .post-embed {
   padding-top: 15px;
