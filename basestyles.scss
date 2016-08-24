@@ -16,6 +16,9 @@ body {
     margin-right: auto;
     padding-top: 51px;
 }
+.hidden {
+    display: none;
+}
 
 /* h styles */
 h1, h2, h3, h4, h5, h6 {
@@ -50,9 +53,24 @@ a:hover {
     color: $traackr-teal;
     cursor: pointer;
 }
-
+a.influencer-name {
+    color: $traackr-red;
+    &:hover {
+        color: $traackr-red;
+    }
+}
 h1 a, h2 a, h3 a {
     color: $traackr-red;
+    &:hover {
+        color: $traackr-red;
+    }
+}
+
+a.influencer-name, .influencer-name {
+    color: $traackr-red;
+    &:hover {
+        color: $traackr-red;
+    }
 }
 
 .noscroll { /* used for overlays on the body when you don't want the body to scroll :) */
@@ -115,6 +133,14 @@ h1 a, h2 a, h3 a {
         color: #c8c8c8;
         cursor: default;
     }
+    &.fake-disabled, &.fake-disabled:hover {
+        border: 1px solid #333;
+        color: #333;
+        cursor: default;
+        &.inline-btn {
+            border: 0;
+        }
+    }
     a:link, a:visited, a:active, a:hover {
         text-decoration: none;
         color: #333;
@@ -143,12 +169,20 @@ h1 a, h2 a, h3 a {
             color: #fff;
             border: 1px solid $traackr-dark-red;
         }
-        &.disabled, &.disabled:hover {
+        &.disabled, &.disabled:hover, &[disabled] {
             opacity: 0.7;
             cursor: default;
             background: $traackr-red;
             border: 1px solid $traackr-red;
             color: #fff;
+        }
+        &.fake-disabled, &.fake-disabled:hover {
+            color: #fff;
+            background: $traackr-red;
+            border: 1px solid $traackr-red;
+            &.inline-btn {
+                border: 0;
+            }
         }
     }
     /* Light Button */
@@ -170,6 +204,14 @@ h1 a, h2 a, h3 a {
             background: transparent;
             border: 1px solid #fff;
             color: #fff;
+        }
+        &.fake-disabled, &.fake-disabled:hover {
+            color: #fff;
+            background: transparent;
+            border: 1px solid #fff;
+            &.inline-btn {
+                border: 0;
+            }
         }
     }
     /* Inline button aka no border */
@@ -482,18 +524,27 @@ input[disabled]:hover {
     width: auto;
 }
 
-.form-row .input-label, .form-row .label, .form-row label {
+.form-row .input-label, .form-row .label, .form-row > label {
     width: 25%;
     float: left;
     display: inline-block;
     padding: 7px 0; /* 7 + 7 = 14 which rounded up is our standard padding */
 }
-
+.form-row .form-row {
+    padding-bottom: 5px;
+}
 .form-content {
     width: 75%;
     float: left;
 }
-
+.form-content label {
+    display: inline-block;
+    width: auto;
+    max-width: initial;
+    float: none;
+    margin-top: 2px;
+    padding: 0;
+}
 .form-content-static {
     margin: 7px 0; /* 7 + 7 = 14 which rounded up is our standard padding */
 }
@@ -502,6 +553,10 @@ input[disabled]:hover {
     padding-bottom: 15px;
     clear: both;
     overflow: hidden;
+}
+
+.form-row input[type="checkbox"], .form-row input[type="radio"] {
+    float: left;
 }
 
 .help-text {
@@ -593,9 +648,20 @@ input.inline-input {
     position: absolute;
     left: -10000px;
 }
+.select2-with-icon {
+    .input-icon {
+        z-index: 1;
+    }
+    .select2-choice {
+        padding-left: 35px;
+    }
+}
+.select2-inline {
+    max-width: 200px;
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
-    .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice div b {
+    .select2-search input, .select2-container .select2-choice abbr, .select2-container .select2-choice div b {
         margin-top: 3px;
     }
 }
@@ -615,6 +681,10 @@ input.inline-input {
         .close-magnet {
             color: $traackr-red;
         }
+        &.readonly {
+            border: 1px solid #c8c8c8;
+            cursor: default;
+        }
     }
     &.pausable-magnet:hover {
         color: $traackr-red;
@@ -624,9 +694,16 @@ input.inline-input {
                 color: $traackr-red;
             }
         }
+        &.readonly {
+            color: #333;
+        }
     }
     &.disabled {
         color: #c8c8c8;
+        &:hover {
+            cursor: default;
+        }
+        border: 1px solid $faint-grey;
     }
     .close-magnet {
         font-size: 10px;
@@ -671,7 +748,7 @@ section {
 
 .block {
     background: #fff;
-    box-shadow: 0px 2px 2px $medium-grey;
+    box-shadow: 0px 1px 2px $medium-grey;
     margin-bottom: 15px;
     &.inline-block {
         margin-bottom: 0;
@@ -689,15 +766,15 @@ section {
 }
 
 .block-header-subtitle h2 {
-    padding: 9px 0 0;
+    padding: 8px 0 0;
 }
 
 .block-header > h4 {
     clear: left;
     color: #999;
     float: left;
-    padding: 1px 0 9px;
-    margin-top: 0;
+    padding: 0 0 9px;
+    margin-top: -3px;
 }
 
 .block-header > h5 {
@@ -710,6 +787,38 @@ section {
 .block-header .btn-group {
     padding: 8px 0;
     float: right;
+}
+
+.block-header {
+    .collapsible-icon {
+        float: right;
+        font-size: 10px;
+        margin-top: 5px;
+    }
+}
+.collapsible-trigger {
+    cursor: pointer;
+    &:hover {
+        color: $traackr-red;
+    }
+    .help-text {
+        padding-left: 15px;
+    }
+    h2 {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    &.disabled {
+        opacity: 0.4;
+        cursor: default;
+        .help-text {
+            color: #333;
+        }
+        &:hover {
+            color: #000;
+        }
+    }
 }
 
 .block-content, .block-footer {
@@ -729,6 +838,9 @@ section {
 .btn-group > li {
     display: inline-block;
     margin-right: 5px;
+    &:last-child {
+        margin-right: 0;
+    }
 }
 
 /* tabs */
@@ -787,7 +899,9 @@ li.nav-item {
 .icon-list {
     font-size: 12px;
 }
-
+.icon-list > li {
+    margin-bottom: 3px;
+}
 .icon-list .ss-icon {
     color: #c8c8c8;
     padding-right: 5px;
@@ -804,6 +918,10 @@ li.nav-item {
     a.icon-link:hover .ss-icon {
         color: $traackr-teal;
     }
+}
+.icon-list > li a.icon-link.disabled:hover .ss-icon, .tags.disabled a.ss-icon:hover {
+    color: #c8c8c8;
+    cursor: default;
 }
 
 .icon-list > li a.icon-link:hover {
@@ -880,7 +998,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.5);
+    //background: rgba(255, 255, 255, 0.5);
 }
 
 .loader {
@@ -904,7 +1022,9 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     width: 10px;
     position: absolute;
     bottom: 0;
+    animation: loading 1s infinite alternate;
     -webkit-animation: loading 1s infinite alternate;
+    -moz-animation: loading 1s infinite alternate;
     transform-origin: center bottom;
 }
 
@@ -916,27 +1036,50 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .loader .bar2 {
     background: #feb394;
     -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    animation-delay: 0.2s;
     left: 15px;
 }
 
 .loader .bar3 {
     background: #fe8f61;
     -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
     left: 30px;
 }
 
 .loader .bar4 {
     background: #fd6b2f;
     -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    animation-delay: 0.6s;
     left: 45px;
 }
 
 .loader .bar5 {
     background: #f74902;
     -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
     left: 60px;
 }
-
+@keyframes loading {
+    0% {
+        height: 10px;
+    }
+    100% {
+        height: 50px;
+    }
+}
+@-moz-keyframes loading {
+    0% {
+        height: 10px;
+    }
+    100% {
+        height: 50px;
+    }
+}
 @-webkit-keyframes loading {
     0% {
         height: 10px;
@@ -963,53 +1106,18 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 
 .influencer .block {
     position: relative;
-    outline: 2px solid transparent;
+    outline: 4px solid transparent;
     cursor: pointer;
     margin-bottom: 0;
 }
 
 .influencer.selected .block {
-    outline: 2px solid $traackr-teal;
+    box-shadow: 0px 0px 0px 4px #48b9c7;
 }
 
 .influencer-large {
     width: 100%;
 }
-
-.influencer-medium {
-    width: 50%;
-}
-
-.influencer-small {
-    width: 20%;
-    height: 301px;
-    max-width: 226px;
-}
-
-.influencer-small .influencer-header {
-    border: 0;
-    clear: both;
-    padding: 1px 8px 0;
-    height: 25px;
-    overflow: hidden;
-}
-
-.influencer-small .influencer-body {
-    padding: 0 8px 0;
-    height: 30px;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-
-.influencer-small .block {
-    height: 289px;
-}
-.influencer-small .meta-item-small {
-    display: block;
-    padding: 0 10px;
-    position: static;
-}
-
 .influencer-avatar {
     height: 224px;
 }
@@ -1025,16 +1133,13 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     width: 216px;
     overflow: hidden;
 }
-
-.influencer-small {
-    .avatar-info {
-        width: 100%;
-    }
-    .influencer-avatar-wrapper {
-        width: 100%;
-    }
+.brand-indicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    z-index: 1;
 }
-
 .avatar-info .overlay {
     display: none;
     position: absolute;
@@ -1044,8 +1149,9 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     height: 100%;
     background-color: transparent;
     cursor: pointer;
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), transparent);
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), transparent, transparent);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.3), transparent, transparent);
+    background-image:         linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent, transparent);
 }
 
 .influencer:hover .overlay {
@@ -1068,7 +1174,6 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     position: absolute;
     top: 15px;
     left: 15px;
-    z-index: 1;
 }
 
 .influencer-buttons .btn, .influencer-buttons .dropdown {
@@ -1092,20 +1197,6 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     padding: 0;
     float: left;
 }
-
-.influencer-medium {
-    .influencer-header .influencer-name { // limit to 1 line
-        width: 210px;
-        height: 25px;
-        overflow: hidden;
-        display: block;
-    }
-    .title-and-description {
-        max-height: 83px;
-        overflow: hidden;
-    }
-}
-
 .influencer-header a.influencer-star {
     color: #e8e8e8;
     font-size: 14px;
@@ -1120,25 +1211,27 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 
 .score {
     display: inline-block;
-    color: $traackr-red;
-    font-size: 11px;
+    color: #f46240;
+    font-size: 12px;
 }
-
-.score .ss-icon {
+.score .ss-icon, .keyword-matches > .ss-icon {
     display: inline-block;
     margin: 0 3px 0;
     padding: 0;
     vertical-align: -1px;
 }
-
-.title, .description {
+.description {
     font-size: 12px;
-    line-height: 1.2;
+    max-height: 32px;
+    overflow: hidden;
 }
 
 .title {
+    font-size: 14px;
     margin-bottom: 3px;
     font-weight: 500;
+    max-height: 19px;
+    overflow: hidden;
 }
 
 .influencer-channels {
@@ -1152,17 +1245,13 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 
 .influencer-small .influencer-channels {
-    padding: 5px 7px;
-    .channel {
-        padding-bottom: 5px;
-    }
+    padding: 0;
 }
 
 .recommended {
     position: absolute;
     bottom: 10px;
 }
-
 .channel {
     display: inline-block;
     font-size: 16px;
@@ -1180,24 +1269,18 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .meta-dropdown:focus {
     outline: 0;
 }
-
 .influencer:hover .meta-item-small {
     display: block;
 }
-
 .meta-item-small {
     font-size: 10px;
     color: #999;
     margin: 0;
     display: none;
-    position: absolute;
-    bottom: 10px;
 }
-
 .recommended-reason {
     display: block;
 }
-
 .influencer .influencer-buttons .dropdown {
     display: none;
 }
@@ -1213,44 +1296,100 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .influencer:hover .expand-btn {
     max-width: 999px;
 }
+.influencer-header .influencer-more-info {
+    float: right;
+    font-size: 12px;
+    margin-top: 5px;
+}
+/* Medium influencer grid card */
+.influencer-medium {
+    width: 50%;
+    .influencer-header .influencer-name { // limit to 1 line
+        width: 210px;
+        height: 25px;
+        overflow: hidden;
+        display: block;
+    }
+    .title-and-description {
+        max-height: 83px;
+        overflow: hidden;
+    }
+}
 
+/* Small influencer grid card */
+$cardHeight: 310px;
+$maxCardWidth: 226px;
+$infNameHeight: 28px;
+$infTitleHeight: 32px;
+$unExpandedInfoHeight: 75px;
+.influencer-small {
+    width: 20%;
+    height: $cardHeight;
+    max-width: $maxCardWidth;
+    .influencer-header {
+        border: 0;
+        clear: both;
+        padding: 0;
+        height: $infNameHeight;
+        overflow: hidden;
+        padding-left: 1px;
+    }
+    .influencer-body {
+        padding: 0;
+        height: $infTitleHeight;
+        overflow: hidden;
+        margin-bottom: 5px;
+        padding-left: 1px;
+    }
+    .block {
+        height: 100%;
+    }
+    .avatar-info {
+        width: 100%;
+    }
+    .influencer-avatar-wrapper {
+        width: 100%;
+    }
+    .title {
+        font-size: 12px;
+        max-height: 30px;
+    }
+}
 .influencer-info-small {
     position: absolute;
     bottom: 0;
     width: 100%;
     background: #fff;
     overflow: hidden;
-    height: 65px;
-    transition: all 0.2s;
-    -webkit-transition: all 0.2s;
+    min-height: $unExpandedInfoHeight;
+    max-height: $unExpandedInfoHeight;
+    transition: all ease-out 0.5s;
+    -webkit-transition: all ease-out 0.5s;
+    padding: 7px;
+    .influencer-more-info {
+        padding: 3px 0;
+        font-size: 12px;
+    }
+    .influencer-channels {
+        padding: 0 2px;
+    }
+    .stage {
+        overflow: hidden;
+        height: 14px;
+    }
+    .scores {
+        float: left;
+        margin: 0px 10px 0 0;
+    }
 }
 
 .influencer:hover .influencer-info-small {
-    height: 135px;
-}
-
-.influencer-header .influencer-more-info {
-    float: right;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.influencer-info-small .influencer-more-info {
-    padding: 0 7px 3px;
-    font-size: 12px;
-}
-
-.influencer-info-small .stage {
-    overflow: hidden;
-}
-
-.influencer-info-small .scores {
-    float: left;
-    margin: 0px 10px 0 0;
+    min-height: 0;
+    max-height: 100%;
 }
 
 .influencer-header .scores {
-    float: right;
+    display: inline-block;
 }
 
 .influencer-header .stage {
@@ -1260,15 +1399,15 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 
 /* stage */
 .stage-wrapper {
-    .divider {
-        display: none;
-    }
+    font-size: 12px;
+    .divider { display: none; }
     color: $traackr-red;
     padding: 0 10px 0 0;
     display: inline-block;
-    .stage-icon {
-        font-size: 11px;
-    }
+    max-width: 300px;
+    overflow: hidden;
+    margin-bottom: -3px;
+    max-height: 15px;
 }
 
 /* Success add icon, adding success icon, and icons while loading */
@@ -1420,6 +1559,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     text-indent: 0;
     padding: 8px 0;
     font-weight: 200;
+    font-size: 14px;
 
     &:hover {
         cursor: default;
@@ -1437,23 +1577,20 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
         padding-bottom: 0;
         margin-bottom: 0;
     }
-}
-.post-avatar, .post-details {
-    display: table-cell;
-    vertical-align: middle;
-    padding: 0 10px 0 5px;
-    .avatar.initials, .image-icon {
-        height: 48px;
-        width: 48px;
-        padding: 15px 0;
-        font-size: 20px;
+    .post-avatar, .post-details {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 10px 0 5px;
+        .avatar.initials, .image-icon {
+            height: 48px;
+            width: 48px;
+            padding: 15px 0;
+            font-size: 20px;
+        }
     }
-}
-.post-avatar {
-    vertical-align: top;
-    width: 60px;
-    img {
-        border-radius: 100%;
+    .post-avatar {
+        vertical-align: top;
+        width: 60px;
     }
 }
 .post-header {
@@ -1489,17 +1626,17 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .post-actions {
     margin-top: 10px;
     font-size: 11px;
-    li {
-        display: inline-block;
-        margin-right: 5px;
-        a:hover, a:active {
-            text-decoration: none;
-        }
-    }
     &.can-edit {
         clear: both;
         padding: 0 10px 0 0;
         display: block;
+        li {
+            display: inline-block;
+            margin-right: 5px;
+            a:hover, a:active {
+                text-decoration: none;
+            }
+        }
     }
 }
 .post-embed {
@@ -1582,6 +1719,10 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     font-size: 14px;
     padding: 10px 0;
 }
+.metrics-sublabel {
+    padding-top: 3px;
+    font-size: 12px;
+}
 .metrics-value {
     float: right;
     font-size: 14px;
@@ -1621,7 +1762,6 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
         width: 33.3%;
     }
 }
-
 @media screen and (max-width: 700px) {
     .form-row {
         label {

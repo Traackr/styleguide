@@ -7,3 +7,18 @@ $susy: (
 @import "colors";
 @import "grid";
 @import "basestyles";
+
+/* Port these styles to basestyles */
+.influencer-small .channel {
+    padding: 5px 0;
+}
+.grid-header .btn-group {
+    float: right;
+}
+.nav-item > a {
+    padding: 8px 15px;
+}
+
+@import "content";
+@import "dashboard";
+

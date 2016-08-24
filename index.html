@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="styles.css">
         <style type="text/css">
             body {
-                font-family: Helvetica;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
                 font-size: 14px;
                 background: #e8e8e8;
                 max-width: 1120px;
@@ -19,6 +19,7 @@
                 margin: 40px auto;
                 color: #333;
                 padding: 0 20px;
+                line-height: 1.4;
             }
             * {
                 box-sizing: border-box;
@@ -600,6 +601,7 @@
                         <div class="influencer-avatar-wrapper">
                             <img class="influencer-avatar" src="sample-avatar.jpg" />
                         </div>
+                        <div class="overlay"></div>
                         <div class="influencer-buttons">
                             <div class="dropdown add-dropdown">
                                 <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
@@ -614,23 +616,24 @@
                                 </ul>
                             </div>
                             <div class="dropdown other-dropdown">
-                                <button type="button" class="dropdown-toggle meta-dropdown btn inline-btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
                                 <ul class="dropdown-menu">
                                     <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
                                     <li><a href="#"><span class="ss-icon ss-symbolicons-block">removeuser</span> Remove from account</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="overlay"></div>
                     </div>
                     <div class="influencer-info">
                         <div class="influencer-header clearfix">
                             <h2><a href="#">Cameron Frye</a></h2>
-                            <ul class="scores">
-                                <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
-                                <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
-                                <li class="score"><span class="ss-icon">target</span> 37</li>
-                            </ul>
+                            <div class="influencer-more-info">
+                                <ul class="scores">
+                                    <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                                    <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                                    <li class="score"><span class="ss-icon">target</span> 37</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="influencer-body">
                             <div class="title">Just a hypochondriac</div>
@@ -681,6 +684,7 @@
                         <div class="influencer-avatar-wrapper">
                             <img class="influencer-avatar" src="sample-avatar.jpg" />
                         </div>
+                        <div class="overlay"></div>
                         <div class="influencer-buttons">
                             <div class="dropdown add-dropdown">
                                 <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
@@ -694,14 +698,13 @@
                                 </ul>
                             </div>
                             <div class="dropdown other-dropdown">
-                                <button type="button" class="dropdown-toggle meta-dropdown btn inline-btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
                                 <ul class="dropdown-menu">
                                     <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
                                     <li><a href="#"><span class="ss-icon ss-symbolicons-block">removeuser</span> Remove from account</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="overlay"></div>
                     </div>
                     <div class="influencer-info-small">
                         <div class="influencer-header clearfix">
@@ -739,9 +742,8 @@
                                 <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
                                 <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
                             </ul>
-                            <div class="stage" style="color: #fea17b"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</div>
+                            <div class="stage"><span class="stage-wrapper"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</span></div>
                         </div>
-                        <div class="recommended meta-item meta-item-small">Recommended to you</div>
                     </div>
                 </div>
             </li><li class="influencer influencer-small">
@@ -750,6 +752,7 @@
                         <div class="influencer-avatar-wrapper">
                             <img class="influencer-avatar" src="sample-avatar.jpg" />
                         </div>
+                        <div class="overlay"></div>
                         <div class="influencer-buttons">
                             <div class="dropdown add-dropdown">
                                 <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
@@ -763,14 +766,13 @@
                                 </ul>
                             </div>
                             <div class="dropdown other-dropdown">
-                                <button type="button" class="dropdown-toggle meta-dropdown btn inline-btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
                                 <ul class="dropdown-menu">
                                     <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
                                     <li><a href="#"><span class="ss-icon ss-symbolicons-block">removeuser</span> Remove from account</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="overlay"></div>
                     </div>
                     <div class="influencer-info-small">
                         <div class="influencer-header clearfix">
@@ -808,9 +810,8 @@
                                 <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
                                 <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
                             </ul>
-                            <div class="stage" style="color: #fea17b"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</div>
+                            <div class="stage"><span class="stage-wrapper"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</span></div>
                         </div>
-                        <div class="recommended meta-item meta-item-small">Recommended to you</div>
                     </div>
                 </div>
             </li>
@@ -822,6 +823,7 @@
                         <div class="influencer-avatar-wrapper">
                             <img class="influencer-avatar" src="sample-avatar.jpg" />
                         </div>
+                        <div class="overlay"></div>
                         <div class="influencer-buttons">
                             <div class="dropdown add-dropdown">
                                 <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
@@ -835,20 +837,19 @@
                                 </ul>
                             </div>
                             <div class="dropdown other-dropdown">
-                                <button type="button" class="dropdown-toggle meta-dropdown btn inline-btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
                                 <ul class="dropdown-menu">
                                     <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
                                     <li><a href="#"><span class="ss-icon ss-symbolicons-block">removeuser</span> Remove from account</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="overlay"></div>
                     </div>
                     <div class="influencer-info">
                         <div class="influencer-header clearfix">
                             <h2><a href="#">Cameron Frye</a></h2>
                             <div class="influencer-more-info">
-                                <div class="stage" style="color: #fea17b"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</div>
+                                <div class="stage"><div class="stage-wrapper"><span class="ss-icon ss-symbolicons-block">heartuser</span> Interested</div></div>
                                 <ul class="scores">
                                     <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
                                     <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
@@ -892,7 +893,6 @@
                                 <li><a href="#" class="icon-link"><span class="ss-icon ss-symbolicons-block">folder</span></a> <a href="#">Skipping School</a>, <a href="#">Ferris Bueller's Friends</a></li>
                                 <li><a href="#" class="icon-link"><span class="ss-icon">tag</span></a> hypochondriac, worries a lot</li>
                             </ul>
-                            <div class="keyword-matches meta-item meta-item-small clearfix">75 posts match "ferris bueller"</div>
                         </div>
                     </div>
                 </div>
@@ -904,6 +904,7 @@
         </style>
         
         <!-- Funtivity goes here -->
+        
         
     </body>
 </html>
