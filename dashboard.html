@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ss-symbolicons-block/webfonts/ss-symbolicons-block.css">
+        <link rel="stylesheet" href="ss-social/webfonts/ss-social.css">
+        <link rel="stylesheet" href="ss-standard/webfonts/ss-standard.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.css">
+        <link rel="stylesheet" href="aehlke-tag-it-6ccd2de/css/jquery.tagit.css">
+        <link rel="stylesheet" href="styles.css">
+        <style type="text/css">
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                background: #e8e8e8;
+                max-width: 1120px;
+                width: 100%;
+                margin: 40px auto;
+                color: #333;
+                padding: 0;
+                line-height: 1.4;
+            }
+            * {
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="block block-tabs inline full-width">
+            <ul>
+                <li class="nav-item"><a href="#">Recent mentions</a>
+                </li><li class="nav-item"><a href="#">Trending content</a>
+                </li><li class="nav-item"><a href="#">Recent movers</a>
+                </li><li class="nav-item"><a href="#" class="selected">Recommended influencers</a></li>
+            </ul>
+        </nav>
+        <div class="influencer-slider dashboard-slider">
+            <div class="slider-nav nav-left btn inline-btn"><span class="ss-icon">navigateleft</span></div>
+            <div class="slider-nav nav-right btn inline-btn"><span class="ss-icon">navigateright</span></div>
+            <div class="slider-list-wrapper">
+                <ul class="influencers can-add slider-list">
+                    <li class="influencer influencer-small slider-item">
+                        <div class="block clearfix">
+                            <div class="avatar-info">
+                                <div class="influencer-avatar-wrapper">
+                                    <img class="influencer-avatar" src="sample-avatar.jpg" />
+                                </div>
+                                <div class="overlay"></div>
+                                <div class="influencer-buttons">
+                                    <div class="dropdown add-dropdown">
+                                        <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                            <span class="ss-icon add-inf">add</span>
+                                            <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
+                                            <span class="loader"></span>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                            <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown other-dropdown">
+                                        <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">skipforward</span> Skip this influencer</a></li>
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="influencer-info-small">
+                                <div class="influencer-header clearfix">
+                                    <h2><a href="#">Cameron Frye</a></h2>
+                                </div>
+                                <div class="influencer-body">
+                                    <div class="title">Just a hypochondriac</div>
+                                </div>
+                                <ul class="influencer-channels"><li class="channel">
+                                    <a href="http://telestrianblog.com" style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://telestrianblog.com">rss</a></li><li class="channel">
+                                    <a href="http://urbanophile.com"  style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://urbanophile.com">
+                                    rss
+                                    </a></li><li class="channel">
+                                    <a href="http://twitter.com/urbanophile"  style="color: #33ccff;" target="_blank" class="ss-icon ss-social-circle ss-social-twitter" title="http://twitter.com/urbanophile">
+                                    twitter
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/arenn" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/arenn">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/the.urbanophile" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/the.urbanophile">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://youtube.com/user/theurbanophile" style="color: #ef0e11;" target="_blank" class="ss-icon ss-social-circle ss-social-youtube" title="http://youtube.com/user/theurbanophile">
+                                    youtube
+                                    </a></li><li class="channel">
+                                    <a href="http://linkedin.com/in/aaronmrenn" style="color: #4875b4;" target="_blank" class="ss-icon ss-social-circle ss-social-linkedin" title="http://linkedin.com/in/aaronmrenn">
+                                    linkedin
+                                    </a></li><li class="channel">
+                                    <a href="http://plus.google.com/u/0/103460771956228399479" style="color: #d34836;" target="_blank" class="ss-icon ss-social-circle ss-social-googleplus" title="http://plus.google.com/u/0/103460771956228399479">
+                                    googleplus
+                                    </a></li>
+                                </ul>
+                                <div class="influencer-more-info clearfix">
+                                    <ul class="scores">
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li><li class="influencer influencer-small slider-item">
+                        <div class="block clearfix">
+                            <div class="avatar-info">
+                                <div class="influencer-avatar-wrapper">
+                                    <img class="influencer-avatar" src="sample-avatar2.png" />
+                                </div>
+                                <div class="overlay"></div>
+                                <div class="influencer-buttons">
+                                    <div class="dropdown add-dropdown">
+                                        <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                            <span class="ss-icon add-inf">add</span>
+                                            <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
+                                            <span class="loader"></span>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                            <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown other-dropdown">
+                                        <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">skipforward</span> Skip this influencer</a></li>
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="influencer-info-small">
+                                <div class="influencer-header clearfix">
+                                    <h2><a href="#">Ferris Bueller</a></h2>
+                                </div>
+                                <div class="influencer-body">
+                                    <div class="title">Never done anything wrong</div>
+                                </div>
+                                <ul class="influencer-channels"><li class="channel">
+                                    <a href="http://telestrianblog.com" style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://telestrianblog.com">rss</a></li><li class="channel">
+                                    <a href="http://urbanophile.com"  style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://urbanophile.com">
+                                    rss
+                                    </a></li><li class="channel">
+                                    <a href="http://twitter.com/urbanophile"  style="color: #33ccff;" target="_blank" class="ss-icon ss-social-circle ss-social-twitter" title="http://twitter.com/urbanophile">
+                                    twitter
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/arenn" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/arenn">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/the.urbanophile" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/the.urbanophile">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://youtube.com/user/theurbanophile" style="color: #ef0e11;" target="_blank" class="ss-icon ss-social-circle ss-social-youtube" title="http://youtube.com/user/theurbanophile">
+                                    youtube
+                                    </a></li><li class="channel">
+                                    <a href="http://linkedin.com/in/aaronmrenn" style="color: #4875b4;" target="_blank" class="ss-icon ss-social-circle ss-social-linkedin" title="http://linkedin.com/in/aaronmrenn">
+                                    linkedin
+                                    </a></li><li class="channel">
+                                    <a href="http://plus.google.com/u/0/103460771956228399479" style="color: #d34836;" target="_blank" class="ss-icon ss-social-circle ss-social-googleplus" title="http://plus.google.com/u/0/103460771956228399479">
+                                    googleplus
+                                    </a></li>
+                                </ul>
+                                <div class="influencer-more-info clearfix">
+                                    <ul class="scores">
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li><li class="influencer influencer-small slider-item">
+                        <div class="block clearfix">
+                            <div class="avatar-info">
+                                <div class="influencer-avatar-wrapper">
+                                    <img class="influencer-avatar" src="sample-avatar3.png" />
+                                </div>
+                                <div class="overlay"></div>
+                                <div class="influencer-buttons">
+                                    <div class="dropdown add-dropdown">
+                                        <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                            <span class="ss-icon add-inf">add</span>
+                                            <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
+                                            <span class="loader"></span>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                            <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown other-dropdown">
+                                        <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">skipforward</span> Skip this influencer</a></li>
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="influencer-info-small">
+                                <div class="influencer-header clearfix">
+                                    <h2><a href="#">Sloane Peterson</a></h2>
+                                </div>
+                                <div class="influencer-body">
+                                    <div class="title">Still terribly sad after the death of a beloved grandmother</div>
+                                </div>
+                                <ul class="influencer-channels"><li class="channel">
+                                    <a href="http://telestrianblog.com" style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://telestrianblog.com">rss</a></li><li class="channel">
+                                    <a href="http://urbanophile.com"  style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://urbanophile.com">
+                                    rss
+                                    </a></li><li class="channel">
+                                    <a href="http://twitter.com/urbanophile"  style="color: #33ccff;" target="_blank" class="ss-icon ss-social-circle ss-social-twitter" title="http://twitter.com/urbanophile">
+                                    twitter
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/arenn" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/arenn">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/the.urbanophile" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/the.urbanophile">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://youtube.com/user/theurbanophile" style="color: #ef0e11;" target="_blank" class="ss-icon ss-social-circle ss-social-youtube" title="http://youtube.com/user/theurbanophile">
+                                    youtube
+                                    </a></li><li class="channel">
+                                    <a href="http://linkedin.com/in/aaronmrenn" style="color: #4875b4;" target="_blank" class="ss-icon ss-social-circle ss-social-linkedin" title="http://linkedin.com/in/aaronmrenn">
+                                    linkedin
+                                    </a></li><li class="channel">
+                                    <a href="http://plus.google.com/u/0/103460771956228399479" style="color: #d34836;" target="_blank" class="ss-icon ss-social-circle ss-social-googleplus" title="http://plus.google.com/u/0/103460771956228399479">
+                                    googleplus
+                                    </a></li>
+                                </ul>
+                                <div class="influencer-more-info clearfix">
+                                    <ul class="scores">
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li><li class="influencer influencer-small slider-item">
+                        <div class="block clearfix">
+                            <div class="avatar-info">
+                                <div class="influencer-avatar-wrapper">
+                                    <img class="influencer-avatar" src="sample-avatar4.jpg" />
+                                </div>
+                                <div class="overlay"></div>
+                                <div class="influencer-buttons">
+                                    <div class="dropdown add-dropdown">
+                                        <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                            <span class="ss-icon add-inf">add</span>
+                                            <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
+                                            <span class="loader"></span>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                            <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown other-dropdown">
+                                        <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">skipforward</span> Skip this influencer</a></li>
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="influencer-info-small">
+                                <div class="influencer-header clearfix">
+                                    <h2><a href="#">Jeanie Bueller</a></h2>
+                                </div>
+                                <div class="influencer-body">
+                                    <div class="title">Definitely not resentful</div>
+                                </div>
+                                <ul class="influencer-channels"><li class="channel">
+                                    <a href="http://telestrianblog.com" style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://telestrianblog.com">rss</a></li><li class="channel">
+                                    <a href="http://urbanophile.com"  style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://urbanophile.com">
+                                    rss
+                                    </a></li><li class="channel">
+                                    <a href="http://twitter.com/urbanophile"  style="color: #33ccff;" target="_blank" class="ss-icon ss-social-circle ss-social-twitter" title="http://twitter.com/urbanophile">
+                                    twitter
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/arenn" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/arenn">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/the.urbanophile" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/the.urbanophile">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://youtube.com/user/theurbanophile" style="color: #ef0e11;" target="_blank" class="ss-icon ss-social-circle ss-social-youtube" title="http://youtube.com/user/theurbanophile">
+                                    youtube
+                                    </a></li><li class="channel">
+                                    <a href="http://linkedin.com/in/aaronmrenn" style="color: #4875b4;" target="_blank" class="ss-icon ss-social-circle ss-social-linkedin" title="http://linkedin.com/in/aaronmrenn">
+                                    linkedin
+                                    </a></li><li class="channel">
+                                    <a href="http://plus.google.com/u/0/103460771956228399479" style="color: #d34836;" target="_blank" class="ss-icon ss-social-circle ss-social-googleplus" title="http://plus.google.com/u/0/103460771956228399479">
+                                    googleplus
+                                    </a></li>
+                                </ul>
+                                <div class="influencer-more-info clearfix">
+                                    <ul class="scores">
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li><li class="influencer influencer-small slider-item">
+                        <div class="block clearfix">
+                            <div class="avatar-info">
+                                <div class="influencer-avatar-wrapper">
+                                    <img class="influencer-avatar" src="sample-avatar5.jpg" />
+                                </div>
+                                <div class="overlay"></div>
+                                <div class="influencer-buttons">
+                                    <div class="dropdown add-dropdown">
+                                        <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                            <span class="ss-icon add-inf">add</span>
+                                            <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
+                                            <span class="loader"></span>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                            <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown other-dropdown">
+                                        <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">skipforward</span> Skip this influencer</a></li>
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="influencer-info-small">
+                                <div class="influencer-header clearfix">
+                                    <h2><a href="#">Ed Rooney</a></h2>
+                                </div>
+                                <div class="influencer-body">
+                                    <div class="title">Catching kids skipping school, one Bueller at a time</div>
+                                </div>
+                                <ul class="influencer-channels"><li class="channel">
+                                    <a href="http://telestrianblog.com" style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://telestrianblog.com">rss</a></li><li class="channel">
+                                    <a href="http://urbanophile.com"  style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://urbanophile.com">
+                                    rss
+                                    </a></li><li class="channel">
+                                    <a href="http://twitter.com/urbanophile"  style="color: #33ccff;" target="_blank" class="ss-icon ss-social-circle ss-social-twitter" title="http://twitter.com/urbanophile">
+                                    twitter
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/arenn" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/arenn">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/the.urbanophile" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/the.urbanophile">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://youtube.com/user/theurbanophile" style="color: #ef0e11;" target="_blank" class="ss-icon ss-social-circle ss-social-youtube" title="http://youtube.com/user/theurbanophile">
+                                    youtube
+                                    </a></li><li class="channel">
+                                    <a href="http://linkedin.com/in/aaronmrenn" style="color: #4875b4;" target="_blank" class="ss-icon ss-social-circle ss-social-linkedin" title="http://linkedin.com/in/aaronmrenn">
+                                    linkedin
+                                    </a></li><li class="channel">
+                                    <a href="http://plus.google.com/u/0/103460771956228399479" style="color: #d34836;" target="_blank" class="ss-icon ss-social-circle ss-social-googleplus" title="http://plus.google.com/u/0/103460771956228399479">
+                                    googleplus
+                                    </a></li>
+                                </ul>
+                                <div class="influencer-more-info clearfix">
+                                    <ul class="scores">
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li><li class="influencer influencer-small slider-item">
+                        <div class="block clearfix">
+                            <div class="avatar-info">
+                                <div class="influencer-avatar-wrapper">
+                                    <img class="influencer-avatar" src="sample-avatar6.jpg" />
+                                </div>
+                                <div class="overlay"></div>
+                                <div class="influencer-buttons">
+                                    <div class="dropdown add-dropdown">
+                                        <div class="btn add-influencer dropdown-toggle no-toggle add light-btn">
+                                            <span class="ss-icon add-inf">add</span>
+                                            <span class="loading-success"><span class="ss-icon ss-symbolicons-block success-icon">usergroup</span> <span class="btn-text">Added</span></span>
+                                            <span class="loader"></span>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><label for="project1"><input type="checkbox" id="project1" /> Project 1</label></li>
+                                            <li><label for="project2"><input type="checkbox" id="project2" /> Project 2</label></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown other-dropdown">
+                                        <button type="button" class="dropdown-toggle meta-dropdown btn light-btn"><span class="ss-icon">ellipsis</span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">skipforward</span> Skip this influencer</a></li>
+                                            <li><a href="#"><span class="ss-icon ss-symbolicons-block">deleteuser</span> Blacklist from account</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="influencer-info-small">
+                                <div class="influencer-header clearfix">
+                                    <h2><a href="#">Ben Stein</a></h2>
+                                </div>
+                                <div class="influencer-body">
+                                    <div class="title">Bueller? Bueller? ... Anybody? Anybody?</div>
+                                </div>
+                                <ul class="influencer-channels"><li class="channel">
+                                    <a href="http://telestrianblog.com" style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://telestrianblog.com">rss</a></li><li class="channel">
+                                    <a href="http://urbanophile.com"  style="color: #f9a94a;" target="_blank" class="ss-icon ss-social-circle ss-social-rss" title="http://urbanophile.com">
+                                    rss
+                                    </a></li><li class="channel">
+                                    <a href="http://twitter.com/urbanophile"  style="color: #33ccff;" target="_blank" class="ss-icon ss-social-circle ss-social-twitter" title="http://twitter.com/urbanophile">
+                                    twitter
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/arenn" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/arenn">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://facebook.com/the.urbanophile" style="color: #066591;" target="_blank" class="ss-icon ss-social-circle ss-social-facebook" title="http://facebook.com/the.urbanophile">
+                                    facebook
+                                    </a></li><li class="channel">
+                                    <a href="http://youtube.com/user/theurbanophile" style="color: #ef0e11;" target="_blank" class="ss-icon ss-social-circle ss-social-youtube" title="http://youtube.com/user/theurbanophile">
+                                    youtube
+                                    </a></li><li class="channel">
+                                    <a href="http://linkedin.com/in/aaronmrenn" style="color: #4875b4;" target="_blank" class="ss-icon ss-social-circle ss-social-linkedin" title="http://linkedin.com/in/aaronmrenn">
+                                    linkedin
+                                    </a></li><li class="channel">
+                                    <a href="http://plus.google.com/u/0/103460771956228399479" style="color: #d34836;" target="_blank" class="ss-icon ss-social-circle ss-social-googleplus" title="http://plus.google.com/u/0/103460771956228399479">
+                                    googleplus
+                                    </a></li>
+                                </ul>
+                                <div class="influencer-more-info clearfix">
+                                    <ul class="scores">
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">usergroup</span> 37</li>
+                                        <li class="score"><span class="ss-icon ss-symbolicons-block">sync</span> 37</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="block">
+            <div class="block-header block-header-subtitle">
+                <h2>Overview</h2>
+                <h4>Some text</h4>
+            </div>
+        </div>
+        <div class="grid dashboard masonry-grid">
+            <div class="grid-item widget">
+                <div class="grid-inner">
+                    <div class="grid-header">
+                        <a href="" class="widget-edit"><span class="ss-icon">gear</span></a>
+                        <h2>Funnel</h2>
+                    </div>
+                    <div class="grid-body">
+                        <img src="funnel.png" style="width: 80%; display: block; margin: 0 auto;"/>
+                        <div class="funnel-infs widget-metrics">
+                            <span class="widget-main-num">1,067</span>
+                            <span class="widget-text">total influencers</span>
+                        </div>
+                        <div class="audience-metrics">
+                            <span class="ss-icon ss-symbolicons-block">binoculars</span> 2.3m total estimated audience
+                        </div>
+                        <div class="grid_8">
+                            <div class="funnel-infs widget-metrics">
+                                <span class="widget-main-num">5</span>
+                                <span class="widget-text">stage changes yesterday</span>
+                            </div>
+                        </div>
+                        <div class="grid_8">
+                            <div class="funnel-infs widget-metrics">
+                                <span class="widget-main-num">7</span>
+                                <span class="widget-text">new influencers this week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item widget">
+                <div class="grid-inner">
+                    <div class="grid-header">
+                        <a href="" class="widget-edit"><span class="ss-icon">gear</span></a>
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="grid-body">
+                        <ul class="projects">
+                            <li class="project-row clearfix">
+                                <h3 class="project-name clearfix">
+                                    Hair &amp; Makeup
+                                    <span class="ss-icon tiny-icon ss-symbolicons-block">navigateright</span>
+                                </h3>
+                                <div class="project-metrics">
+                                    <div class="grid_9">
+                                        <span class="ss-icon ss-symbolicons-block">user</span> 5 new influencers
+                                    </div>
+                                    <div class="grid_7 widget-alt">
+                                        9 recent mentions
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="project-row clearfix">
+                                <h3 class="project-name clearfix">
+                                    Hair &amp; Makeup
+                                    <span class="ss-icon tiny-icon ss-symbolicons-block">navigateright</span>
+                                </h3>
+                                <div class="project-metrics">
+                                    <div class="grid_9">
+                                        <span class="ss-icon ss-symbolicons-block">user</span> 5 new influencers
+                                    </div>
+                                    <div class="grid_7 widget-alt">
+                                        9 recent mentions
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="project-row clearfix">
+                                <h3 class="project-name clearfix">
+                                    Hair &amp; Makeup
+                                    <span class="ss-icon tiny-icon ss-symbolicons-block">navigateright</span>
+                                </h3>
+                                <div class="project-metrics">
+                                    <div class="grid_9">
+                                        <span class="ss-icon ss-symbolicons-block">user</span> 5 new influencers
+                                    </div>
+                                    <div class="grid_7 widget-alt">
+                                        9 recent mentions
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="project-row clearfix">
+                                <h3 class="project-name clearfix">
+                                    Hair &amp; Makeup
+                                    <span class="ss-icon tiny-icon ss-symbolicons-block">navigateright</span>
+                                </h3>
+                                <div class="project-metrics">
+                                    <div class="grid_9">
+                                        <span class="ss-icon ss-symbolicons-block">user</span> 5 new influencers
+                                    </div>
+                                    <div class="grid_7  widget-alt">
+                                        9 recent mentions
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="widget-cta">
+                            <div class="grid_8">
+                                <a href="#"><span class="ss-icon">add</span> Add new project</a>
+                            </div>
+                            <div class="grid_8 widget-alt">
+                                <a href="#"><span class="ss-icon ss-symbolicons-block">navigateright</span> View all</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item widget grid-width2">
+                <div class="grid-inner">
+                    <div class="grid-header">
+                        <a href="" class="widget-edit"><span class="ss-icon">gear</span></a>
+                        <h2>Team activity</h2>
+                    </div>
+                    <div class="grid-body">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item widget grid-width2">
+                <div class="grid-inner">
+                    <div class="grid-header">
+                        <a href="" class="widget-edit"><span class="ss-icon">gear</span></a>
+                        <h2>Share of voice</h2>
+                    </div>
+                    <div class="grid-body">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item widget">
+                <div class="grid-inner">
+                    <div class="grid-header">
+                        <a href="" class="widget-edit"><span class="ss-icon">gear</span></a>
+                        <h2>Impressions</h2>
+                    </div>
+                    <div class="grid-body">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item widget">
+                <div class="grid-inner grid-has-tabs">
+                    <div class="block-tabs full-width">
+                        <ul>
+                            <li class="nav-item"><a href="#" class="selected">Top Engagers</a></li>
+                            <li class="nav-item"><a href="#">Top Impacters</a></li>
+                        </ul>
+                    </div>
+                    <div class="grid-body">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
+<script type="text/javascript" src="aehlke-tag-it-6ccd2de/js/tag-it.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.qtip-toggle').qtip({
+        style: {
+            tip: {
+                mimic: 'center',
+                offset: 5
+            }
+        },
+        position: {
+            target: 'mouse',
+            adjust: {
+                mouse: false,
+                y: 7
+            }
+        }
+    });
+    $('input.with-help, input.error').qtip({
+        position: {
+            my: 'bottom center', 
+            at: 'top left',
+            target: false, // my target
+            adjust: {
+                x: 50,
+                y: -5
+            }
+        },
+        show: {
+            event: 'focus'
+        },
+        hide: {
+            event: 'blur'
+        }
+    });
+    $(document).ready(function() {
+        $("#tagBox").tagit();
+    });
+    
+    ( function( $, window, document, undefined ) {
+
+        "use strict";
+
+        // Create the defaults once
+        var defaults = {
+            scope: "window"
+        };
+
+        // The actual plugin constructor
+        function Plugin ( element, options ) {
+            this.element = element;
+            this.settings = $.extend( {}, defaults, options );
+            this._defaults = defaults;
+            this._name = "spin";
+            this.init();
+        }
+
+        $.extend( Plugin.prototype, {
+            init: function() {
+                if ( this._defaults.scope === "window" ) {
+                    var $template = $('#bodyTemplate').clone().show().addClass("active-spinner"),
+                        $me = $(this.element);
+                    $me.append($template);
+                } else {
+                    var $template = $('#innerTemplate').clone().show().addClass("active-spinner"),
+                        $me = $(this.element);
+                    $me.append($template);
+                }
+            },
+            stop: function( text ) {
+                $(this.element).find('.active-spinner').remove().unbind().removeData();
+            }
+        });
+		  $.fn[ "spin" ] = function( options ) {
+            return this.each( function() {
+				    if ( !$.data( this, "plugin_spin" ) ) {
+					   $.data( this, "plugin_" +
+						  "spin", new Plugin( this, options ) );
+				    }
+            });
+		  };
+    })( jQuery, window, document );
+    
+    $('.load-body-spinner').on('click', function() {
+        $('body').spin();
+        return false;
+    });
+    $('.load-inner-spinner').on('click', function() {
+        $(this).closest('.block-content').spin({ scope: 'inline' });
+        return false;
+    });
+    $('.influencer').on('click', function(e) {
+        if ( e.target.tagName.toLowerCase() !== 'a' && $(e.target).closest('a').length === 0 && $(e.target).closest('label').length === 0 ) {
+            $(this).toggleClass("selected");
+        }
+    });
+    $('.add-influencer').on('click', function() {
+        var $this = $(this);
+        if ( $this.hasClass("add") ) {
+            $this.closest('.influencer').addClass('added');
+            $this.removeClass("add").addClass("disabled").addClass("loading");
+            setTimeout(function() { // simulate some loading
+                // Success!
+                $this.closest('.influencer');
+                $this.removeClass("loading").addClass("expand-btn").removeClass("disabled").removeClass("no-toggle").trigger('click');
+            }, 2000);
+        }
+        
+        return false;
+    });
+    
+    $('.dropdown-toggle').on('click', function() {
+        if ( ! $(this).hasClass('no-toggle') ) {
+            $('.dropdown-toggle').not($(this)).closest('.dropdown').removeClass('open');
+            $(this).closest('.dropdown').toggleClass('open');
+        }
+        return false;
+    });
+    $(document).click(function (e) {
+        e.stopPropagation();
+        var container = $(".dropdown-menu");
+
+        //check if the clicked area is dropDown or not
+        if (container.has(e.target).length === 0) {
+            container.closest('.dropdown').removeClass('open');
+        }
+    });
+    var $slider = $('.dashboard-slider');
+    var slideItemWidth = 226; // this is how wide they are
+    // TODO: Make slider hide left and right arrows also if there aren't enough items in the list
+    if ( $slider.length && $slider.find('.slider-list').length && $slider.find('.slider-item').length ) {
+        var $sliderList = $slider.find('.slider-list'),
+            sliderWidth = slideItemWidth * $sliderList.find('.slider-item').length;
+        // Set widths correctly
+        $sliderList.width(sliderWidth + slideItemWidth).find('.slider-item').outerWidth(slideItemWidth);
+        // Move the last item before the first item
+        $sliderList.find('.slider-item:first').before($sliderList.find('.slider-item:last')); 
+        // set up the click events for left and right arrows
+        $slider.find('.nav-right').on('click', function() {
+            var leftValue = parseInt($sliderList.css('left')) - slideItemWidth;
+            var $firstItem = $sliderList.find('.slider-item:first');
+            $sliderList.find('.slider-item:last').after($firstItem.clone(true));
+            $sliderList.animate({ 'left' : leftValue }, 500, function(){ 
+                $firstItem.remove();
+                $sliderList.css({'left' : '-' + slideItemWidth + 'px'});  
+            });  
+        });
+        $slider.find('.nav-left').on('click', function() {
+            var leftValue = parseInt($sliderList.css('left')) + slideItemWidth;
+            $sliderList.animate({ 'left' : leftValue }, 500, function(){ 
+                $sliderList.find('.slider-item:first').before($sliderList.find('.slider-item:last'));
+                $sliderList.css({'left' : '-' + slideItemWidth + 'px'});  
+            });  
+        });
+    } else {
+        $slider.find('.slider-nav').hide();
+    }
+    
+    /*$('input.error-input').qtip({
+        position: {
+            my: 'bottom center',  // Position my top left...
+            at: 'top left', // at the bottom right of...
+            target: false, // my target
+            adjust: {
+                x: 50,
+                y: 5
+            }
+        },
+        show: true,
+        hide: {
+            event: 'focus'
+        }
+    });*/
+});
+</script>

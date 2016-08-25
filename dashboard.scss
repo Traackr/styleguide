@@ -1,0 +1,107 @@
+.dashboard-slider {
+    position: relative;
+    ul {
+        width: 100%;
+        & > li {
+            position: relative;
+            left: 0;
+        }
+    }
+    .nav-left {
+        left: -40px;
+    }
+    .nav-right {
+        right: -40px;
+    }
+    .nav-left, .nav-right {
+        position: absolute;
+        top: 50%;
+        margin-top: -19px;
+        color: #c8c8c8;
+        font-size: 18px;
+        &:hover {
+            color: $traackr-red;
+        }
+    }
+}
+.slider-list-wrapper {
+    overflow: hidden;
+}
+.slider-list {
+    position: relative;
+    left: -226px;
+}
+.widget {
+    position: relative;
+    .grid-header {
+        padding: 3px 10px;
+        height: 38px;
+    }
+    .grid-body {
+        padding: 10px;
+    }
+    .grid-inner.grid-has-tabs {
+        border-top: 0;
+    }
+}
+.widget-edit {
+    float: right;
+    padding: 5px;
+}
+.widget-main-num {
+    color: #43b4c2;
+    font-size: 30px;
+}
+.widget-text {
+    font-size: 11px;
+    width: 77px;
+    display: inline-block;
+    text-align: left;
+}
+.widget h2 {
+    float: left;
+    padding: 0;
+}
+.widget-cta {
+    position: absolute;
+    bottom: 15px;
+    width: 90%;
+    font-size: 12px;
+}
+.widget-alt {
+    text-align: right;
+}
+
+/* Funnel */
+.funnel-infs {
+    text-align: center;
+}
+.audience-metrics {
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Projects */
+.project-row {
+    padding: 5px 0;
+    border-bottom: 1px solid #e8e8e8;
+    cursor: pointer;
+    &:first-child {
+        padding-top: 0;
+    }
+}
+.project-name {
+    padding: 0;
+    color: #43b4c2;
+    .ss-icon {
+        float: right;
+        padding: 5px 0 0;
+    }
+}
+.project-metrics {
+    font-size: 11px;
+}
+.project-metrics-alt {
+    text-align: right;
+}
