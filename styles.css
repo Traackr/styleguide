@@ -2016,6 +2016,9 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .grid-width2 {
   width: 50%; }
 
+.post-actions li {
+  display: inline-block; }
+
 .dashboard-slider {
   position: relative; }
   .dashboard-slider ul {
@@ -2067,18 +2070,24 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   display: inline-block;
   text-align: left; }
 
-.widget h2 {
+.widget h3 {
   float: left;
-  padding: 0; }
+  padding: 2px 0; }
 
 .widget-cta {
   position: absolute;
-  bottom: 15px;
+  bottom: 10px;
   width: 90%;
-  font-size: 12px; }
+  font-size: 11px; }
 
 .widget-alt {
   text-align: right; }
+
+.widget .nav-item > a {
+  font-size: 16px;
+  padding: 5px 15px;
+  height: 40px;
+  border-bottom: 1px solid #e8e8e8; }
 
 /* Funnel */
 .funnel-infs {
@@ -2101,8 +2110,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   padding: 0;
   color: #43b4c2; }
   .project-name .ss-icon {
-    float: right;
-    padding: 5px 0 0; }
+    float: right; }
 
 .project-metrics {
   font-size: 11px; }
