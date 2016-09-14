@@ -928,6 +928,52 @@
                 text-align: center;
                 width: 40%;
             }
+
+            /*
+              Base Style
+             */
+            .mini-stats-table .mini-stat {
+                display: inline-block
+            }
+            
+            .mini-stats-table .mini-stat .mini-stat-field, .mini-stats-table .mini-stat .mini-stat-value {
+                display: inline-block;
+            }
+
+
+            @media screen and (max-width: 900px) {
+                .mini-stats-table .mini-stat {
+                    text-align: center;
+                    margin: auto;  
+                    width: 46%;
+                    border: 0 !important;
+                }
+                .mini-stats-table .mini-stat .mini-stat-field, .mini-stats-table .mini-stat .mini-stat-value {
+                    display: block;
+                    float: none;
+                    margin: auto;
+                }
+                .mini-stats-table  .ss-icon {
+                    display: block;
+                }             
+            }
+
+            /*
+             * Page Style
+             */   
+            .mini-stat {
+                width: 40%;
+                margin: 0 18px 18px 18px;
+            } 
+
+            .mini-stat:nth-child(3), .mini-stat:nth-child(4) {
+                border-top: 1px #cccccc solid;
+                padding-top: 18px;
+                margin-bottom: 0;
+            }       
+            .mini-stat-value {
+                float: right;
+            }  
         </style>
 
         <!-- Funtivity goes here -->
@@ -968,7 +1014,45 @@
             <div class="grid_8">
                 <div class="block">
                     <div class="block-content">
-                        TODO
+                        <div class="mini-stats-table">
+                            <div class="mini-stat">
+                                <div class="mini-stat-field">
+                                    <span class="ss-icon ss-social-circle ss-social-twitter">twitter</span> Twitter
+                                </div>
+                                <div class="mini-stat-value">
+                                    +3K <span class="pill">+80%</span>
+                                </div>
+                            </div>
+
+                            <div class="mini-stat">
+                                <div class="mini-stat-field">
+                                    <span class="ss-icon ss-social-circle ss-social-youtube">youtube</span> Youtube
+                                </div>
+                                <div class="mini-stat-value">
+                                    +3K <span class="pill">+80%</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mini-stat">
+                                <div class="mini-stat-field">
+                                    <span class="ss-icon ss-social-circle ss-social-instagra">instagram</span> Instagram
+                                </div>
+                                <div class="mini-stat-value">
+                                    +3K <span class="pill">+80%</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mini-stat">
+                                <div class="mini-stat-field">
+                                    <span class="ss-icon ss-social-circle ss-social-facebook">facebook</span> Facebook
+                                </div>
+                                <div class="mini-stat-value">
+                                    +3K <span class="pill">+80%</span>
+                                </div>
+                            </div>                            
+                        </div>
                     </div>
                 </div>
             </div>
