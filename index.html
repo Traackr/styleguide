@@ -193,9 +193,9 @@
                     <div class="btn"><span class="ss-icon tiny-icon">descend</span></div>
                 </div>
                 <div class="btn expand-btn"><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
-                
+
                 <p></p>
-                
+
                 <div class="dropdown">
                     <button type="button" class="btn dropdown-toggle">I'm a dropdown <span class="ss-icon tiny-icon">descend</span></button>
                     <ul class="dropdown-menu">
@@ -244,7 +244,7 @@
                     <div class="btn light-btn" role="button"><span class="ss-icon">descend</span></div>
                 </div>
                 <div class="btn light-btn expand-btn"><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
-                
+
                 <div class="dropdown">
                     <button type="button" class="btn light-btn dropdown-toggle">I'm a dropdown <span class="ss-icon tiny-icon">descend</span></button>
                     <ul class="dropdown-menu">
@@ -267,7 +267,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header"><h2>Avatars</h2></div>
             <div class="block-content">
@@ -275,7 +275,7 @@
             <div class="avatar image-icon initials">DC</div>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header clearfix">
                 <h2>Tabs</h2>
@@ -288,7 +288,7 @@
                 </ul>
             </nav>
         </div>
-        
+
         <nav class="block-tabs">
             <ul>
                 <li class="nav-item"><a href="#" class="selected"><span class="ss-icon ss-symbolicons-block">rss</span></a>
@@ -304,7 +304,7 @@
                 And some full-width tabs below.
             </div>
         </div>
-        
+
         <div class="block">
             <nav class="block-tabs inline full-width">
                 <ul>
@@ -391,7 +391,7 @@
                 </form>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header clearfix">
                 <h2>Posts</h2>
@@ -447,7 +447,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header">
                 <h2>Metrics list</h2>
@@ -484,7 +484,7 @@
                 </ul>
             </div>
         </div>
-       
+
         <h2>Headers and footers and layout</h2>
         <div class="block">
             <div class="block-header block-header-subtitle clearfix">
@@ -498,8 +498,8 @@
         </div>
         <div class="block">
             <div class="block-header clearfix">
-                <h2>Block header 
-                    
+                <h2>Block header
+
                         <div class="dropdown">
                             <span class="btn tiny-btn dropdown-toggle"><span class="ss-icon">descend</span></span>
                             <ul class="dropdown-menu">
@@ -541,7 +541,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>                       
+                </div>
             </div>
         </div>
         <div class="block">
@@ -553,7 +553,7 @@
                 <a class="btn primary-btn" href="#">Save</a>
             </div>
         </div>
-        
+
         <div class="block inline-block">
             <div class="block-header"><h2>Filters magnet display</h2></div>
         </div>
@@ -587,12 +587,12 @@
                     <span class="bar4"></span>
                     <span class="bar5"></span>
                 </div>
-                
+
                 <a href="#" class="load-body-spinner">Load the body spinner</a>
                 <a href="#" class="load-inner-spinner">Load the inner spinner</a>
             </div>
         </div>
-        
+
         <h2>Influencers</h2>
         <ul class="influencers can-add">
             <li class="influencer influencer-medium">
@@ -898,14 +898,82 @@
                 </div>
             </li>
         </ul>
-        
+
         <style type="text/css">
             /* Funtivity CSS goes here */
+            .stat-table {
+                display: table;
+                color: #f46240;
+                width: 100%;
+            }
+            .stat-table > div {
+                display: table-cell;
+            }
+            .stat-table .info {
+                width: 60%;
+                font-weight: bold;
+            }
+            .stat-table .number {
+                font-size: 32px;
+                line-height: 34px;
+            }
+            .stat-table .label {
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+            .stat-table .ss-icon {
+                font-size: 36px;
+                line-height: 36px;
+                vertical-align: middle;
+                text-align: center;
+                width: 40%;
+            }
         </style>
-        
+
         <!-- Funtivity goes here -->
-        
-        
+
+        <div class="grid">
+            <div class="grid_4">
+                <div class="block">
+                    <div class="block-content">
+                        <div class="stat-table">
+                            <div class="info">
+                                <div class="number">100K</div>
+                                <div class="label">Total Audience</div>
+                            </div>
+                            <div class="ss-icon">
+                                eye
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid_4">
+                <div class="block">
+                    <div class="block-content">
+                        <div class="stat-table">
+                            <div class="info">
+                                <div class="number">+300%</div>
+                                <div class="label">Audience Increase</div>
+                            </div>
+                            <div class="ss-icon">
+                                barchart
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid_8">
+                <div class="block">
+                    <div class="block-content">
+                        TODO
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
 
@@ -932,7 +1000,7 @@ $(document).ready(function() {
     });
     $('input.with-help, input.error').qtip({
         position: {
-            my: 'bottom center', 
+            my: 'bottom center',
             at: 'top left',
             target: false, // my target
             adjust: {
@@ -950,7 +1018,7 @@ $(document).ready(function() {
     $(document).ready(function() {
         $("#tagBox").tagit();
     });
-    
+
     ( function( $, window, document, undefined ) {
 
         "use strict";
@@ -994,7 +1062,7 @@ $(document).ready(function() {
             });
 		  };
     })( jQuery, window, document );
-    
+
     $('.load-body-spinner').on('click', function() {
         $('body').spin();
         return false;
@@ -1021,7 +1089,7 @@ $(document).ready(function() {
         }
         return false;
     });
-    
+
     $('.dropdown-toggle').on('click', function() {
         if ( ! $(this).hasClass('no-toggle') ) {
             $('.dropdown-toggle').not($(this)).closest('.dropdown').removeClass('open');
@@ -1038,7 +1106,7 @@ $(document).ready(function() {
             container.closest('.dropdown').removeClass('open');
         }
     });
-    
+
     /*$('input.error-input').qtip({
         position: {
             my: 'bottom center',  // Position my top left...
