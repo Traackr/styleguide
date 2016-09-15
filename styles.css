@@ -495,12 +495,12 @@ h4, h5 {
   font-size: 12px; }
 
 a {
-  color: #43b4c2;
+  color: #f46240;
   text-decoration: none; }
 
 a:hover {
   text-decoration: underline;
-  color: #43b4c2;
+  color: #f46240;
   cursor: pointer; }
 
 a.influencer-name {
@@ -517,6 +517,11 @@ a.influencer-name, .influencer-name {
   color: #f46240; }
   a.influencer-name:hover, .influencer-name:hover {
     color: #f46240; }
+
+.empty-results {
+  text-align: center;
+  padding: 100px 0;
+  font-size: 18px; }
 
 .noscroll {
   /* used for overlays on the body when you don't want the body to scroll :) */
@@ -1230,10 +1235,10 @@ section {
 
 .nav-item > a:hover {
   text-decoration: none;
-  color: #43b4c2; }
+  color: #f46240; }
 
 .nav-item > a.selected {
-  border-top: 6px solid #43b4c2; }
+  border-top: 6px solid #f46240; }
 
 li.nav-item {
   display: inline-block;
@@ -1277,7 +1282,7 @@ li.nav-item {
 .icon-list > li {
   line-height: 1.4; }
   .icon-list > li a.icon-link:hover .ss-icon {
-    color: #43b4c2; }
+    color: #f46240; }
 
 .icon-list > li a.icon-link.disabled:hover .ss-icon, .tags.disabled a.ss-icon:hover {
   color: #c8c8c8;
@@ -1293,7 +1298,7 @@ li.nav-item {
 .icon-list.icon-link-list li {
   cursor: pointer; }
   .icon-list.icon-link-list li:hover {
-    color: #43b4c2; }
+    color: #f46240; }
 
 /* date */
 .prev-range {
@@ -1853,7 +1858,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   .post-list .post-header a.post-meta-link:link, .post-list .post-header a.post-meta-link:visited {
     color: #333; }
   .post-list .post-header a.post-meta-link:hover, .post-list .post-header a.post-meta-link:active {
-    color: #43b4c2; }
+    color: #f46240; }
 
 .post-list .post-content {
   line-height: 1.3;
@@ -1865,7 +1870,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   .post-list .post-meta a:link, .post-list .post-meta a:visited {
     color: #c8c8c8; }
   .post-list .post-meta a:hover, .post-list .post-meta a:active {
-    color: #43b4c2; }
+    color: #f46240; }
   .post-list .post-meta .post-icon {
     color: #333;
     font-size: 14px;
@@ -2043,12 +2048,16 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   -moz-box-shadow: 0px 1px 2px #c8c8c8;
   -o-box-shadow: 0px 1px 2px #c8c8c8;
   box-shadow: 0px 1px 2px #c8c8c8;
-  position: absolute; }
+  position: absolute;
+  min-width: 500px; }
 
 .ui-dialog-titlebar {
   padding: 8px 15px;
   border-bottom: 1px solid #e8e8e8;
   font-size: 18px; }
+
+.no-title .ui-dialog-titlebar {
+  display: none; }
 
 .ui-dialog-titlebar-close {
   float: right;
