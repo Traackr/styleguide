@@ -911,7 +911,6 @@
             }
             .stat-table .info {
                 width: 60%;
-                font-weight: bold;
             }
             .stat-table .number {
                 font-size: 32px;
@@ -932,54 +931,43 @@
             /*
               Base Style
              */
-            .mini-stats-table .mini-stat {
-                display: inline-block
-            }
-            
-            .mini-stats-table .mini-stat .mini-stat-field, .mini-stats-table .mini-stat .mini-stat-value {
+            .mini-stat-field, .mini-stat-value {
                 display: inline-block;
             }
-
-
-            @media screen and (max-width: 900px) {
-                .mini-stats-table .mini-stat {
-                    text-align: center;
-                    margin: auto;  
-                    width: 46%;
-                    border: 0 !important;
-                }
-                .mini-stats-table .mini-stat .mini-stat-field, .mini-stats-table .mini-stat .mini-stat-value {
-                    display: block;
-                    float: none;
-                    margin: auto;
-                }
-                .mini-stats-table  .ss-icon {
-                    display: block;
-                }             
+            .mini-stat-field .ss-icon {
+                float: left;
+                padding: 5px 5px 0 0;
             }
-
-            /*
-             * Page Style
-             */   
             .mini-stat {
-                width: 40%;
-                margin: 0 18px 18px 18px;
+                width: 49%;
+                padding: 0 7px 7px 7px;
+                display: inline-block;
             } 
 
             .mini-stat:nth-child(3), .mini-stat:nth-child(4) {
-                border-top: 1px #cccccc solid;
-                padding-top: 18px;
-                margin-bottom: 0;
+                border-top: 1px #c8c8c8 solid;
+                padding-top: 7px;
+                padding-bottom: 0;
             }       
             .mini-stat-value {
                 float: right;
             }  
+
+
+            @media screen and (max-width: 900px) {
+                .stat-grid {
+                    width: 50%;
+                }
+                .stat-table-grid {
+                    width: 100%;
+                }
+            }
         </style>
 
         <!-- Funtivity goes here -->
 
         <div class="grid">
-            <div class="grid_4">
+            <div class="grid_4 stat-grid">
                 <div class="block">
                     <div class="block-content">
                         <div class="stat-table">
@@ -995,7 +983,7 @@
                 </div>
             </div>
 
-            <div class="grid_4">
+            <div class="grid_4 stat-grid">
                 <div class="block">
                     <div class="block-content">
                         <div class="stat-table">
@@ -1011,7 +999,7 @@
                 </div>
             </div>
 
-            <div class="grid_8">
+            <div class="grid_8 stat-table-grid">
                 <div class="block">
                     <div class="block-content">
                         <div class="mini-stats-table">
