@@ -48,13 +48,13 @@ h4, h5 {
 }
 
 a {
-    color: $traackr-teal;
+    color: $traackr-red;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
-    color: $traackr-teal;
+    color: $traackr-red;
     cursor: pointer;
 }
 a.influencer-name {
@@ -75,6 +75,11 @@ a.influencer-name, .influencer-name {
     &:hover {
         color: $traackr-red;
     }
+}
+.empty-results {
+    text-align: center;
+    padding: 100px 0;
+    font-size: 18px;
 }
 
 .noscroll { /* used for overlays on the body when you don't want the body to scroll :) */
@@ -933,11 +938,11 @@ section {
 
 .nav-item > a:hover {
     text-decoration: none;
-    color: $traackr-teal;
+    color: $traackr-red;
 }
 
 .nav-item > a.selected {
-    border-top: 6px solid $traackr-teal;
+    border-top: 6px solid $traackr-red;
 }
 
 li.nav-item {
@@ -988,7 +993,7 @@ li.nav-item {
 .icon-list > li {
     line-height: 1.4;
     a.icon-link:hover .ss-icon {
-        color: $traackr-teal;
+        color: $traackr-red;
     }
 }
 .icon-list > li a.icon-link.disabled:hover .ss-icon, .tags.disabled a.ss-icon:hover {
@@ -1007,7 +1012,7 @@ li.nav-item {
 .icon-list.icon-link-list li {
     cursor: pointer;
     &:hover {
-        color: $traackr-teal;
+        color: $traackr-red;
     }
 }
 
@@ -1674,7 +1679,7 @@ $unExpandedInfoHeight: 75px;
         color: #333;
     }
     a.post-meta-link:hover, a.post-meta-link:active {
-        color: $traackr-teal;
+        color: $traackr-red;
     }
 }
 .post-list .post-content {
@@ -1688,7 +1693,7 @@ $unExpandedInfoHeight: 75px;
         color: $medium-grey;
     }
     a:hover, a:active {
-        color: $traackr-teal;
+        color: $traackr-red;
     }
     .post-icon {
         color: #333;
@@ -1916,11 +1921,15 @@ $unExpandedInfoHeight: 75px;
     -o-box-shadow: 0px 1px 2px $medium-grey;
     box-shadow: 0px 1px 2px $medium-grey;
     position: absolute;
+    min-width: 500px;
 }
 .ui-dialog-titlebar {
     padding: 8px 15px;
     border-bottom: 1px solid $faint-grey;
     font-size: 18px;
+}
+.no-title .ui-dialog-titlebar {
+    display: none;
 }
 .ui-dialog-titlebar-close {
     float: right;
