@@ -1788,15 +1788,19 @@ $unExpandedInfoHeight: 75px;
 }
 .metrics-avatar {
     float: left;
-    margin-right: 15px;
+    width: 40px;
     img {
         border-radius: 100%;
     }
 }
+.metrics-detail {
+    float: left;
+    width: calc(100% - 40px);
+}
 .metrics-label {
     float: left;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0;
 }
 .metrics-sublabel {
     padding-top: 3px;
@@ -1805,7 +1809,7 @@ $unExpandedInfoHeight: 75px;
 .metrics-value {
     float: right;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0;
 }
 .metrics-progress {
     clear: both;

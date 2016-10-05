@@ -208,9 +208,9 @@
                     <div class="btn"><span class="ss-icon tiny-icon">descend</span></div>
                 </div>
                 <div class="btn expand-btn"><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
-                
+
                 <p></p>
-                
+
                 <div class="dropdown">
                     <button type="button" class="btn dropdown-toggle">I'm a dropdown <span class="ss-icon tiny-icon">descend</span></button>
                     <ul class="dropdown-menu">
@@ -259,7 +259,7 @@
                     <div class="btn light-btn" role="button"><span class="ss-icon">descend</span></div>
                 </div>
                 <div class="btn light-btn expand-btn"><span class="ss-icon">filter</span> <span class="expand-text btn-text">Expand</span></div>
-                
+
                 <div class="dropdown">
                     <button type="button" class="btn light-btn dropdown-toggle">I'm a dropdown <span class="ss-icon tiny-icon">descend</span></button>
                     <ul class="dropdown-menu">
@@ -282,7 +282,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header"><h2>Avatars</h2></div>
             <div class="block-content">
@@ -290,7 +290,7 @@
             <div class="avatar image-icon initials">DC</div>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header clearfix">
                 <h2>Tabs</h2>
@@ -303,7 +303,7 @@
                 </ul>
             </nav>
         </div>
-        
+
         <nav class="block-tabs">
             <ul>
                 <li class="nav-item"><a href="#" class="selected"><span class="ss-icon ss-symbolicons-block">rss</span></a>
@@ -319,7 +319,7 @@
                 And some full-width tabs below.
             </div>
         </div>
-        
+
         <div class="block">
             <nav class="block-tabs inline full-width">
                 <ul>
@@ -406,7 +406,7 @@
                 </form>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header clearfix">
                 <h2>Posts</h2>
@@ -462,7 +462,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header">
                 <h2>Metrics list</h2>
@@ -477,10 +477,12 @@
                                 <img src="sample-avatar.jpg" style="height: 36px; width: 36px;" />
                             </div>
                         </div>
-                        <h4 class="metrics-label">Fox Mulder</h4>
-                        <div class="metrics-value">5 Shares</div>
-                        <div class="metrics-progress">
-                            <div class="metrics-progress-bar" style="background-color: rgb(67, 180, 194); width: 100%"></div>
+                        <div class="metrics-detail">
+                            <h4 class="metrics-label">Fox Mulder</h4>
+                            <div class="metrics-value">5 Shares</div>
+                            <div class="metrics-progress">
+                                <div class="metrics-progress-bar" style="background-color: rgb(67, 180, 194); width: 100%"></div>
+                            </div>
                         </div>
                     </li>
                     <li class="metrics-row">
@@ -490,16 +492,18 @@
                                 <img src="sample-avatar.jpg" style="height: 36px; width: 36px;" />
                             </div>
                         </div>
-                        <h4 class="metrics-label">Dana Scully</h4>
-                        <div class="metrics-value">4 Shares</div>
-                        <div class="metrics-progress">
-                            <div class="metrics-progress-bar" style="background-color: rgb(67, 180, 194); width: 80%"></div>
+                        <div class="metrics-detail">
+                            <h4 class="metrics-label">Dana Scully</h4>
+                            <div class="metrics-value">4 Shares</div>
+                            <div class="metrics-progress">
+                                <div class="metrics-progress-bar" style="background-color: rgb(67, 180, 194); width: 80%"></div>
+                            </div>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
-       
+
         <h2>Headers and footers and layout</h2>
         <div class="block">
             <div class="block-header block-header-subtitle clearfix">
@@ -513,8 +517,8 @@
         </div>
         <div class="block">
             <div class="block-header clearfix">
-                <h2>Block header 
-                    
+                <h2>Block header
+
                         <div class="dropdown">
                             <span class="btn tiny-btn dropdown-toggle"><span class="ss-icon">descend</span></span>
                             <ul class="dropdown-menu">
@@ -556,7 +560,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>                       
+                </div>
             </div>
         </div>
         <div class="block clearfix">
@@ -568,7 +572,7 @@
                 <a class="btn primary-btn" href="#">Save</a>
             </div>
         </div>
-        
+
         <div class="block inline-block">
             <div class="block-header"><h2>Filters magnet display</h2></div>
         </div>
@@ -602,12 +606,12 @@
                     <span class="bar4"></span>
                     <span class="bar5"></span>
                 </div>
-                
+
                 <a href="#" class="load-body-spinner">Load the body spinner</a>
                 <a href="#" class="load-inner-spinner">Load the inner spinner</a>
             </div>
         </div>
-        
+
         <div class="block">
             <div class="block-header">
                 <h2>To Do</h2>
@@ -621,7 +625,7 @@
                 </ol>
             </div>
         </div>
-        
+
         <h2>Influencers</h2>
         <ul class="influencers can-add">
             <li class="influencer influencer-medium">
@@ -927,14 +931,14 @@
                 </div>
             </li>
         </ul>
-        
+
         <style type="text/css">
             /* Funtivity CSS goes here */
         </style>
-        
+
         <!-- Funtivity goes here -->
-        
-        
+
+
     </body>
 </html>
 
@@ -961,7 +965,7 @@ $(document).ready(function() {
     });
     $('input.with-help, input.error').qtip({
         position: {
-            my: 'bottom center', 
+            my: 'bottom center',
             at: 'top left',
             target: false, // my target
             adjust: {
@@ -979,7 +983,7 @@ $(document).ready(function() {
     $(document).ready(function() {
         $("#tagBox").tagit();
     });
-    
+
     ( function( $, window, document, undefined ) {
 
         "use strict";
@@ -1023,7 +1027,7 @@ $(document).ready(function() {
             });
 		  };
     })( jQuery, window, document );
-    
+
     $('.load-body-spinner').on('click', function() {
         $('body').spin();
         return false;
@@ -1050,7 +1054,7 @@ $(document).ready(function() {
         }
         return false;
     });
-    
+
     $('.dropdown-toggle').on('click', function() {
         if ( ! $(this).hasClass('no-toggle') ) {
             $('.dropdown-toggle').not($(this)).closest('.dropdown').removeClass('open');
@@ -1067,7 +1071,7 @@ $(document).ready(function() {
             container.closest('.dropdown').removeClass('open');
         }
     });
-    
+
     /*$('input.error-input').qtip({
         position: {
             my: 'bottom center',  // Position my top left...
