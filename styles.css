@@ -1613,10 +1613,14 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     width: 210px;
     height: 25px;
     overflow: hidden;
-    display: block; }
+    display: inline-block;
+    vertical-align: bottom; }
   .influencer-medium .title-and-description {
     max-height: 83px;
     overflow: hidden; }
+  .influencer-medium .influencer-rank {
+    display: inline-block;
+    vertical-align: bottom; }
 
 /* Small influencer grid card */
 .influencer-small {
