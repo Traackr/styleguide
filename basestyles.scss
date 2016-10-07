@@ -8,6 +8,7 @@ body {
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4;
+    color: #333; /* this is declared at the top of the styleguide index.html page instead of basestyles; we should make "fake-black" our global color */
 }
 
 .container {
@@ -1397,7 +1398,7 @@ $cardHeight: 310px;
 $maxCardWidth: 226px;
 $infNameHeight: 28px;
 $infTitleHeight: 32px;
-$unExpandedInfoHeight: 75px;
+$unExpandedInfoHeight: 72px;
 .influencer-small {
     width: 20%;
     height: $cardHeight;
@@ -1643,12 +1644,20 @@ $unExpandedInfoHeight: 75px;
     }
 }
 /* Posts */
+
+.post-preview-spinner {
+  height: 105px; /* match approximate height of embedly preview */
+}
+
 .post-list .post, .large-avatar-form {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid $light-grey;
     display: table;
     width: 100%;
+    &:hover {
+        cursor: pointer;
+    }
     &:last-of-type {
         border-bottom: 0;
         padding-bottom: 0;
@@ -1667,8 +1676,16 @@ $unExpandedInfoHeight: 75px;
     .post-avatar {
         vertical-align: top;
         width: 60px;
+        /* if resize-and-crop not applied, or if it is applied but fails with a 404: */
         img {
             border-radius: 50%;
+        }
+        /* else, if resize-and-crop worked, border-radius needs to be applied to container, not (possibly) cropped img: */
+        .resize-and-crop {
+            border-radius: 50%;
+            img {
+                border-radius: 0%;
+            }
         }
     }
 }
@@ -1676,10 +1693,11 @@ $unExpandedInfoHeight: 75px;
     font-size: 16px;
     padding-bottom: 5px;
     a.post-meta-link:link, a.post-meta-link:visited {
-        color: #333;
+        color: $medium-grey;
+        font-size: 14px;
     }
     a.post-meta-link:hover, a.post-meta-link:active {
-        color: $traackr-red;
+        text-decoration: none;
     }
 }
 .post-list .post-content {
@@ -1687,8 +1705,9 @@ $unExpandedInfoHeight: 75px;
     width: 75%;
 }
 .post-list .post-meta {
-    font-size: 12px;
     float: right;
+    color: $medium-grey;
+    font-size: 14px;
     a:link, a:visited {
         color: $medium-grey;
     }
@@ -1696,24 +1715,45 @@ $unExpandedInfoHeight: 75px;
         color: $traackr-red;
     }
     .post-icon {
-        color: #333;
         font-size: 14px;
-        margin: 0 0 0 10px;
         float: right;
+        margin: 0 0 0 5px;
+        &.ss-social-circle {
+            margin: 3px 0 0 5px;
+        }
     }
 }
 .post-list .post-actions {
     margin-top: 10px;
-    font-size: 11px;
     &.can-edit {
         clear: both;
-        padding: 0 10px 0 0;
+        padding: 0 5px 0 0;
         display: block;
         li {
             display: inline-block;
             margin-right: 5px;
-            a:hover, a:active {
-                text-decoration: none;
+            a {
+            color: $medium-grey;
+                &:hover, &:active {
+                    color: $traackr-red;
+                    text-decoration: none;
+                }
+
+                /* actions like retweet and favorite hover from medium-grey to red,
+                   but we want to "hard-code" sentiment'd hearts to their meaningful
+                   color: */
+                &[data-sentiment=neutral] {
+                    color: $traackr-yellow;
+                }
+
+                &[data-sentiment=positive] {
+                    color: $traackr-red;
+                }
+
+                &[data-sentiment=negative] {
+                    color: $black;
+                }
+
             }
         }
     }
@@ -1788,15 +1828,19 @@ $unExpandedInfoHeight: 75px;
 }
 .metrics-avatar {
     float: left;
-    margin-right: 15px;
+    width: 50px;
     img {
         border-radius: 100%;
     }
 }
+.metrics-detail {
+    float: left;
+    width: calc(100% - 60px);
+}
 .metrics-label {
     float: left;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0;
 }
 .metrics-sublabel {
     padding-top: 3px;
@@ -1805,7 +1849,7 @@ $unExpandedInfoHeight: 75px;
 .metrics-value {
     float: right;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0;
 }
 .metrics-progress {
     clear: both;
@@ -1836,7 +1880,7 @@ $unExpandedInfoHeight: 75px;
     }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1100px) {
     .influencer-small {
         width: 25%;
     }
