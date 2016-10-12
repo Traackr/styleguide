@@ -1384,11 +1384,16 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
         width: 210px;
         height: 25px;
         overflow: hidden;
-        display: block;
+        display: inline-block;
+        vertical-align: bottom;
     }
     .title-and-description {
         max-height: 83px;
         overflow: hidden;
+    }
+    .influencer-rank {
+        display: inline-block;
+        vertical-align: bottom;
     }
 }
 
