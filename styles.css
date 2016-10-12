@@ -318,6 +318,125 @@ button:focus {
     border: 1px solid #fbc3b6;
     border-left: 0; }
 
+a.ss-social-circle, .ss-social-circle {
+  line-height: 1;
+  text-decoration: none;
+  color: #444444; }
+  a.ss-social-circle:hover, .ss-social-circle:hover {
+    text-decoration: none;
+    border-bottom: none;
+    color: #444444; }
+
+a.ss-social-rss, .ss-social-rss {
+  color: #f9a94a; }
+  a.ss-social-rss:hover, .ss-social-rss:hover {
+    color: #f9a94a; }
+
+a.ss-social-twitter, .ss-social-twitter {
+  color: #33ccff; }
+  a.ss-social-twitter:hover, .ss-social-twitter:hover {
+    color: #33ccff; }
+
+a.ss-social-tumblr, .ss-social-tumblr {
+  color: #2c4762; }
+  a.ss-social-tumblr:hover, .ss-social-tumblr:hover {
+    color: #2c4762; }
+
+a.ss-social-facebook, .ss-social-facebook {
+  color: #066591; }
+  a.ss-social-facebook:hover, .ss-social-facebook:hover {
+    color: #066591; }
+
+a.ss-social-youtube, .ss-social-youtube {
+  color: #ef0e11; }
+  a.ss-social-youtube:hover, .ss-social-youtube:hover {
+    color: #ef0e11; }
+
+a.ss-social-linkedin, .ss-social-linkedin {
+  color: #4875b4; }
+  a.ss-social-linkedin:hover, .ss-social-linkedin:hover {
+    color: #4875b4; }
+
+a.ss-social-flickr, .ss-social-flickr {
+  color: #ff0084; }
+  a.ss-social-flickr:hover, .ss-social-flickr:hover {
+    color: #ff0084; }
+
+a.ss-social-googleplus, .ss-social-googleplus {
+  color: #d34836; }
+  a.ss-social-googleplus:hover, .ss-social-googleplus:hover {
+    color: #d34836; }
+
+a.ss-social-quora, .ss-social-quora {
+  color: #a82400; }
+  a.ss-social-quora:hover, .ss-social-quora:hover {
+    color: #a82400; }
+
+a.ss-social-share, .ss-social-share {
+  color: #e9953b; }
+  a.ss-social-share:hover, .ss-social-share:hover {
+    color: #e9953b; }
+
+a.ss-social-lastfm, .ss-social-lastfm {
+  color: #c00000; }
+  a.ss-social-lastfm:hover, .ss-social-lastfm:hover {
+    color: #c00000; }
+
+a.ss-social-friendfeed, .ss-social-friendfeed {
+  color: #2f72c4; }
+  a.ss-social-friendfeed:hover, .ss-social-friendfeed:hover {
+    color: #2f72c4; }
+
+a.ss-social-microsoft, .ss-social-microsoft {
+  color: #285da7; }
+  a.ss-social-microsoft:hover, .ss-social-microsoft:hover {
+    color: #285da7; }
+
+a.ss-social-posterous, .ss-social-posterous {
+  color: #f8d662; }
+  a.ss-social-posterous:hover, .ss-social-posterous:hover {
+    color: #f8d662; }
+
+a.ss-social-pinterest, .ss-social-pinterest {
+  color: #cb2027; }
+  a.ss-social-pinterest:hover, .ss-social-pinterest:hover {
+    color: #cb2027; }
+
+a.ss-social-wordpress, .ss-social-wordpress {
+  color: #444444; }
+  a.ss-social-wordpress:hover, .ss-social-wordpress:hover {
+    color: #444444; }
+
+a.ss-social-stumbleupon, .ss-social-stumbleupon {
+  color: #2fb25b; }
+  a.ss-social-stumbleupon:hover, .ss-social-stumbleupon:hover {
+    color: #2fb25b; }
+
+a.ss-social-foursquare, .ss-social-foursquare {
+  color: #30b0e2; }
+  a.ss-social-foursquare:hover, .ss-social-foursquare:hover {
+    color: #30b0e2; }
+
+a.ss-social-yelp, .ss-social-yelp {
+  color: #c41200; }
+  a.ss-social-yelp:hover, .ss-social-yelp:hover {
+    color: #c41200; }
+
+a.ss-social-vimeo, .ss-social-vimeo {
+  color: #33454e; }
+  a.ss-social-vimeo:hover, .ss-social-vimeo:hover {
+    color: #33454e; }
+
+a.ss-social-myspace, .ss-social-myspace {
+  color: #008dde; }
+  a.ss-social-myspace:hover, .ss-social-myspace:hover {
+    color: #008dde; }
+
+a.ss-social-digg, .ss-social-digg {
+  color: #444444; }
+  a.ss-social-digg:hover, .ss-social-digg:hover {
+    color: #444444; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -836,6 +955,12 @@ a.influencer-name, .influencer-name {
     padding-top: 5px;
     margin-top: 0; }
 
+.qtip-close {
+  margin-top: -17px;
+  position: absolute;
+  right: 4px;
+  top: 50%; }
+
 /* tables */
 .table {
   width: 100%;
@@ -1083,7 +1208,8 @@ input.inline-input {
   border: 1px #c8c8c8 solid;
   cursor: pointer;
   display: inline-block;
-  line-height: 1.42857143; }
+  line-height: 1.42857143;
+  margin-bottom: 7px; }
   .magnet:hover, .search-term:hover {
     border: 1px solid #f46240;
     color: #f46240; }
@@ -1527,6 +1653,13 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   .influencer-header a.influencer-star.influencer-star-on {
     color: #52bdc5; }
 
+.pill {
+  background-color: #f46240;
+  color: #fff;
+  border-radius: 10%;
+  padding: 1px 3px 1px 3px;
+  overflow: visible; }
+
 .score {
   display: inline-block;
   color: #f46240;
@@ -1658,8 +1791,8 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   width: 100%;
   background: #fff;
   overflow: hidden;
-  min-height: 72px;
-  max-height: 72px;
+  min-height: 75px;
+  max-height: 75px;
   transition: all ease-out 0.5s;
   -webkit-transition: all ease-out 0.5s;
   padding: 7px; }
@@ -1667,7 +1800,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     padding: 3px 0;
     font-size: 12px; }
   .influencer-info-small .influencer-channels {
-    padding: 0 2px; }
+    padding: 3px 2px; }
   .influencer-info-small .stage {
     overflow: hidden;
     height: 14px; }
@@ -2206,6 +2339,80 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   text-align: center;
   width: 100%; }
 
+/* Stats Table and Mini Stats Tables */
+.stat-table {
+  display: table;
+  color: #f46240;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px; }
+
+.stat-table > div {
+  display: table-cell; }
+
+.stat-table .info {
+  width: 80%;
+  border: none; }
+  .stat-table .info:hover {
+    border: none; }
+
+.stat-table .number {
+  font-size: 32px;
+  line-height: 34px; }
+
+.stat-table .label {
+  text-transform: uppercase;
+  font-size: 10px; }
+
+.stat-table .ss-icon {
+  font-size: 36px;
+  line-height: 36px;
+  vertical-align: bottom;
+  text-align: center;
+  width: 20%; }
+
+.mini-stats-table {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px; }
+  .mini-stats-table .table {
+    float: left;
+    width: 48.5%;
+    font-size: 14px; }
+    .mini-stats-table .table:not(:first-child) {
+      margin-left: 15px; }
+    .mini-stats-table .table td {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      white-space: nowrap;
+      padding-left: 0px;
+      padding-right: 0px; }
+      .mini-stats-table .table td.mini-stat-value {
+        text-align: right; }
+    .mini-stats-table .table tr.top-row td {
+      padding-bottom: 7px; }
+    .mini-stats-table .table tr.bottom-row td {
+      padding-top: 7px; }
+
+/*
+  Stats Table: Responsive Styles
+ */
+@media screen and (max-width: 1280px) {
+  .mini-stats-table .table {
+    width: 46.5%; } }
+@media screen and (max-width: 900px) {
+  .stat-grid {
+    width: 50%; }
+
+  .stat-table-grid {
+    width: 100%; } }
+@media screen and (max-width: 700px) {
+  .mini-stats-table .table td.mini-stat-value {
+    text-align: left;
+    padding-bottom: 7px; } }
 /* Port these styles to basestyles */
 .influencer-small .channel {
   padding: 5px 0; }

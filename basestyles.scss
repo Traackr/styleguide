@@ -456,6 +456,13 @@ a.influencer-name, .influencer-name {
     }
 }
 
+.qtip-close {
+    margin-top: -17px;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+}
+
 /* tables */
 .table {
     width: 100%;
@@ -744,6 +751,7 @@ input.inline-input {
     cursor: pointer;
     display: inline-block;
     line-height: 1.42857143;
+    margin-bottom: 7px;
     &:hover {
         border: 1px solid $traackr-red;
         color: $traackr-red;
@@ -1286,6 +1294,14 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     }
 }
 
+.pill {
+    background-color: #f46240;
+    color: #fff;
+    border-radius: 10%;
+    padding: 1px 3px 1px 3px;
+    overflow: visible;   
+}
+
 .score {
     display: inline-block;
     color: #f46240;
@@ -1403,7 +1419,7 @@ $cardHeight: 310px;
 $maxCardWidth: 226px;
 $infNameHeight: 28px;
 $infTitleHeight: 32px;
-$unExpandedInfoHeight: 72px;
+$unExpandedInfoHeight: 75px;
 .influencer-small {
     width: 20%;
     height: $cardHeight;
@@ -1453,7 +1469,7 @@ $unExpandedInfoHeight: 72px;
         font-size: 12px;
     }
     .influencer-channels {
-        padding: 0 2px;
+        padding: 3px 2px;
     }
     .stage {
         overflow: hidden;
@@ -2112,4 +2128,118 @@ $unExpandedInfoHeight: 72px;
     color: $traackr-red;
     text-align: center;
     width: 100%;
+}
+
+
+/* Stats Table and Mini Stats Tables */
+
+
+.stat-table {
+    display: table;
+    color: #f46240;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.stat-table > div {
+    display: table-cell;
+}
+
+.stat-table .info {
+    width: 80%;
+    border: none;
+    &:hover {
+        border: none;
+    }
+}
+
+.stat-table .number {
+    font-size: 32px;
+    line-height: 34px;
+}
+
+.stat-table .label {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.stat-table .ss-icon {
+    font-size: 36px;
+    line-height: 36px;
+    vertical-align: bottom;
+    text-align: center;
+    width: 20%;
+}
+
+.mini-stats-table {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+    .table {
+        &:not(:first-child) {
+            margin-left: 15px;
+        }
+        float: left;
+        width: 48.5%;
+        font-size: 14px;
+        td {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            white-space: nowrap;
+            padding-left: 0px;
+            padding-right: 0px;
+            &.mini-stat-value {
+                text-align: right;
+            }
+        }  
+        tr {
+            &.top-row {
+                td {
+                    padding-bottom: 7px;
+                }
+            }
+            &.bottom-row {
+                td {
+                    padding-top: 7px;
+                }
+            }
+        }      
+    }
+}
+
+
+/*
+  Stats Table: Responsive Styles
+ */
+
+@media screen and (max-width: 1280px) {
+    .mini-stats-table {
+        .table {
+            width: 46.5%;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .stat-grid {
+        width: 50%;
+    }
+    .stat-table-grid {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .mini-stats-table {
+        .table {
+            td.mini-stat-value {
+                text-align: left;
+                padding-bottom: 7px;
+            }
+        }
+    }
 }
