@@ -6,7 +6,9 @@ body {
     background: $faint-grey;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    color: #333; /* this is declared at the top of the styleguide index.html page instead of basestyles; we should make "fake-black" our global color */
 }
 
 .container {
@@ -18,6 +20,9 @@ body {
 }
 .hidden {
     display: none;
+}
+footer {
+    margin-top: 30px;
 }
 
 /* h styles */
@@ -44,13 +49,13 @@ h4, h5 {
 }
 
 a {
-    color: $traackr-teal;
+    color: $traackr-red;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
-    color: $traackr-teal;
+    color: $traackr-red;
     cursor: pointer;
 }
 a.influencer-name {
@@ -71,6 +76,11 @@ a.influencer-name, .influencer-name {
     &:hover {
         color: $traackr-red;
     }
+}
+.empty-results {
+    text-align: center;
+    padding: 100px 0;
+    font-size: 18px;
 }
 
 .noscroll { /* used for overlays on the body when you don't want the body to scroll :) */
@@ -310,7 +320,6 @@ a.influencer-name, .influencer-name {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1000;
     display: none;
     float: left;
     min-width: 240px;
@@ -324,15 +333,19 @@ a.influencer-name, .influencer-name {
     background-clip: padding-box;
     border: 1px solid #e8e8e8;
     border-top: 0;
-    -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
-    -o-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 1px 2px $medium-grey;
+    -moz-box-shadow: 0px 1px 2px $medium-grey;
+    -o-box-shadow: 0px 1px 2px $medium-grey;
+    box-shadow: 0px 1px 2px $medium-grey;
     /* If you want your dropdown to swing to the left instead of right */
     &.swing-left {
         left: auto;
         right: 0;
     }
+}
+.dropdown-menu.right {
+    right: 0;
+    left: auto;
 }
 
 .dropdown-menu > li > a, .dropdown-menu > li > label {
@@ -404,7 +417,6 @@ a.influencer-name, .influencer-name {
 .qtip .qtip-tip {
     margin: 0 auto;
     overflow: hidden;
-    z-index: 10;
 }
 
 .qtip-default .qtip-titlebar, .qtip-titlebar {
@@ -433,15 +445,22 @@ a.influencer-name, .influencer-name {
     color: #333;
     font-size: 13px;
     word-wrap: break-word;
-    -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
-    -o-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 1px 2px $medium-grey;
+    -moz-box-shadow: 0px 1px 2px $medium-grey;
+    -o-box-shadow: 0px 1px 2px $medium-grey;
+    box-shadow: 0px 1px 2px $medium-grey;
     line-height: 17px;
     h2, h3, h4, h5, h6 {
         padding-top: 5px;
         margin-top: 0;
     }
+}
+
+.qtip-close {
+    margin-top: -17px;
+    position: absolute;
+    right: 4px;
+    top: 50%;
 }
 
 /* tables */
@@ -452,11 +471,28 @@ a.influencer-name, .influencer-name {
     table-layout: fixed;
 }
 
+.table .edit-buttons {
+    text-align: right;
+
+    .edit-button,
+    .delete-button {
+        color: #c8c8c8;
+        cursor: pointer;
+
+        &:hover {
+            color: $traackr-red;
+        }
+    }
+}
+
 .table.bordered {
     border: 1px solid #e8e8e8;
 }
 .table tr {
     border-bottom: 1px solid #e8e8e8;
+}
+.table tr.last {
+    border-bottom: none;
 }
 .table td, .table th {
     padding: 15px;
@@ -478,7 +514,7 @@ fieldset {
 
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"],
 input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"],
-input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], textarea {
+input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], textarea, select {
     border: 1px solid #c8c8c8;
     background: white;
     margin: 0;
@@ -545,6 +581,11 @@ input[disabled]:hover {
     margin-top: 2px;
     padding: 0;
 }
+.form-content .inline-checkradio {
+    input[type="checkbox"], input[type="radio"] {
+        float: none;
+    }
+}
 .form-content-static {
     margin: 7px 0; /* 7 + 7 = 14 which rounded up is our standard padding */
 }
@@ -552,7 +593,7 @@ input[disabled]:hover {
 .form-row {
     padding-bottom: 15px;
     clear: both;
-    overflow: hidden;
+    @extend .clearfix;
 }
 
 .form-row input[type="checkbox"], .form-row input[type="radio"] {
@@ -583,6 +624,10 @@ input.inline-input {
 }
 
 /* select2 */
+.select2-fat {
+    position: relative;
+}
+
 .select2-container .select2-choice {
     background-color: #fff;
     -moz-background-clip: padding;
@@ -620,6 +665,17 @@ input.inline-input {
         display: block;
     }
 }
+.select2-container.select2-subtle {
+    width: auto;
+    .select2-choice {
+        width: auto;
+        border: 0;
+        padding-right: 25px;
+        b {
+            margin-top: 6px;
+        }
+    }
+}
 .select2-offscreen {
     position: absolute;
     left: -10000px;
@@ -628,6 +684,17 @@ input.inline-input {
     position: absolute;
     background: #fff;
     min-width: 240px;
+    background: #fff;
+    color: #333;
+    border-top: 0;
+    top: 100%;
+    -webkit-box-shadow: 0px 1px 2px $medium-grey;
+    -moz-box-shadow: 0px 1px 2px $medium-grey;
+    -o-box-shadow: 0px 1px 2px $medium-grey;
+    box-shadow: 0px 1px 2px $medium-grey;
+    z-index: 9999;
+    width: 100%;
+    margin-top: -1px;
     ul {
         border: 1px solid $light-grey;
         li {
@@ -639,6 +706,14 @@ input.inline-input {
         }
     }
 }
+.select2-results {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 200px;
+}
 .select2-highlighted {
     background: $traackr-red;
     color: #fff;
@@ -649,20 +724,21 @@ input.inline-input {
     left: -10000px;
 }
 .select2-with-icon {
-    .input-icon {
-        z-index: 1;
-    }
     .select2-choice {
         padding-left: 35px;
     }
 }
 .select2-inline {
     max-width: 200px;
+    position: relative;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
     .select2-search input, .select2-container .select2-choice abbr, .select2-container .select2-choice div b {
         margin-top: 3px;
+    }
+    .select2-container.select2-subtle .select2-choice b {
+        margin-top: 6px;
     }
 }
 
@@ -675,6 +751,7 @@ input.inline-input {
     cursor: pointer;
     display: inline-block;
     line-height: 1.42857143;
+    margin-bottom: 7px;
     &:hover {
         border: 1px solid $traackr-red;
         color: $traackr-red;
@@ -761,6 +838,11 @@ section {
     @extend .clearfix;
 }
 
+.footer-warning {
+    float: left;
+    padding: 10px 0;
+}
+
 .block-header > h2, .block-header > h5 {
     float: left;
 }
@@ -784,7 +866,7 @@ section {
     padding: 15px 15px 0;
 }
 
-.block-header .btn-group {
+.btn-group {
     padding: 8px 0;
     float: right;
 }
@@ -855,20 +937,21 @@ section {
 
 .nav-item > a {
     display: block;
-    padding: 12px 15px;
+    padding: 9px 15px;
     border-top: 6px solid #fff;
     box-sizing: border-box;
     height: 45px;
     color: #333;
+    font-size: 14px;
 }
 
 .nav-item > a:hover {
     text-decoration: none;
-    color: $traackr-teal;
+    color: $traackr-red;
 }
 
 .nav-item > a.selected {
-    border-top: 6px solid $traackr-teal;
+    border-top: 6px solid $traackr-red;
 }
 
 li.nav-item {
@@ -899,6 +982,9 @@ li.nav-item {
 .icon-list {
     font-size: 12px;
 }
+.icon-list.icon-list-roomy {
+    font-size: 14px;
+}
 .icon-list > li {
     margin-bottom: 3px;
 }
@@ -916,7 +1002,7 @@ li.nav-item {
 .icon-list > li {
     line-height: 1.4;
     a.icon-link:hover .ss-icon {
-        color: $traackr-teal;
+        color: $traackr-red;
     }
 }
 .icon-list > li a.icon-link.disabled:hover .ss-icon, .tags.disabled a.ss-icon:hover {
@@ -935,7 +1021,7 @@ li.nav-item {
 .icon-list.icon-link-list li {
     cursor: pointer;
     &:hover {
-        color: $traackr-teal;
+        color: $traackr-red;
     }
 }
 
@@ -949,11 +1035,11 @@ li.nav-item {
 }
 
 /* pagination */
-.pagination {
+.traackr-pagination, .pagination {
     text-align: center;
 }
 
-.pagination li {
+.traackr-pagination li, .pagination li {
     display: inline-block;
     padding: 6px 9px;
     min-width: 34px;
@@ -1138,7 +1224,6 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     top: 15px;
     right: 15px;
     color: #fff;
-    z-index: 1;
 }
 .avatar-info .overlay {
     display: none;
@@ -1209,6 +1294,14 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     }
 }
 
+.pill {
+    background-color: #f46240;
+    color: #fff;
+    border-radius: 10%;
+    padding: 1px 3px 1px 3px;
+    overflow: visible;   
+}
+
 .score {
     display: inline-block;
     color: #f46240;
@@ -1226,7 +1319,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     overflow: hidden;
 }
 
-.title {
+.influencer .title {
     font-size: 14px;
     margin-bottom: 3px;
     font-weight: 500;
@@ -1308,11 +1401,16 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
         width: 210px;
         height: 25px;
         overflow: hidden;
-        display: block;
+        display: inline-block;
+        vertical-align: bottom;
     }
     .title-and-description {
         max-height: 83px;
         overflow: hidden;
+    }
+    .influencer-rank {
+        display: inline-block;
+        vertical-align: bottom;
     }
 }
 
@@ -1371,7 +1469,7 @@ $unExpandedInfoHeight: 75px;
         font-size: 12px;
     }
     .influencer-channels {
-        padding: 0 2px;
+        padding: 3px 2px;
     }
     .stage {
         overflow: hidden;
@@ -1531,6 +1629,7 @@ $unExpandedInfoHeight: 75px;
     border-radius: 0;
     position: absolute;
     border: 1px solid #c8c8c8;
+    z-index: 1;
 }
 
 /* Filters */
@@ -1557,7 +1656,7 @@ $unExpandedInfoHeight: 75px;
     color: #fff;
     text-align: center;
     text-indent: 0;
-    padding: 8px 0;
+    padding: 6px 0;
     font-weight: 200;
     font-size: 14px;
 
@@ -1566,12 +1665,20 @@ $unExpandedInfoHeight: 75px;
     }
 }
 /* Posts */
-.post {
+
+.post-preview-spinner {
+  height: 105px; /* match approximate height of embedly preview */
+}
+
+.post-list .post, .large-avatar-form {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid $light-grey;
     display: table;
     width: 100%;
+    &:hover {
+        cursor: pointer;
+    }
     &:last-of-type {
         border-bottom: 0;
         padding-bottom: 0;
@@ -1580,7 +1687,6 @@ $unExpandedInfoHeight: 75px;
     .post-avatar, .post-details {
         display: table-cell;
         vertical-align: middle;
-        padding: 0 10px 0 5px;
         .avatar.initials, .image-icon {
             height: 48px;
             width: 48px;
@@ -1591,55 +1697,89 @@ $unExpandedInfoHeight: 75px;
     .post-avatar {
         vertical-align: top;
         width: 60px;
-    }
-}
-.post-header {
-    font-size: 16px;
-    padding-bottom: 5px;
-    a.post-meta-link:link, a.post-meta-link:visited {
-        color: #333;
-    }
-    a.post-meta-link:hover, a.post-meta-link:active {
-        color: $traackr-teal;
-    }
-}
-.post-content {
-    line-height: 1.3;
-    width: 75%;
-}
-.post-meta {
-    font-size: 12px;
-    float: right;
-    a:link, a:visited {
-        color: $medium-grey;
-    }
-    a:hover, a:active {
-        color: $traackr-teal;
-    }
-    .post-icon {
-        color: #333;
-        font-size: 14px;
-        margin: 0 0 0 10px;
-        float: right;
-    }
-}
-.post-actions {
-    margin-top: 10px;
-    font-size: 11px;
-    &.can-edit {
-        clear: both;
-        padding: 0 10px 0 0;
-        display: block;
-        li {
-            display: inline-block;
-            margin-right: 5px;
-            a:hover, a:active {
-                text-decoration: none;
+        /* if resize-and-crop not applied, or if it is applied but fails with a 404: */
+        img {
+            border-radius: 50%;
+        }
+        /* else, if resize-and-crop worked, border-radius needs to be applied to container, not (possibly) cropped img: */
+        .resize-and-crop {
+            border-radius: 50%;
+            img {
+                border-radius: 0%;
             }
         }
     }
 }
-.post-embed {
+.post-list .post-header {
+    font-size: 16px;
+    padding-bottom: 5px;
+    a.post-meta-link:link, a.post-meta-link:visited {
+        color: $medium-grey;
+        font-size: 14px;
+    }
+    a.post-meta-link:hover, a.post-meta-link:active {
+        text-decoration: none;
+    }
+}
+.post-list .post-content {
+    line-height: 1.3;
+    width: 75%;
+}
+.post-list .post-meta {
+    float: right;
+    color: $medium-grey;
+    font-size: 14px;
+    a:link, a:visited {
+        color: $medium-grey;
+    }
+    a:hover, a:active {
+        color: $traackr-red;
+    }
+    .post-icon {
+        font-size: 14px;
+        float: right;
+        margin: 0 0 0 5px;
+        &.ss-social-circle {
+            margin: 3px 0 0 5px;
+        }
+    }
+}
+.post-list .post-actions {
+    margin-top: 10px;
+    &.can-edit {
+        clear: both;
+        padding: 0 5px 0 0;
+        display: block;
+        li {
+            display: inline-block;
+            margin-right: 5px;
+            a {
+            color: $medium-grey;
+                &:hover, &:active {
+                    color: $traackr-red;
+                    text-decoration: none;
+                }
+
+                /* actions like retweet and favorite hover from medium-grey to red,
+                   but we want to "hard-code" sentiment'd hearts to their meaningful
+                   color: */
+                &[data-sentiment=neutral] {
+                    color: $traackr-yellow;
+                }
+
+                &[data-sentiment=positive] {
+                    color: $traackr-red;
+                }
+
+                &[data-sentiment=negative] {
+                    color: $black;
+                }
+
+            }
+        }
+    }
+}
+.post-list .post-embed {
     padding-top: 15px;
     @extend .clearfix;
     .thumb {
@@ -1709,15 +1849,19 @@ $unExpandedInfoHeight: 75px;
 }
 .metrics-avatar {
     float: left;
-    margin-right: 15px;
+    width: 50px;
     img {
         border-radius: 100%;
     }
 }
+.metrics-detail {
+    float: left;
+    width: calc(100% - 60px);
+}
 .metrics-label {
     float: left;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0;
 }
 .metrics-sublabel {
     padding-top: 3px;
@@ -1726,7 +1870,7 @@ $unExpandedInfoHeight: 75px;
 .metrics-value {
     float: right;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0;
 }
 .metrics-progress {
     clear: both;
@@ -1736,7 +1880,13 @@ $unExpandedInfoHeight: 75px;
     height: 5px;
 }
 
-.plusmore-hidden {
+.tag-list {
+    display: inline-block;
+    li {
+        display: inline-block;
+    }
+}
+.plusmore-hidden, li.plusmore-hidden {
     display: none;
 }
 
@@ -1751,7 +1901,7 @@ $unExpandedInfoHeight: 75px;
     }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1100px) {
     .influencer-small {
         width: 25%;
     }
@@ -1804,6 +1954,14 @@ $unExpandedInfoHeight: 75px;
             content: attr(data-th);
         }
     }
+    .table.no-header {
+        td {
+            padding-left: 0;
+        }
+        td:before {
+            display: none;
+        }
+    }
 
     /* Influencers */
     .influencer-medium {
@@ -1817,6 +1975,108 @@ $unExpandedInfoHeight: 75px;
             display: inline;
             padding-right: 5px;
         }
+    }
+}
+
+/* Dialogs */
+.ui-dialog {
+    background: #fff;
+    -webkit-box-shadow: 0px 1px 2px $medium-grey;
+    -moz-box-shadow: 0px 1px 2px $medium-grey;
+    -o-box-shadow: 0px 1px 2px $medium-grey;
+    box-shadow: 0px 1px 2px $medium-grey;
+    position: absolute;
+    min-width: 500px;
+}
+.ui-dialog-titlebar {
+    padding: 8px 15px;
+    border-bottom: 1px solid $faint-grey;
+    font-size: 18px;
+}
+.no-title .ui-dialog-titlebar {
+    display: none;
+}
+.ui-dialog-titlebar-close {
+    float: right;
+    overflow: hidden;
+    height: 20px;
+    .ui-icon {
+        display: none;
+    }
+    &:before {
+        content: "\2421";
+        font-family: "SSStandard";
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        text-rendering: optimizeLegibility;
+        white-space: nowrap;
+        -moz-font-feature-settings: "liga=1";
+        -moz-font-feature-settings: "liga";
+        -ms-font-feature-settings: "liga" 1;
+        -o-font-feature-settings: "liga";
+        font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        vertical-align: middle;
+        text-indent: 0;
+        width: 20px;
+        height: 20px;
+        display: block;
+        padding: 0;
+        float: right;
+        font-size: 10px;
+        text-align: center;
+        padding-top: 5px;
+        color: $medium-grey;
+    }
+}
+.ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+.ui-dialog-content {
+    padding: 15px;
+    p {
+        padding-bottom: 15px;
+    }
+    .submit-btn-group {
+        padding-top: 15px;
+    }
+}
+
+/* Z-index */
+.dropdown-menu {
+    z-index: 1000;
+}
+.qtip .qtip-tip {
+    z-index: 10;
+}
+.select2-with-icon .input-icon, .brand-indicator {
+    z-index: 1;
+}
+.select2-drop {
+    z-index: 9999;
+}
+
+.filter-selected-count:before {
+    content: '(';
+}
+.filter-selected-count:after {
+    content: ')';
+}
+
+.plusmore-item {
+    &:after {
+        content: attr(data-separator);
+    }
+
+    &:last-child:after {
+        content: none;
     }
 }
 
@@ -1847,10 +2107,139 @@ $unExpandedInfoHeight: 75px;
     }
 }
 
-.pill {
-    background-color: #f46240;
-    color: #fff;
-    border-radius: 10%;
-    padding: 1px 3px 1px 3px;
-    overflow: visible;   
+/* Global Success / Error Message Banners */
+.global-message.message-flash,
+.global-message.message-error {
+    background: #c8c8c8;
+    color: white;
+    text-align: center;
+    width: 100%;
+
+    .global-message-close {
+        position: absolute;
+        right: 30px;
+        top: 75px;
+    }
+}
+
+.shadow-login-message {
+    font-size: 12px;
+    background-color: $traackr-yellow;
+    color: $traackr-red;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Stats Table and Mini Stats Tables */
+
+
+.stat-table {
+    display: table;
+    color: #f46240;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.stat-table > div {
+    display: table-cell;
+}
+
+.stat-table .info {
+    width: 80%;
+    border: none;
+    &:hover {
+        border: none;
+    }
+}
+
+.stat-table .number {
+    font-size: 32px;
+    line-height: 34px;
+}
+
+.stat-table .label {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.stat-table .ss-icon {
+    font-size: 36px;
+    line-height: 36px;
+    vertical-align: bottom;
+    text-align: center;
+    width: 20%;
+}
+
+.mini-stats-table {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+    .table {
+        &:not(:first-child) {
+            margin-left: 15px;
+        }
+        float: left;
+        width: 48.5%;
+        font-size: 14px;
+        td {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            white-space: nowrap;
+            padding-left: 0px;
+            padding-right: 0px;
+            &.mini-stat-value {
+                text-align: right;
+            }
+        }  
+        tr {
+            &.top-row {
+                td {
+                    padding-bottom: 7px;
+                }
+            }
+            &.bottom-row {
+                td {
+                    padding-top: 7px;
+                }
+            }
+        }      
+    }
+}
+
+
+/*
+  Stats Table: Responsive Styles
+ */
+
+@media screen and (max-width: 1280px) {
+    .mini-stats-table {
+        .table {
+            width: 46.5%;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .stat-grid {
+        width: 50%;
+    }
+    .stat-table-grid {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .mini-stats-table {
+        .table {
+            td.mini-stat-value {
+                text-align: left;
+                padding-bottom: 7px;
+            }
+        }
+    }
 }

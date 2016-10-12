@@ -116,6 +116,21 @@
                         </tr>
                     </tbody>
                 </table>
+                <h3>Table: No headers</h3>
+                <table class="table no-header">
+                    <tbody>
+                        <tr>
+                            <td><span class="ss-icon ss-symbolicons-block">userprofile</span></td>
+                            <td>Name</td>
+                            <td>Leonard McCoy</td>
+                        </tr>
+                        <tr>
+                            <td><span class="ss-icon">location</span></td>
+                            <td>Location</td>
+                            <td>USS Enterprise</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="block">
@@ -462,10 +477,12 @@
                                 <img src="sample-avatar.jpg" style="height: 36px; width: 36px;" />
                             </div>
                         </div>
-                        <h4 class="metrics-label">Fox Mulder</h4>
-                        <div class="metrics-value">5 Shares</div>
-                        <div class="metrics-progress">
-                            <div class="metrics-progress-bar" style="background-color: rgb(67, 180, 194); width: 100%"></div>
+                        <div class="metrics-detail">
+                            <h4 class="metrics-label">Fox Mulder</h4>
+                            <div class="metrics-value">5 Shares</div>
+                            <div class="metrics-progress">
+                                <div class="metrics-progress-bar" style="background-color: rgb(67, 180, 194); width: 100%"></div>
+                            </div>
                         </div>
                     </li>
                     <li class="metrics-row">
@@ -475,10 +492,12 @@
                                 <img src="sample-avatar.jpg" style="height: 36px; width: 36px;" />
                             </div>
                         </div>
-                        <h4 class="metrics-label">Dana Scully</h4>
-                        <div class="metrics-value">4 Shares</div>
-                        <div class="metrics-progress">
-                            <div class="metrics-progress-bar" style="background-color: rgb(67, 180, 194); width: 80%"></div>
+                        <div class="metrics-detail">
+                            <h4 class="metrics-label">Dana Scully</h4>
+                            <div class="metrics-value">4 Shares</div>
+                            <div class="metrics-progress">
+                                <div class="metrics-progress-bar" style="background-color: rgb(67, 180, 194); width: 80%"></div>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -517,7 +536,7 @@
             </div>
         </div>
         <div class="block">
-            <div class="block-header clearfix">
+            <div class="block-header">
                 <h2>Block header</h2> <h5>Subtitle goes here</h5>
             </div>
             <div class="block-footer">
@@ -544,8 +563,8 @@
                 </div>
             </div>
         </div>
-        <div class="block">
-            <div class="block-header clearfix">
+        <div class="block clearfix">
+            <div class="block-header">
                 <h2>Block header</h2> <h5>Subtitle goes here</h5>
             </div>
             <div class="block-footer btn-group submit-btn-group">
@@ -590,6 +609,20 @@
 
                 <a href="#" class="load-body-spinner">Load the body spinner</a>
                 <a href="#" class="load-inner-spinner">Load the inner spinner</a>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="block-header">
+                <h2>To Do</h2>
+            </div>
+            <div class="block-content">
+                <ol>
+                    <li>Move influencers somewhere else</li>
+                    <li>Add Analytics header - Found on the top of the Analytics charts</li>
+                    <li>Add radio buttons/inputs to forms - See User Settings - Notifications</li>
+                    <li>Dialogs/modals</li>
+                </ol>
             </div>
         </div>
 
@@ -899,152 +932,91 @@
             </li>
         </ul>
 
-        <style type="text/css">
-            /* Funtivity CSS goes here */
-            .stat-table {
-                display: table;
-                color: #f46240;
-                width: 100%;
-            }
-            .stat-table > div {
-                display: table-cell;
-            }
-            .stat-table .info {
-                width: 60%;
-            }
-            .stat-table .number {
-                font-size: 32px;
-                line-height: 34px;
-            }
-            .stat-table .label {
-                text-transform: uppercase;
-                font-size: 12px;
-            }
-            .stat-table .ss-icon {
-                font-size: 36px;
-                line-height: 36px;
-                vertical-align: middle;
-                text-align: center;
-                width: 40%;
-            }
 
-            /*
-              Base Style
-             */
-            .mini-stat-field, .mini-stat-value {
-                display: inline-block;
-            }
-            .mini-stat-field .ss-icon {
-                float: left;
-                padding: 5px 5px 0 0;
-            }
-            .mini-stat {
-                width: 49%;
-                padding: 0 7px 7px 7px;
-                display: inline-block;
-            } 
+    <h2>Stat Table</h2>
 
-            .mini-stat:nth-child(3), .mini-stat:nth-child(4) {
-                border-top: 1px #c8c8c8 solid;
-                padding-top: 7px;
-                padding-bottom: 0;
-            }       
-            .mini-stat-value {
-                float: right;
-            }  
-
-
-            @media screen and (max-width: 900px) {
-                .stat-grid {
-                    width: 50%;
-                }
-                .stat-table-grid {
-                    width: 100%;
-                }
-            }
-        </style>
-
-        <!-- Funtivity goes here -->
-
-        <div class="grid">
-            <div class="grid_4 stat-grid">
-                <div class="block">
-                    <div class="block-content">
-                        <div class="stat-table">
-                            <div class="info">
-                                <div class="number">100K</div>
-                                <div class="label">Total Audience</div>
-                            </div>
-                            <div class="ss-icon">
-                                eye
-                            </div>
+    <div class="grid influencer_footprint_stats clearfix">
+        <div class="grid_4 stat-grid">
+            <div class="block">
+                <div class="block-content">
+                    <div class="stat-table">
+                        <div class="info">
+                            <div class="number">7K</div>
+                            <div class="label">Total Audience</div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid_4 stat-grid">
-                <div class="block">
-                    <div class="block-content">
-                        <div class="stat-table">
-                            <div class="info">
-                                <div class="number">+300%</div>
-                                <div class="label">Audience Increase</div>
-                            </div>
-                            <div class="ss-icon">
-                                barchart
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid_8 stat-table-grid">
-                <div class="block">
-                    <div class="block-content">
-                        <div class="mini-stats-table">
-                            <div class="mini-stat">
-                                <div class="mini-stat-field">
-                                    <span class="ss-icon ss-social-circle ss-social-twitter">twitter</span> Twitter
-                                </div>
-                                <div class="mini-stat-value">
-                                    +3K <span class="pill">+80%</span>
-                                </div>
-                            </div>
-
-                            <div class="mini-stat">
-                                <div class="mini-stat-field">
-                                    <span class="ss-icon ss-social-circle ss-social-youtube">youtube</span> Youtube
-                                </div>
-                                <div class="mini-stat-value">
-                                    +3K <span class="pill">+80%</span>
-                                </div>
-                            </div>
-
-
-                            <div class="mini-stat">
-                                <div class="mini-stat-field">
-                                    <span class="ss-icon ss-social-circle ss-social-instagra">instagram</span> Instagram
-                                </div>
-                                <div class="mini-stat-value">
-                                    +3K <span class="pill">+80%</span>
-                                </div>
-                            </div>
-
-
-                            <div class="mini-stat">
-                                <div class="mini-stat-field">
-                                    <span class="ss-icon ss-social-circle ss-social-facebook">facebook</span> Facebook
-                                </div>
-                                <div class="mini-stat-value">
-                                    +3K <span class="pill">+80%</span>
-                                </div>
-                            </div>                            
+                        <div class="ss-icon">
+                        eye
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="grid_4 stat-grid">
+            <div class="block">
+                <div class="block-content">
+                    <div class="stat-table">
+                        <div class="info">
+                            <div class="number">21%</div>
+                            <div class="label">Audience Increase</div>
+                        </div>
+                        <div class="ss-icon ss-symbolicons-block">
+                        barchart
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="grid_8 stat-table-grid">
+            <div class="block">
+                <div class="block-content">
+                    <div class="mini-stats-table clearfix">
+                    <table class="table no-header">
+                        <tbody>
+                            <tr class="top-row">
+                                <td>
+                                    <span class="ss-icon ss-social-circle ss-social-twitter" data-url="twitter">twitter</span> Twitter
+                                </td>
+                                <td class="mini-stat-value">
+                                        +201 <span qtip="tip" class="pill" data-hasqtip="12" oldtitle="Audience trend over the last 4 weeks." title="">+20%</span>
+                                </td>
+                            </tr>
+                            <tr class="bottom-row">
+                                <td>
+                                    <span class="ss-icon ss-social-circle ss-social-instagram" data-url="instagram">instagram</span> Instagram
+                                </td>
+                                <td class="mini-stat-value">
+                                    +190 <span qtip="tip" class="pill" data-hasqtip="13" oldtitle="Audience trend over the last 4 weeks." title="">+15%</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table no-header">
+                        <tbody>
+                            <tr class="top-row">
+                                <td>
+                                <span class="ss-icon ss-social-circle ss-social-youtube" data-url="youtube">youtube</span> Youtube
+                                </td>
+                                <td class="mini-stat-value">
+                                    +4 <span qtip="tip" class="pill" data-hasqtip="14" oldtitle="Audience trend over the last 4 weeks." title="">+38%</span>
+                                </td>
+                            </tr>
+                            <tr class="bottom-row">
+                                <td>
+                                <span class="ss-icon ss-social-circle ss-social-facebook" data-url="facebook">facebook</span> Facebook
+                                </td>
+                                <td class="mini-stat-value">
+                                <span qtip="tip" data-hasqtip="15" oldtitle="The data for this period is not yet calculated or the influencer might not have an active channel." title="">-</span> 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </body>
 </html>
