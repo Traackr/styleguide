@@ -18,8 +18,11 @@ body {
     margin-right: auto;
     padding-top: 51px;
 }
+/* our responsive overrides sometimes assign "dislay:block" on certain elements
+   (e.g. ".table" components) for ideal display on mobile. therefore, we need an
+   "!important" on ".hidden" to ensure that it sticks */
 .hidden {
-    display: none;
+    display: none; /*!important; */
 }
 footer {
     margin-top: 30px;
@@ -638,7 +641,8 @@ input.inline-input {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    padding: 9px;
+    padding: 7px 9px;
+    max-height: 34px;
     color: #333;
     text-decoration: none;
     div {
@@ -656,6 +660,7 @@ input.inline-input {
         width: 18px;
     }
     b {
+        margin-top: 4px;
         background-image: url(../images/select2/select2x2.png);
         background-repeat: no-repeat;
         background-size: 60px 41px;
@@ -863,7 +868,7 @@ section {
     float: left;
     color: #999;
     line-height: 2.2;
-    padding: 15px 15px 0;
+    padding: 17px 15px 0;
 }
 
 .btn-group {
@@ -1052,16 +1057,17 @@ ul.tagit {
     margin: 0;
     border: 0;
     border: 1px solid #c8c8c8;
-    padding: 3px 5px;
+    padding: 0;
+    padding-top: 5px;
 }
 
 ul.tagit li.tagit-choice-editable {
     padding: 6px 22px 6px 12px;
-    background: $traackr-red;
-    color: #fff;
-    font-size: 14px;
+    background: transparent;
+    color: $black;
+    font-size: 12px;
     font-weight: normal;
-    border: 0;
+    border: 1px $black solid;
     border-radius: 5px;
     display: inline-block;
     position: relative;
@@ -1074,7 +1080,7 @@ ul.tagit li.tagit-choice .tagit-close {
 
 ul.tagit li.tagit-choice .tagit-close .text-icon {
     display: block;
-    color: #fff;
+    color: $black;
 }
 
 /* loader */
@@ -1299,7 +1305,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     color: #fff;
     border-radius: 10%;
     padding: 1px 3px 1px 3px;
-    overflow: visible;   
+    overflow: visible;
 }
 
 .score {
@@ -1694,6 +1700,14 @@ $unExpandedInfoHeight: 75px;
             font-size: 20px;
         }
     }
+    .post-tag.post-tags {
+        ul.tag-list.list li {
+            font-size: 13px;
+            &.plusmore-more-items {
+                padding-top: 0;
+            }
+        }
+    }
     .post-avatar {
         vertical-align: top;
         width: 60px;
@@ -1753,6 +1767,9 @@ $unExpandedInfoHeight: 75px;
         li {
             display: inline-block;
             margin-right: 5px;
+            &.plusmore-hidden {
+                display: none;
+            }
             a {
             color: $medium-grey;
                 &:hover, &:active {
@@ -1886,9 +1903,7 @@ $unExpandedInfoHeight: 75px;
         display: inline-block;
     }
 }
-.plusmore-hidden, li.plusmore-hidden {
-    display: none;
-}
+
 
 .block .zero-state-widget {
     text-align: center;
@@ -1929,6 +1944,9 @@ $unExpandedInfoHeight: 75px;
     .table {
         thead, tbody, th, td, tr {
             display: block;
+            &.hidden {
+                display: none;
+            }
         }
         thead tr {
             position: absolute;
@@ -1943,6 +1961,12 @@ $unExpandedInfoHeight: 75px;
             border-bottom: 0;
             position: relative;
             padding-left: 50%;
+        }
+        /* if data-th attribute is empty, don't include the extra padding;
+           note that if it's missing, extra padding is included (to handle case
+           where first td consists of an icon) */
+        td[data-th=''] {
+            padding-left: 10px;
         }
         td:before {
             position: absolute;
@@ -2040,12 +2064,14 @@ $unExpandedInfoHeight: 75px;
     background: rgba(0, 0, 0, 0.5);
 }
 .ui-dialog-content {
-    padding: 15px;
     p {
         padding-bottom: 15px;
     }
-    .submit-btn-group {
-        padding-top: 15px;
+    fieldset {
+        padding: 0;
+    }
+    .block-content, .block-footer {
+        border: 0;
     }
 }
 
@@ -2060,7 +2086,7 @@ $unExpandedInfoHeight: 75px;
     z-index: 1;
 }
 .select2-drop {
-    z-index: 9999;
+    z-index: 11000;
 }
 
 .filter-selected-count:before {
@@ -2070,17 +2096,18 @@ $unExpandedInfoHeight: 75px;
     content: ')';
 }
 
-.plusmore-item {
-    &:after {
-        content: attr(data-separator);
-    }
-
-    &:last-child:after {
-        content: none;
-    }
-}
-
+/**
+ * Phone size styles
+ */
 @media screen and (max-width: 500px) {
+    /** Reduce the font size to prevent buttons from wrapping on lines where possible */
+    .medium-circle-icon, button, .btn, input[type="button"] {
+        font-size: 12px;
+    }
+    .ui-dialog {
+        min-width: inherit;
+        width: 100%;
+    }
     .influencer-small {
         width: 100%;
     }
@@ -2109,27 +2136,33 @@ $unExpandedInfoHeight: 75px;
 
 /* Global Success / Error Message Banners */
 .global-message.message-flash,
+.global-message.message-success,
 .global-message.message-error {
-    background: #c8c8c8;
-    color: white;
-    text-align: center;
-    width: 100%;
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+
+    .text {
+        float: left;
+        width: 95%;
+    }
 
     .global-message-close {
-        position: absolute;
-        right: 30px;
-        top: 75px;
+        float: right;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        color: white;
+
+        a {
+            color: #c8c8c8;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
-
-.shadow-login-message {
-    font-size: 12px;
-    background-color: $traackr-yellow;
-    color: $traackr-red;
-    text-align: center;
-    width: 100%;
-}
-
 
 /* Stats Table and Mini Stats Tables */
 
@@ -2195,7 +2228,7 @@ $unExpandedInfoHeight: 75px;
             &.mini-stat-value {
                 text-align: right;
             }
-        }  
+        }
         tr {
             &.top-row {
                 td {
@@ -2207,7 +2240,7 @@ $unExpandedInfoHeight: 75px;
                     padding-top: 7px;
                 }
             }
-        }      
+        }
     }
 }
 
@@ -2242,4 +2275,19 @@ $unExpandedInfoHeight: 75px;
             }
         }
     }
+}
+
+
+/* Plusmore */
+.plusmore-item {
+    &:after {
+        content: attr(data-separator);
+    }
+
+    &:last-child:after {
+        content: none;
+    }
+}
+.plusmore-hidden, li.plusmore-hidden {
+    display: none;
 }

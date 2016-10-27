@@ -591,8 +591,12 @@ body {
   margin-right: auto;
   padding-top: 51px; }
 
+/* our responsive overrides sometimes assign "dislay:block" on certain elements
+   (e.g. ".table" components) for ideal display on mobile. therefore, we need an
+   "!important" on ".hidden" to ensure that it sticks */
 .hidden {
-  display: none; }
+  display: none;
+  /*!important; */ }
 
 footer {
   margin-top: 30px; }
@@ -1109,7 +1113,8 @@ input.inline-input {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  padding: 9px;
+  padding: 7px 9px;
+  max-height: 34px;
   color: #333;
   text-decoration: none; }
   .select2-container .select2-choice div {
@@ -1126,6 +1131,7 @@ input.inline-input {
     height: 100%;
     width: 18px; }
   .select2-container .select2-choice b {
+    margin-top: 4px;
     background-image: url(../images/select2/select2x2.png);
     background-repeat: no-repeat;
     background-size: 60px 41px;
@@ -1297,7 +1303,7 @@ section {
   float: left;
   color: #999;
   line-height: 2.2;
-  padding: 15px 15px 0; }
+  padding: 17px 15px 0; }
 
 .btn-group {
   padding: 8px 0;
@@ -1451,15 +1457,16 @@ ul.tagit {
   margin: 0;
   border: 0;
   border: 1px solid #c8c8c8;
-  padding: 3px 5px; }
+  padding: 0;
+  padding-top: 5px; }
 
 ul.tagit li.tagit-choice-editable {
   padding: 6px 22px 6px 12px;
-  background: #f46240;
-  color: #fff;
-  font-size: 14px;
+  background: transparent;
+  color: #444444;
+  font-size: 12px;
   font-weight: normal;
-  border: 0;
+  border: 1px #444444 solid;
   border-radius: 5px;
   display: inline-block;
   position: relative; }
@@ -1470,7 +1477,7 @@ ul.tagit li.tagit-choice .tagit-close {
 
 ul.tagit li.tagit-choice .tagit-close .text-icon {
   display: block;
-  color: #fff; }
+  color: #444444; }
 
 /* loader */
 .loader-wrapper {
@@ -1991,6 +1998,10 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
       width: 48px;
       padding: 15px 0;
       font-size: 20px; }
+  .post-list .post .post-tag.post-tags ul.tag-list.list li, .large-avatar-form .post-tag.post-tags ul.tag-list.list li {
+    font-size: 13px; }
+    .post-list .post .post-tag.post-tags ul.tag-list.list li.plusmore-more-items, .large-avatar-form .post-tag.post-tags ul.tag-list.list li.plusmore-more-items {
+      padding-top: 0; }
   .post-list .post .post-avatar, .large-avatar-form .post-avatar {
     vertical-align: top;
     width: 60px;
@@ -2040,6 +2051,8 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     .post-list .post-actions.can-edit li {
       display: inline-block;
       margin-right: 5px; }
+      .post-list .post-actions.can-edit li.plusmore-hidden {
+        display: none; }
       .post-list .post-actions.can-edit li a {
         color: #c8c8c8;
         /* actions like retweet and favorite hover from medium-grey to red,
@@ -2147,9 +2160,6 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   .tag-list li {
     display: inline-block; }
 
-.plusmore-hidden, li.plusmore-hidden {
-  display: none; }
-
 .block .zero-state-widget {
   text-align: center; }
   .block .zero-state-widget p {
@@ -2173,27 +2183,35 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     width: 100%;
     float: none; }
 
-  .table thead, .table tbody, .table th, .table td, .table tr {
-    display: block; }
-  .table thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px; }
-  .table tr {
-    border-bottom: 1px solid #e8e8e8; }
-  .table td {
-    border: none;
-    border-bottom: 0;
-    position: relative;
-    padding-left: 50%; }
-  .table td:before {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-    content: attr(data-th); }
+  .table {
+    /* if data-th attribute is empty, don't include the extra padding;
+       note that if it's missing, extra padding is included (to handle case
+       where first td consists of an icon) */ }
+    .table thead, .table tbody, .table th, .table td, .table tr {
+      display: block; }
+      .table thead.hidden, .table tbody.hidden, .table th.hidden, .table td.hidden, .table tr.hidden {
+        display: none; }
+    .table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px; }
+    .table tr {
+      border-bottom: 1px solid #e8e8e8; }
+    .table td {
+      border: none;
+      border-bottom: 0;
+      position: relative;
+      padding-left: 50%; }
+    .table td[data-th=''] {
+      padding-left: 10px; }
+    .table td:before {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      content: attr(data-th); }
 
   .table.no-header td {
     padding-left: 0; }
@@ -2269,12 +2287,12 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5); }
 
-.ui-dialog-content {
-  padding: 15px; }
-  .ui-dialog-content p {
-    padding-bottom: 15px; }
-  .ui-dialog-content .submit-btn-group {
-    padding-top: 15px; }
+.ui-dialog-content p {
+  padding-bottom: 15px; }
+.ui-dialog-content fieldset {
+  padding: 0; }
+.ui-dialog-content .block-content, .ui-dialog-content .block-footer {
+  border: 0; }
 
 /* Z-index */
 .dropdown-menu {
@@ -2287,7 +2305,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   z-index: 1; }
 
 .select2-drop {
-  z-index: 9999; }
+  z-index: 11000; }
 
 .filter-selected-count:before {
   content: '('; }
@@ -2295,12 +2313,18 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 .filter-selected-count:after {
   content: ')'; }
 
-.plusmore-item:after {
-  content: attr(data-separator); }
-.plusmore-item:last-child:after {
-  content: none; }
-
+/**
+ * Phone size styles
+ */
 @media screen and (max-width: 500px) {
+  /** Reduce the font size to prevent buttons from wrapping on lines where possible */
+  .medium-circle-icon, button, .btn, input[type="button"] {
+    font-size: 12px; }
+
+  .ui-dialog {
+    min-width: inherit;
+    width: 100%; }
+
   .influencer-small {
     width: 100%; }
 
@@ -2321,23 +2345,32 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     clear: both; } }
 /* Global Success / Error Message Banners */
 .global-message.message-flash,
+.global-message.message-success,
 .global-message.message-error {
-  background: #c8c8c8;
-  color: white;
-  text-align: center;
-  width: 100%; }
+  background-color: white;
+  margin-bottom: 15px;
+  padding: 15px; }
+  .global-message.message-flash .text,
+  .global-message.message-success .text,
+  .global-message.message-error .text {
+    float: left;
+    width: 95%; }
   .global-message.message-flash .global-message-close,
+  .global-message.message-success .global-message-close,
   .global-message.message-error .global-message-close {
-    position: absolute;
-    right: 30px;
-    top: 75px; }
-
-.shadow-login-message {
-  font-size: 12px;
-  background-color: #ffdb3f;
-  color: #f46240;
-  text-align: center;
-  width: 100%; }
+    float: right;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    color: white; }
+    .global-message.message-flash .global-message-close a,
+    .global-message.message-success .global-message-close a,
+    .global-message.message-error .global-message-close a {
+      color: #c8c8c8; }
+      .global-message.message-flash .global-message-close a:hover,
+      .global-message.message-success .global-message-close a:hover,
+      .global-message.message-error .global-message-close a:hover {
+        text-decoration: none; }
 
 /* Stats Table and Mini Stats Tables */
 .stat-table {
@@ -2413,6 +2446,15 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   .mini-stats-table .table td.mini-stat-value {
     text-align: left;
     padding-bottom: 7px; } }
+/* Plusmore */
+.plusmore-item:after {
+  content: attr(data-separator); }
+.plusmore-item:last-child:after {
+  content: none; }
+
+.plusmore-hidden, li.plusmore-hidden {
+  display: none; }
+
 /* Port these styles to basestyles */
 .influencer-small .channel {
   padding: 5px 0; }
