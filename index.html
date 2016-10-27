@@ -621,7 +621,6 @@
                     <li>Move influencers somewhere else</li>
                     <li>Add Analytics header - Found on the top of the Analytics charts</li>
                     <li>Add radio buttons/inputs to forms - See User Settings - Notifications</li>
-                    <li>Dialogs/modals</li>
                 </ol>
             </div>
         </div>
@@ -966,7 +965,7 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
 
         <div class="grid_8 stat-table-grid">
             <div class="block">
@@ -1007,7 +1006,7 @@
                                 <span class="ss-icon ss-social-circle ss-social-facebook" data-url="facebook">facebook</span> Facebook
                                 </td>
                                 <td class="mini-stat-value">
-                                <span qtip="tip" data-hasqtip="15" oldtitle="The data for this period is not yet calculated or the influencer might not have an active channel." title="">-</span> 
+                                <span qtip="tip" data-hasqtip="15" oldtitle="The data for this period is not yet calculated or the influencer might not have an active channel." title="">-</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -1018,12 +1017,34 @@
         </div>
     </div>
 
+    <h2>Dialogs/Modals</h2>
+
+    <a href="" id="sampleDialogLink">Launch</a>
+
+    <div id="sampleDialog" style="display:none">
+        <form>
+            <div class="block-content">
+                BLOCK CONTENT
+            </div>
+            <div class="block-footer">
+
+                <div class="submit-btn-group">
+                    <!-- cancels were formerly links so they can remain a-href's, or turn into buttons since they're now styled as buttons -->
+                    <a href="#" onclick="$('#sampleDialog').dialog('close'); return false;" class="btn">Cancel</a>
+                    <button class="btn primary-btn" type="button" onclick="$('#sampleDialog').dialog('close'); return false;">Done</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
     </body>
 </html>
 
-<script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/device.js/0.2.7/device.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/qtip2/3.0.3/jquery.qtip.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/ui/jquery-ui-git.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="aehlke-tag-it-6ccd2de/js/tag-it.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -1166,5 +1187,23 @@ $(document).ready(function() {
             event: 'focus'
         }
     });*/
+
+    $('#sampleDialogLink').click(function(ev) {
+        ev.preventDefault();
+
+        //based on add-influencer-popup
+        $('#sampleDialog').dialog({
+            title: 'Sample Dialog',
+            resizable: false,
+            draggable: false,
+            modal: true,
+            autoOpen: true,
+            width: (device.desktop()) ? "520px" : '100%',
+            close: function (ev) {
+                alert('Dialog closed!');
+            }
+        });
+
+    });
 });
 </script>
