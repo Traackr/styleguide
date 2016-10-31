@@ -1100,18 +1100,22 @@
 
     <div id="sampleDialog" style="display:none">
         <form>
-            <div class="block-content">
-                BLOCK CONTENT
-            </div>
-            <div class="block-footer">
+            <fieldset>
+                <div class="block">
+                    <div class="block-content">
+                        BLOCK CONTENT
+                    </div>
+                    <div class="block-footer">
 
-                <div class="submit-btn-group">
-                    <!-- cancels were formerly links so they can remain a-href's, or turn into buttons since they're now styled as buttons -->
-                    <a href="#" onclick="$('#sampleDialog').dialog('close'); return false;" class="btn">Cancel</a>
-                    <button class="btn primary-btn" type="button" onclick="$('#sampleDialog').dialog('close'); return false;">Done</button>
+                        <div class="submit-btn-group">
+                            <!-- cancels were formerly links so they can remain a-href's, or turn into buttons since they're now styled as buttons -->
+                            <a href="#" onclick="$('#sampleDialog').dialog('close'); return false;" class="btn">Cancel</a>
+                            <button class="btn primary-btn" type="button" onclick="$('#sampleDialog').dialog('close'); return false;">Done</button>
+                        </div>
+
+                    </div>
                 </div>
-
-            </div>
+            </fieldset>
         </form>
     </div>
 
