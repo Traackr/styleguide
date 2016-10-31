@@ -8,6 +8,7 @@ body {
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4;
+    color: #333; /* this is declared at the top of the styleguide index.html page instead of basestyles; we should make "fake-black" our global color */
 }
 
 .container {
@@ -17,8 +18,11 @@ body {
     margin-right: auto;
     padding-top: 51px;
 }
+/* our responsive overrides sometimes assign "dislay:block" on certain elements
+   (e.g. ".table" components) for ideal display on mobile. therefore, we need an
+   "!important" on ".hidden" to ensure that it sticks */
 .hidden {
-    display: none;
+    display: none; /*!important; */
 }
 footer {
     margin-top: 30px;
@@ -230,8 +234,9 @@ a.influencer-name, .influencer-name {
     }
     /* Tiny button - extremely small */
     &.tiny-btn, &.tiny-btn:hover {
-        padding: 2px 3px 1px;
+        padding: 1.2px 3px 2px 3px;
         font-size: 7px;
+        margin-left: 5px; /* Tiny Button never appears flush left */
     }
 }
 
@@ -455,6 +460,13 @@ a.influencer-name, .influencer-name {
     }
 }
 
+.qtip-close {
+    margin-top: -17px;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+}
+
 /* tables */
 .table {
     width: 100%;
@@ -630,7 +642,8 @@ input.inline-input {
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    padding: 9px;
+    padding: 7px 9px;
+    max-height: 34px;
     color: #333;
     text-decoration: none;
     div {
@@ -648,6 +661,7 @@ input.inline-input {
         width: 18px;
     }
     b {
+        margin-top: 4px;
         background-image: url(../images/select2/select2x2.png);
         background-repeat: no-repeat;
         background-size: 60px 41px;
@@ -743,6 +757,7 @@ input.inline-input {
     cursor: pointer;
     display: inline-block;
     line-height: 1.42857143;
+    margin-bottom: 7px;
     &:hover {
         border: 1px solid $traackr-red;
         color: $traackr-red;
@@ -854,11 +869,11 @@ section {
     float: left;
     color: #999;
     line-height: 2.2;
-    padding: 15px 15px 0;
+    padding: 17px 15px 0;
 }
 
 .btn-group {
-    padding: 8px 0;
+    padding: 10.5px 0;
     float: right;
 }
 
@@ -1043,16 +1058,17 @@ ul.tagit {
     margin: 0;
     border: 0;
     border: 1px solid #c8c8c8;
-    padding: 3px 5px;
+    padding: 0;
+    padding-top: 5px;
 }
 
 ul.tagit li.tagit-choice-editable {
     padding: 6px 22px 6px 12px;
-    background: $traackr-red;
-    color: #fff;
-    font-size: 14px;
+    background: transparent;
+    color: $black;
+    font-size: 12px;
     font-weight: normal;
-    border: 0;
+    border: 1px $black solid;
     border-radius: 5px;
     display: inline-block;
     position: relative;
@@ -1065,7 +1081,7 @@ ul.tagit li.tagit-choice .tagit-close {
 
 ul.tagit li.tagit-choice .tagit-close .text-icon {
     display: block;
-    color: #fff;
+    color: $black;
 }
 
 /* loader */
@@ -1189,7 +1205,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 
 .influencer.selected .block {
-    box-shadow: 0px 0px 0px 4px #48b9c7;
+    box-shadow: 0px 0px 0px 4px $traackr-red;
 }
 
 .influencer-large {
@@ -1278,11 +1294,19 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     font-size: 14px;
     &:hover {
         text-decoration: none;
-        color: #52bdc5;
+        color: $traackr-red;
     }
     &.influencer-star-on {
-        color: #52bdc5;
+        color: $traackr-red;
     }
+}
+
+.pill {
+    background-color: #f46240;
+    color: #fff;
+    border-radius: 10%;
+    padding: 1px 3px 1px 3px;
+    overflow: visible;
 }
 
 .score {
@@ -1384,11 +1408,16 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
         width: 210px;
         height: 25px;
         overflow: hidden;
-        display: block;
+        display: inline-block;
+        vertical-align: bottom;
     }
     .title-and-description {
         max-height: 83px;
         overflow: hidden;
+    }
+    .influencer-rank {
+        display: inline-block;
+        vertical-align: bottom;
     }
 }
 
@@ -1447,7 +1476,7 @@ $unExpandedInfoHeight: 75px;
         font-size: 12px;
     }
     .influencer-channels {
-        padding: 0 2px;
+        padding: 3px 2px;
     }
     .stage {
         overflow: hidden;
@@ -1611,8 +1640,11 @@ $unExpandedInfoHeight: 75px;
 }
 
 /* Filters */
+
+/* Filter panel contains the magnets, and the magnets always have a bottom margin.  this allows
+   for the magnet bottom margin to compensate for the rest of the panel's bottom margin. */
 .filters-panel {
-    margin: 15px 0;
+    margin: 15px 0 7px 0;
 }
 
 /* Avatars */
@@ -1643,12 +1675,20 @@ $unExpandedInfoHeight: 75px;
     }
 }
 /* Posts */
+
+.post-preview-spinner {
+  height: 105px; /* match approximate height of embedly preview */
+}
+
 .post-list .post, .large-avatar-form {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid $light-grey;
     display: table;
     width: 100%;
+    &:hover {
+        cursor: pointer;
+    }
     &:last-of-type {
         border-bottom: 0;
         padding-bottom: 0;
@@ -1661,14 +1701,31 @@ $unExpandedInfoHeight: 75px;
             height: 48px;
             width: 48px;
             padding: 15px 0;
+            line-height: 19px;
             font-size: 20px;
+        }
+    }
+    .post-tag.post-tags {
+        ul.tag-list.list li {
+            font-size: 13px;
+            &.plusmore-more-items {
+                padding-top: 0;
+            }
         }
     }
     .post-avatar {
         vertical-align: top;
         width: 60px;
+        /* if resize-and-crop not applied, or if it is applied but fails with a 404: */
         img {
             border-radius: 50%;
+        }
+        /* else, if resize-and-crop worked, border-radius needs to be applied to container, not (possibly) cropped img: */
+        .resize-and-crop {
+            border-radius: 50%;
+            img {
+                border-radius: 0%;
+            }
         }
     }
 }
@@ -1676,10 +1733,19 @@ $unExpandedInfoHeight: 75px;
     font-size: 16px;
     padding-bottom: 5px;
     a.post-meta-link:link, a.post-meta-link:visited {
-        color: #333;
+        color: $medium-grey;
+        font-size: 14px;
+        &.post-date {
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
     a.post-meta-link:hover, a.post-meta-link:active {
-        color: $traackr-red;
+        text-decoration: none;
+        &.post-date {
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
 }
 .post-list .post-content {
@@ -1687,8 +1753,9 @@ $unExpandedInfoHeight: 75px;
     width: 75%;
 }
 .post-list .post-meta {
-    font-size: 12px;
     float: right;
+    color: $medium-grey;
+    font-size: 14px;
     a:link, a:visited {
         color: $medium-grey;
     }
@@ -1696,24 +1763,48 @@ $unExpandedInfoHeight: 75px;
         color: $traackr-red;
     }
     .post-icon {
-        color: #333;
         font-size: 14px;
-        margin: 0 0 0 10px;
         float: right;
+        margin: 0 0 0 5px;
+        &.ss-social-circle {
+            margin: 4px 0 0 5px;
+        }
     }
 }
 .post-list .post-actions {
     margin-top: 10px;
-    font-size: 11px;
     &.can-edit {
         clear: both;
-        padding: 0 10px 0 0;
+        padding: 0 5px 0 0;
         display: block;
         li {
             display: inline-block;
             margin-right: 5px;
-            a:hover, a:active {
-                text-decoration: none;
+            &.plusmore-hidden {
+                display: none;
+            }
+            a {
+            color: $medium-grey;
+                &:hover, &:active {
+                    color: $traackr-red;
+                    text-decoration: none;
+                }
+
+                /* actions like retweet and favorite hover from medium-grey to red,
+                   but we want to "hard-code" sentiment'd hearts to their meaningful
+                   color: */
+                &[data-sentiment=neutral] {
+                    color: $traackr-yellow;
+                }
+
+                &[data-sentiment=positive] {
+                    color: $traackr-red;
+                }
+
+                &[data-sentiment=negative] {
+                    color: $black;
+                }
+
             }
         }
     }
@@ -1788,15 +1879,19 @@ $unExpandedInfoHeight: 75px;
 }
 .metrics-avatar {
     float: left;
-    margin-right: 15px;
+    width: 50px;
     img {
         border-radius: 100%;
     }
 }
+.metrics-detail {
+    float: left;
+    width: calc(100% - 60px);
+}
 .metrics-label {
     float: left;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0;
 }
 .metrics-sublabel {
     padding-top: 3px;
@@ -1805,7 +1900,7 @@ $unExpandedInfoHeight: 75px;
 .metrics-value {
     float: right;
     font-size: 14px;
-    padding: 10px 0;
+    padding: 0;
 }
 .metrics-progress {
     clear: both;
@@ -1821,9 +1916,7 @@ $unExpandedInfoHeight: 75px;
         display: inline-block;
     }
 }
-.plusmore-hidden, li.plusmore-hidden {
-    display: none;
-}
+
 
 .block .zero-state-widget {
     text-align: center;
@@ -1836,7 +1929,7 @@ $unExpandedInfoHeight: 75px;
     }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1100px) {
     .influencer-small {
         width: 25%;
     }
@@ -1864,6 +1957,9 @@ $unExpandedInfoHeight: 75px;
     .table {
         thead, tbody, th, td, tr {
             display: block;
+            &.hidden {
+                display: none;
+            }
         }
         thead tr {
             position: absolute;
@@ -1878,6 +1974,12 @@ $unExpandedInfoHeight: 75px;
             border-bottom: 0;
             position: relative;
             padding-left: 50%;
+        }
+        /* if data-th attribute is empty, don't include the extra padding;
+           note that if it's missing, extra padding is included (to handle case
+           where first td consists of an icon) */
+        td[data-th=''] {
+            padding-left: 10px;
         }
         td:before {
             position: absolute;
@@ -1975,12 +2077,18 @@ $unExpandedInfoHeight: 75px;
     background: rgba(0, 0, 0, 0.5);
 }
 .ui-dialog-content {
-    padding: 15px;
     p {
         padding-bottom: 15px;
     }
-    .submit-btn-group {
-        padding-top: 15px;
+    fieldset {
+        padding: 0;
+    }
+    .block {
+        box-shadow: none;
+        margin-bottom: 0;
+    }
+    .block-content, .block-footer {
+        border-top: 0;
     }
 }
 
@@ -1995,7 +2103,7 @@ $unExpandedInfoHeight: 75px;
     z-index: 1;
 }
 .select2-drop {
-    z-index: 9999;
+    z-index: 11000;
 }
 
 .filter-selected-count:before {
@@ -2005,17 +2113,18 @@ $unExpandedInfoHeight: 75px;
     content: ')';
 }
 
-.plusmore-item {
-    &:after {
-        content: attr(data-separator);
-    }
-
-    &:last-child:after {
-        content: none;
-    }
-}
-
+/**
+ * Phone size styles
+ */
 @media screen and (max-width: 500px) {
+    /** Reduce the font size to prevent buttons from wrapping on lines where possible */
+    .medium-circle-icon, button, .btn, input[type="button"] {
+        font-size: 12px;
+    }
+    .ui-dialog {
+        min-width: inherit;
+        width: 100%;
+    }
     .influencer-small {
         width: 100%;
     }
@@ -2044,23 +2153,158 @@ $unExpandedInfoHeight: 75px;
 
 /* Global Success / Error Message Banners */
 .global-message.message-flash,
+.global-message.message-success,
 .global-message.message-error {
-    background: #c8c8c8;
-    color: white;
-    text-align: center;
-    width: 100%;
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+
+    .text {
+        float: left;
+        width: 95%;
+    }
 
     .global-message-close {
-        position: absolute;
-        right: 30px;
-        top: 75px;
+        float: right;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        color: white;
+
+        a {
+            color: #c8c8c8;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
 }
 
-.shadow-login-message {
-    font-size: 12px;
-    background-color: $traackr-yellow;
-    color: $traackr-red;
-    text-align: center;
+/* Stats Table and Mini Stats Tables */
+
+
+.stat-table {
+    display: table;
+    color: #f46240;
     width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.stat-table > div {
+    display: table-cell;
+}
+
+.stat-table .info {
+    width: 80%;
+    border: none;
+    &:hover {
+        border: none;
+    }
+}
+
+.stat-table .number {
+    font-size: 32px;
+    line-height: 34px;
+}
+
+.stat-table .label {
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.stat-table .ss-icon {
+    font-size: 36px;
+    line-height: 36px;
+    vertical-align: bottom;
+    text-align: center;
+    width: 20%;
+}
+
+.mini-stats-table {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
+    .table {
+        &:not(:first-child) {
+            margin-left: 15px;
+        }
+        float: left;
+        width: 48.5%;
+        font-size: 14px;
+        td {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            white-space: nowrap;
+            padding-left: 0px;
+            padding-right: 0px;
+            &.mini-stat-value {
+                text-align: right;
+            }
+        }
+        tr {
+            &.top-row {
+                td {
+                    padding-bottom: 7px;
+                }
+            }
+            &.bottom-row {
+                td {
+                    padding-top: 7px;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+  Stats Table: Responsive Styles
+ */
+
+@media screen and (max-width: 1280px) {
+    .mini-stats-table {
+        .table {
+            width: 46.5%;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .stat-grid {
+        width: 50%;
+    }
+    .stat-table-grid {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .mini-stats-table {
+        .table {
+            td.mini-stat-value {
+                text-align: left;
+                padding-bottom: 7px;
+            }
+        }
+    }
+}
+
+
+/* Plusmore */
+.plusmore-item {
+    &:after {
+        content: attr(data-separator);
+    }
+
+    &:last-child:after {
+        content: none;
+    }
+}
+.plusmore-hidden, li.plusmore-hidden {
+    display: none;
 }
