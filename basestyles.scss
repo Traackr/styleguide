@@ -234,8 +234,9 @@ a.influencer-name, .influencer-name {
     }
     /* Tiny button - extremely small */
     &.tiny-btn, &.tiny-btn:hover {
-        padding: 2px 3px 1px;
+        padding: 1.2px 3px 2px 3px;
         font-size: 7px;
+        margin-left: 5px; /* Tiny Button never appears flush left */
     }
 }
 
@@ -872,7 +873,7 @@ section {
 }
 
 .btn-group {
-    padding: 8px 0;
+    padding: 10.5px 0;
     float: right;
 }
 
@@ -1204,7 +1205,7 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 }
 
 .influencer.selected .block {
-    box-shadow: 0px 0px 0px 4px #48b9c7;
+    box-shadow: 0px 0px 0px 4px $traackr-red;
 }
 
 .influencer-large {
@@ -1293,10 +1294,10 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
     font-size: 14px;
     &:hover {
         text-decoration: none;
-        color: #52bdc5;
+        color: $traackr-red;
     }
     &.influencer-star-on {
-        color: #52bdc5;
+        color: $traackr-red;
     }
 }
 
@@ -1639,8 +1640,11 @@ $unExpandedInfoHeight: 75px;
 }
 
 /* Filters */
+
+/* Filter panel contains the magnets, and the magnets always have a bottom margin.  this allows
+   for the magnet bottom margin to compensate for the rest of the panel's bottom margin. */
 .filters-panel {
-    margin: 15px 0;
+    margin: 15px 0 7px 0;
 }
 
 /* Avatars */
@@ -1697,6 +1701,7 @@ $unExpandedInfoHeight: 75px;
             height: 48px;
             width: 48px;
             padding: 15px 0;
+            line-height: 19px;
             font-size: 20px;
         }
     }
@@ -1730,9 +1735,17 @@ $unExpandedInfoHeight: 75px;
     a.post-meta-link:link, a.post-meta-link:visited {
         color: $medium-grey;
         font-size: 14px;
+        &.post-date {
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
     a.post-meta-link:hover, a.post-meta-link:active {
         text-decoration: none;
+        &.post-date {
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
 }
 .post-list .post-content {
@@ -1754,7 +1767,7 @@ $unExpandedInfoHeight: 75px;
         float: right;
         margin: 0 0 0 5px;
         &.ss-social-circle {
-            margin: 3px 0 0 5px;
+            margin: 4px 0 0 5px;
         }
     }
 }
@@ -2070,8 +2083,12 @@ $unExpandedInfoHeight: 75px;
     fieldset {
         padding: 0;
     }
+    .block {
+        box-shadow: none;
+        margin-bottom: 0;
+    }
     .block-content, .block-footer {
-        border: 0;
+        border-top: 0;
     }
 }
 
