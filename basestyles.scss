@@ -503,7 +503,8 @@ a.influencer-name, .influencer-name {
     text-align: left;
 }
 .table th {
-    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
 }
 .table tbody tr:last-child {
     border-bottom: 0;
@@ -1843,6 +1844,9 @@ $unExpandedInfoHeight: 75px;
     white-space: nowrap;
     float: left;
     width: 33.3%;
+    &.col_4 {
+        width: 25%;
+    }
     &.col_3 {
         width: 33.3%;
     }
