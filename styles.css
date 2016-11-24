@@ -998,7 +998,8 @@ a.influencer-name, .influencer-name {
   text-align: left; }
 
 .table th {
-  font-weight: bold; }
+  font-size: 10px;
+  text-transform: uppercase; }
 
 .table tbody tr:last-child {
   border-bottom: 0; }
@@ -2106,6 +2107,8 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
   white-space: nowrap;
   float: left;
   width: 33.3%; }
+  .data-summary-section.col_4 {
+    width: 25%; }
   .data-summary-section.col_3 {
     width: 33.3%; }
   .data-summary-section.col_2 {
