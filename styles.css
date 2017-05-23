@@ -699,10 +699,9 @@ a.influencer-name, .influencer-name {
     position: relative;
     top: 1px;
     line-height: 1; }
-  .medium-circle-icon:hover, button:hover, .btn:hover, input[type="button"]:hover {
-    border: 1px solid #f46240;
-    color: #f46240;
-    text-decoration: none; }
+  .medium-circle-icon.selected, .medium-circle-icon.selected:hover, button.selected, button.selected:hover, .btn.selected, .btn.selected:hover, input[type="button"].selected, input[type="button"].selected:hover {
+    background-color: #333;
+    color: white; }
   .medium-circle-icon.disabled, .medium-circle-icon.disabled:hover, button.disabled, button.disabled:hover, .btn.disabled, .btn.disabled:hover, input[type="button"].disabled, input[type="button"].disabled:hover {
     border: 1px solid #c8c8c8;
     color: #c8c8c8;
@@ -1363,8 +1362,7 @@ section {
 
 .nav-item > a {
   display: block;
-  padding: 9px 15px;
-  border-top: 6px solid #fff;
+  padding: 12px 15px;
   box-sizing: border-box;
   height: 45px;
   color: #333;
@@ -1375,7 +1373,7 @@ section {
   color: #f46240; }
 
 .nav-item > a.selected {
-  border-top: 6px solid #f46240; }
+  color: #f46240; }
 
 li.nav-item {
   display: inline-block;
@@ -1384,6 +1382,10 @@ li.nav-item {
   border-right: 1px solid #e8e8e8;
   border-top: 1px solid #e8e8e8;
   background: #fff; }
+  li.nav-item.sub {
+    background: #e8e8e8;
+    border-right: 1px solid #c8c8c8;
+    border-top: 1px solid #c8c8c8; }
 
 .full-width.block-tabs ul, .block .block-tabs ul {
   box-shadow: none;
@@ -2387,6 +2389,49 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
       .global-message.message-flash .global-message-close a:hover,
       .global-message.message-success .global-message-close a:hover,
       .global-message.message-error .global-message-close a:hover {
+        text-decoration: none; }
+
+/* Global Notifications */
+#globalNotificationContainer {
+  position: fixed;
+  left: 20px;
+  bottom: 20px; }
+
+.global-notification {
+  z-index: 9999999;
+  max-width: 320px;
+  min-height: 70px;
+  min-width: 300px;
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 11px -10px 14px -13px rgba(0, 0, 0, 0.08), 5px 6px 26px -10px rgba(0, 0, 0, 0.15);
+  position: relative; }
+  .global-notification .message {
+    align-items: center;
+    display: flex; }
+  .global-notification .message-img {
+    display: inline-block;
+    margin-right: 4px; }
+  .global-notification .messages {
+    align-items: center;
+    display: flex;
+    flex: 0 0 150px;
+    height: 50px;
+    margin-left: 15px; }
+    .global-notification .messages .text {
+      width: 231px; }
+  .global-notification .global-notification-close {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    color: white; }
+    .global-notification .global-notification-close a {
+      color: #c8c8c8; }
+      .global-notification .global-notification-close a:hover {
         text-decoration: none; }
 
 /* Stats Table and Mini Stats Tables */
