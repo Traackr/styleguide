@@ -318,125 +318,6 @@ button:focus {
     border: 1px solid #fbc3b6;
     border-left: 0; }
 
-a.ss-social-circle, .ss-social-circle {
-  line-height: 1;
-  text-decoration: none;
-  color: #444444; }
-  a.ss-social-circle:hover, .ss-social-circle:hover {
-    text-decoration: none;
-    border-bottom: none;
-    color: #444444; }
-
-a.ss-social-rss, .ss-social-rss {
-  color: #f9a94a; }
-  a.ss-social-rss:hover, .ss-social-rss:hover {
-    color: #f9a94a; }
-
-a.ss-social-twitter, .ss-social-twitter {
-  color: #33ccff; }
-  a.ss-social-twitter:hover, .ss-social-twitter:hover {
-    color: #33ccff; }
-
-a.ss-social-tumblr, .ss-social-tumblr {
-  color: #2c4762; }
-  a.ss-social-tumblr:hover, .ss-social-tumblr:hover {
-    color: #2c4762; }
-
-a.ss-social-facebook, .ss-social-facebook {
-  color: #066591; }
-  a.ss-social-facebook:hover, .ss-social-facebook:hover {
-    color: #066591; }
-
-a.ss-social-youtube, .ss-social-youtube {
-  color: #ef0e11; }
-  a.ss-social-youtube:hover, .ss-social-youtube:hover {
-    color: #ef0e11; }
-
-a.ss-social-linkedin, .ss-social-linkedin {
-  color: #4875b4; }
-  a.ss-social-linkedin:hover, .ss-social-linkedin:hover {
-    color: #4875b4; }
-
-a.ss-social-flickr, .ss-social-flickr {
-  color: #ff0084; }
-  a.ss-social-flickr:hover, .ss-social-flickr:hover {
-    color: #ff0084; }
-
-a.ss-social-googleplus, .ss-social-googleplus {
-  color: #d34836; }
-  a.ss-social-googleplus:hover, .ss-social-googleplus:hover {
-    color: #d34836; }
-
-a.ss-social-quora, .ss-social-quora {
-  color: #a82400; }
-  a.ss-social-quora:hover, .ss-social-quora:hover {
-    color: #a82400; }
-
-a.ss-social-share, .ss-social-share {
-  color: #e9953b; }
-  a.ss-social-share:hover, .ss-social-share:hover {
-    color: #e9953b; }
-
-a.ss-social-lastfm, .ss-social-lastfm {
-  color: #c00000; }
-  a.ss-social-lastfm:hover, .ss-social-lastfm:hover {
-    color: #c00000; }
-
-a.ss-social-friendfeed, .ss-social-friendfeed {
-  color: #2f72c4; }
-  a.ss-social-friendfeed:hover, .ss-social-friendfeed:hover {
-    color: #2f72c4; }
-
-a.ss-social-microsoft, .ss-social-microsoft {
-  color: #285da7; }
-  a.ss-social-microsoft:hover, .ss-social-microsoft:hover {
-    color: #285da7; }
-
-a.ss-social-posterous, .ss-social-posterous {
-  color: #f8d662; }
-  a.ss-social-posterous:hover, .ss-social-posterous:hover {
-    color: #f8d662; }
-
-a.ss-social-pinterest, .ss-social-pinterest {
-  color: #cb2027; }
-  a.ss-social-pinterest:hover, .ss-social-pinterest:hover {
-    color: #cb2027; }
-
-a.ss-social-wordpress, .ss-social-wordpress {
-  color: #444444; }
-  a.ss-social-wordpress:hover, .ss-social-wordpress:hover {
-    color: #444444; }
-
-a.ss-social-stumbleupon, .ss-social-stumbleupon {
-  color: #2fb25b; }
-  a.ss-social-stumbleupon:hover, .ss-social-stumbleupon:hover {
-    color: #2fb25b; }
-
-a.ss-social-foursquare, .ss-social-foursquare {
-  color: #30b0e2; }
-  a.ss-social-foursquare:hover, .ss-social-foursquare:hover {
-    color: #30b0e2; }
-
-a.ss-social-yelp, .ss-social-yelp {
-  color: #c41200; }
-  a.ss-social-yelp:hover, .ss-social-yelp:hover {
-    color: #c41200; }
-
-a.ss-social-vimeo, .ss-social-vimeo {
-  color: #33454e; }
-  a.ss-social-vimeo:hover, .ss-social-vimeo:hover {
-    color: #33454e; }
-
-a.ss-social-myspace, .ss-social-myspace {
-  color: #008dde; }
-  a.ss-social-myspace:hover, .ss-social-myspace:hover {
-    color: #008dde; }
-
-a.ss-social-digg, .ss-social-digg {
-  color: #444444; }
-  a.ss-social-digg:hover, .ss-social-digg:hover {
-    color: #444444; }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2526,6 +2407,93 @@ ul.tagit li.tagit-choice .tagit-close .text-icon {
 
 .nav-item > a {
   padding: 8px 15px; }
+
+.subnavigation-tabs ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+.subnavigation-tabs li {
+  background-color: #F7F7F7;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 3px solid #e8e8e8;
+  border-top: 0;
+  display: inline-block;
+  letter-spacing: 0.4px;
+  margin-top: 10px;
+  min-width: 140px;
+  text-align: center;
+  transition: 200ms ease-in;
+  vertical-align: bottom; }
+  .subnavigation-tabs li:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
+  .subnavigation-tabs li:hover {
+    margin-top: 0; }
+  .subnavigation-tabs li.selected {
+    background-color: #FFF;
+    border-bottom: 3px solid #FFF; }
+    .subnavigation-tabs li.selected:hover {
+      margin-top: 10px; }
+    .subnavigation-tabs li.selected a:hover {
+      padding-top: 18px;
+      padding-bottom: 14px; }
+  @media screen and (max-width: 980px) {
+    .subnavigation-tabs li {
+      min-width: 50px; } }
+.subnavigation-tabs .ss-icon {
+  vertical-align: middle; }
+.subnavigation-tabs .subnav-title {
+  margin-left: 5px;
+  vertical-align: middle; }
+.subnavigation-tabs .subnav-icon {
+  display: inline-block;
+  opacity: 0.7;
+  margin-left: -4px;
+  vertical-align: middle;
+  width: 17px; }
+.subnavigation-tabs a {
+  color: #5b5e64;
+  display: block;
+  font-size: 0.85em;
+  padding: 18px 25px 14px 25px;
+  text-transform: uppercase;
+  transition: 200ms ease-in; }
+  .subnavigation-tabs a:hover {
+    padding-top: 23px;
+    padding-bottom: 19px;
+    text-decoration: none; }
+  @media screen and (max-width: 980px) {
+    .subnavigation-tabs a {
+      padding-left: 20px;
+      padding-right: 20px; } }
+.subnavigation-tabs.bottom a, .subnavigation-tabs.bottom a:hover {
+  padding-bottom: 16px; }
+.subnavigation-tabs.bottom li {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top: 3px solid #e8e8e8;
+  border-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+  vertical-align: top; }
+  .subnavigation-tabs.bottom li:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
+  .subnavigation-tabs.bottom li:hover {
+    margin-bottom: 0;
+    margin-top: 0; }
+  .subnavigation-tabs.bottom li.selected {
+    border-top: 3px solid #FFF; }
+    .subnavigation-tabs.bottom li.selected a:hover {
+      padding-top: 18px;
+      padding-bottom: 16px; }
+@media screen and (max-width: 980px) {
+  .subnavigation-tabs .subnav-title {
+    display: none; } }
 
 .masonry-grid {
   margin: 5px -5px 0; }
