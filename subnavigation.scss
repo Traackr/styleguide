@@ -1,0 +1,133 @@
+.subnavigation-tabs {
+  ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    background-color: #F7F7F7;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 3px solid $light-grey;
+    border-top: 0;
+    display: inline-block;
+    letter-spacing: 0.4px;
+    margin-top: 10px;
+    min-width: 140px;
+    text-align: center;
+    transition: 200ms ease-in;
+    vertical-align: bottom;
+
+    &:first-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:hover {
+      margin-top: 0;
+    }
+
+    &.selected {
+      background-color: #FFF;
+      border-bottom: 3px solid #FFF;
+
+      &:hover {
+        margin-top: 10px;
+      }
+
+      a:hover {
+        padding-top: 18px;
+        padding-bottom: 14px;
+      }
+    }
+
+    @media screen and (max-width: 980px) {
+      min-width: 50px;
+    }
+  }
+
+  .ss-icon {
+    vertical-align: middle;
+  }
+
+  .subnav-title {
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+
+  // The icons for a navigation link
+  .subnav-icon {
+    display: inline-block;
+    opacity: 0.7;
+    margin-left: -4px;
+    vertical-align: middle;
+    width: 17px;
+  }
+
+
+  a {
+    color: $traackr-nav-grey;
+    display: block;
+    font-size: 0.85em;
+    padding: 18px 25px 14px 25px;
+    text-transform: uppercase;
+    transition: 200ms ease-in;
+
+    &:hover {
+      padding-top: 23px;
+      padding-bottom: 19px;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 980px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &.bottom {
+    a, a:hover {
+      padding-bottom: 16px;
+    }
+
+    li {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-top: 3px solid $light-grey;
+      border-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 10px;
+      vertical-align: top;
+
+      &:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+
+      &:hover {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      &.selected {
+        border-top: 3px solid #FFF;
+
+        a:hover {
+          padding-top: 18px;
+          padding-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 980px) {
+    .subnav-title {
+      display: none;
+    }
+  }
+}

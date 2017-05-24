@@ -32,6 +32,7 @@ $medium-sea-green: rgb(47, 178, 91);
 
 /* We are Grey; we stand between the candle and the light */
 $dark-grey: rgb(51, 51, 51); // #333
+$med-dark-grey: rgb(137, 137, 137); // #888
 $medium-grey: rgb(200, 200, 200); // #c8c8c8
 $light-grey: rgb(232, 232, 232); // #e8e8e8
 
@@ -47,11 +48,14 @@ $traackr-red: rgb(244, 98, 64); //#f46240
 $traackr-dark-red: rgb(240, 76, 60); // #f04c3c
 $traackr-yellow: rgb(255, 219, 63); // #ffdb3f
 $traackr-teal: rgb(67, 180, 194); // #43b4c2
+$traackr-blue-grey: rgb(103, 112, 128); // #677080
+$traackr-nav-grey: rgb(91, 94, 100); // #5b5e64
+$traackr-blue: rgb(109, 197, 213); // #6DC5D5
 
 /* Social Networks */
 $traackr-social-twitter: $deep-sky-blue;
 $traackr-social-rss: $sunshade;
-$traackr-social-email: $sunshade;
+$traackr-social-email: $black;
 $traackr-social-tumblr: $arapawa;
 $traackr-social-facebook: $dark-cerulean;
 $traackr-social-youtube: $red;
@@ -70,7 +74,7 @@ $traackr-social-foursquare: $summer-sky;
 $traackr-social-yelp: $free-speech-red-darker;
 $traackr-social-vimeo: $big-stone;
 $traackr-social-myspace: $pacific-blue;
-$traackr-social-compose: $medium-sea-green;
+$traackr-social-compose: $black;
 
 /* Relationship Stages */
 $traackr-stage-1: #fcb69a;
@@ -117,192 +121,4 @@ $list-stage-gradients: 8333, 10000, 12500, 16666, 16667, 20000, 24999, 25000, 30
             }
         }
     }
-}
-
-a.ss-social-circle, .ss-social-circle {
-  line-height: 1;
-  text-decoration: none;
-  color: $black;
-
-  &:hover {
-    text-decoration: none;
-    border-bottom: none;
-    color: $black;
-  }
-}
-
-a.ss-social-rss, .ss-social-rss {
-  color: $traackr-social-rss;
-
-  &:hover {
-    color: $traackr-social-rss;
-  }
-}
-
-a.ss-social-twitter, .ss-social-twitter {
-  color: $traackr-social-twitter;
-
-  &:hover {
-    color: $traackr-social-twitter;
-  }
-}
-
-a.ss-social-tumblr, .ss-social-tumblr {
-  color: $traackr-social-tumblr;
-
-  &:hover {
-    color: $traackr-social-tumblr;
-  }
-}
-
-a.ss-social-facebook, .ss-social-facebook {
-  color: $traackr-social-facebook;
-
-  &:hover {
-    color: $traackr-social-facebook;
-  }
-}
-
-a.ss-social-youtube, .ss-social-youtube {
-  color: $traackr-social-youtube;
-
-  &:hover {
-    color: $traackr-social-youtube;
-  }
-}
-
-a.ss-social-linkedin, .ss-social-linkedin {
-  color: $traackr-social-linkedin;
-
-  &:hover {
-    color: $traackr-social-linkedin;
-  }
-}
-
-a.ss-social-flickr, .ss-social-flickr {
-  color: $traackr-social-flickr;
-
-  &:hover {
-    color: $traackr-social-flickr;
-  }
-}
-
-a.ss-social-googleplus, .ss-social-googleplus {
-  color: $traackr-social-googleplus;
-
-  &:hover {
-    color: $traackr-social-googleplus;
-  }
-}
-
-a.ss-social-quora, .ss-social-quora {
-  color: $traackr-social-quora;
-
-  &:hover {
-    color: $traackr-social-quora;
-  }
-}
-
-a.ss-social-share, .ss-social-share {
-  color: $traackr-social-share;
-
-  &:hover {
-    color: $traackr-social-share;
-  }
-}
-
-a.ss-social-lastfm, .ss-social-lastfm {
-  color: $traackr-social-lastfm;
-
-  &:hover {
-    color: $traackr-social-lastfm;
-  }
-}
-
-a.ss-social-friendfeed, .ss-social-friendfeed {
-  color: $traackr-social-friendfeed;
-
-  &:hover {
-    color: $traackr-social-friendfeed;
-  }
-}
-
-a.ss-social-microsoft, .ss-social-microsoft {
-  color: $traackr-social-microsoft;
-
-  &:hover {
-    color: $traackr-social-microsoft;
-  }
-}
-
-a.ss-social-posterous, .ss-social-posterous {
-  color: $traackr-social-posterous;
-
-  &:hover {
-    color: $traackr-social-posterous;
-  }
-}
-
-a.ss-social-pinterest, .ss-social-pinterest {
-  color: $traackr-social-pinterest;
-
-  &:hover {
-    color: $traackr-social-pinterest;
-  }
-}
-
-a.ss-social-wordpress, .ss-social-wordpress {
-  color: $black;
-
-  &:hover {
-    color: $black;
-  }
-}
-
-a.ss-social-stumbleupon, .ss-social-stumbleupon {
-  color: $traackr-social-stumbleupon;
-
-  &:hover {
-    color: $traackr-social-stumbleupon;
-  }
-}
-
-a.ss-social-foursquare, .ss-social-foursquare {
-  color: $traackr-social-foursquare;
-
-  &:hover {
-    color: $traackr-social-foursquare;
-  }
-}
-
-a.ss-social-yelp, .ss-social-yelp {
-  color: $traackr-social-yelp;
-
-  &:hover {
-    color: $traackr-social-yelp;
-  }
-}
-
-a.ss-social-vimeo, .ss-social-vimeo {
-  color: $traackr-social-vimeo;
-
-  &:hover {
-    color: $traackr-social-vimeo;
-  }
-}
-
-a.ss-social-myspace, .ss-social-myspace {
-  color: $traackr-social-myspace;
-
-  &:hover {
-    color: $traackr-social-myspace;
-  }
-}
-
-a.ss-social-digg, .ss-social-digg {
-  color: $black;
-
-  &:hover {
-    color: $black;
-  }
 }

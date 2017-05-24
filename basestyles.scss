@@ -136,10 +136,9 @@ a.influencer-name, .influencer-name {
         top: 1px;
         line-height: 1;
     }
-    &:hover {
-        border: 1px solid $traackr-red;
-        color: $traackr-red;
-        text-decoration: none;
+    &.selected, &.selected:hover {
+        background-color: #333;
+        color: white;
     }
     &.disabled, &.disabled:hover {
         border: 1px solid #c8c8c8;
@@ -503,7 +502,8 @@ a.influencer-name, .influencer-name {
     text-align: left;
 }
 .table th {
-    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
 }
 .table tbody tr:last-child {
     border-bottom: 0;
@@ -943,8 +943,7 @@ section {
 
 .nav-item > a {
     display: block;
-    padding: 9px 15px;
-    border-top: 6px solid #fff;
+    padding: 12px 15px;
     box-sizing: border-box;
     height: 45px;
     color: #333;
@@ -957,16 +956,21 @@ section {
 }
 
 .nav-item > a.selected {
-    border-top: 6px solid $traackr-red;
+    color: $traackr-red;
 }
 
 li.nav-item {
     display: inline-block;
     cursor: pointer;
     text-align: center;
-    border-right: 1px solid #e8e8e8;
-    border-top: 1px solid #e8e8e8;
+    border-right: 1px solid $light-grey;
+    border-top: 1px solid $light-grey;
     background: #fff;
+    &.sub {
+        background: $light-grey;
+        border-right: 1px solid $medium-grey;
+        border-top: 1px solid $medium-grey;
+    }
 }
 
 .full-width.block-tabs ul, .block .block-tabs ul {
@@ -1843,6 +1847,9 @@ $unExpandedInfoHeight: 75px;
     white-space: nowrap;
     float: left;
     width: 33.3%;
+    &.col_4 {
+        width: 25%;
+    }
     &.col_3 {
         width: 33.3%;
     }
@@ -2174,6 +2181,64 @@ $unExpandedInfoHeight: 75px;
         a {
             color: #c8c8c8;
 
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* Global Notifications */
+#globalNotificationContainer {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+}
+
+
+.global-notification {
+    z-index: 9999999;
+    max-width: 320px;
+    min-height: 70px;
+    min-width: 300px;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 11px -10px 14px -13px rgba(0, 0, 0, .08), 5px 6px 26px -10px rgba(0, 0, 0, .15);
+    position: relative;
+
+    .message {
+        align-items: center;
+        display: flex;
+    }
+
+    .message-img {
+        display:inline-block;
+        margin-right: 4px;
+    }
+
+    .messages {
+        align-items: center;
+        display: flex;
+        flex: 0 0 150px;
+        height: 50px;
+        margin-left: 15px;
+        .text {
+            width: 231px;
+        }
+    }
+
+    .global-notification-close {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+        color: white;
+
+        a {
+            color: #c8c8c8;
             &:hover {
                 text-decoration: none;
             }
