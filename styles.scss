@@ -18,6 +18,7 @@ $susy: (
 .nav-item > a {
     padding: 8px 15px;
 }
+@import "subnavigation";
 
 // TODO: Take this out, doesn't belong
 @import "content";
